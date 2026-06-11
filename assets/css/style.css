@@ -734,6 +734,7 @@ select.form-control {
 
 /* Content */
 .content {
+  position: relative;
   padding: 0 32px 40px;
   display: flex;
   flex-direction: column;
@@ -1062,10 +1063,6 @@ select.form-control {
   font-weight: 500;
   border-bottom: 1px solid var(--border);
   font-size: 13px;
-}
-
-.data-table tbody tr {
-  border-bottom: 1px solid #f1f3f6;
 }
 
 .data-table tbody tr:last-child {
@@ -1431,7 +1428,7 @@ select.form-control {
   align-items: center;
   gap: 10px;
   width: 100%;
-  padding: 10px 12px;
+  padding: 10px 0px;
   border-radius: 8px;
   text-align: left;
   color: var(--brand-navy);
@@ -3053,4 +3050,12 @@ select.form-control {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #b7bdc9;
+}
+
+/* DASHBOARD CHART */
+
+.chart-card {
+  position: relative;
+  height: 400px; /* adjust as needed */
+  width: 100%;
 }
