@@ -3,6 +3,11 @@
    ========================================================= */
 
 /* ---------- Design tokens ---------- */
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Public Sans", sans-serif;
+}
 :root {
   /* Brand */
   --brand-navy: #13284b;
@@ -576,10 +581,10 @@ select.form-control {
   align-items: center;
   gap: 12px;
   padding: 12px 14px;
-  border-radius: 12px;
-  color: var(--text-secondary);
-  font-weight: 500;
-  font-size: 15px;
+  border-radius: 10px;
+  color: #404959;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .nav-item .nav-icon {
@@ -595,9 +600,9 @@ select.form-control {
 }
 
 .nav-item.active {
-  background: var(--bg-sidebar-active);
-  color: var(--brand-navy);
-  font-weight: 600;
+  background: #e2eef7;
+  color: #404959;
+  font-weight: 400;
 }
 
 .nav-item.logout {
