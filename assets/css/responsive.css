@@ -122,6 +122,13 @@
   .topbar {
     padding: 16px;
     flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Hide the desktop sidebar collapse arrow */
+  .sidebar-toggle {
+    display: none;
   }
 
   .content {
@@ -130,12 +137,28 @@
 
   .page-title {
     font-size: 20px;
+    flex: 1;
+    min-width: 0;
+    gap: 8px;
   }
 
+  /* Dissolve topbar-actions so bell & search participate directly in topbar flex */
+  .topbar-actions {
+    display: contents;
+  }
+
+  /* Bell stays on row 1, pushed to the right by page-title flex:1 */
+  .bell-btn {
+    order: 2;
+    flex-shrink: 0;
+  }
+
+  /* Search drops to row 2, full topbar width */
   .search-box {
+    order: 3;
+    flex: 0 0 100%;
     min-width: 0;
     width: 100%;
-    order: 3;
   }
 
   .stats-grid {
@@ -343,10 +366,6 @@
   .code-input {
     width: 42px;
     height: 48px;
-  }
-
-  .topbar-actions {
-    flex-wrap: wrap;
   }
 
   .auth-brand .logo-large {

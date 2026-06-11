@@ -719,6 +719,10 @@ select.form-control {
   display: none;
 }
 
+.menu-btn {
+  display: none;
+}
+
 .bell-btn {
   width: 44px;
   height: 44px;
