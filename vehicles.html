@@ -352,79 +352,109 @@
       </main>
     </div>
 
-    <!-- ============ Add New Vehicle Type modal ============ -->
+    <style>
+     
+    .upload-zone{
+     padding:22px 34px;
+      border:1px dashed #9AC0DD;
+      border-radius:8px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      cursor:pointer;
+      background:#F8FBFC;
+  }
+    .upload-icon{
+        margin-bottom:12px;
+    }
+    
+    .upload-text{
+        font-size:14px;
+        font-weight:500;
+        line-height:1.5;
+        color:#101B30;
+    }
+    
+    .upload-help{
+        margin-top:12px;
+        font-size:12px;
+        color:#707683;
+    }
+  
+    
+   
+    </style>
     <div class="modal-overlay hidden" id="addVehicleModal">
-      <div class="modal">
+      <div class="modal vehicle-modal">
         <button class="modal-close" data-modal-close aria-label="Close">
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <line x1="6" y1="6" x2="18" y2="18" />
-            <line x1="6" y1="18" x2="18" y2="6" />
-          </svg>
+          ✕
         </button>
-        <h3>Add New Vehicle Type</h3>
-        <p>
+    
+        <h3 class="modal-title">Add New Vehicle Type</h3>
+    
+        <p class="modal-subtitle">
           Once saved, this vehicle type will appear live in the app immediately.
         </p>
+    
         <form>
-          <div class="form-group">
-            <label class="form-label">Vehicle Type Icon</label>
+          <div class="form-group" style="margin-bottom: 30px;">
+            <label class="form-label" style="margin-bottom: 8px;">Vehicle Type Icon</label>
+    
             <label class="upload-zone" for="vehicleIconFile">
-              <span class="upload-ic"
-                ><svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <circle cx="9" cy="10" r="2" />
-                  <path d="M3 17l5-5 6 6" /></svg
-              ></span>
-              <div>
-                <span class="upload-link">Click to upload</span> or<br />drag
-                and drop
-              </div>
-              <div class="upload-help" style="margin-top: 6px">
-                (JPG or PNG)
-              </div>
-              <input
-                type="file"
-                id="vehicleIconFile"
-                accept="image/jpeg,image/png"
-                style="display: none"
+
+              <img
+                  src="assets/images/imageupload.svg"
+                  alt="Upload"
+                  class="upload-image"
+                  style="margin-bottom: 16px;"
               />
-            </label>
+          
+              <div class="upload-text">
+                  <span style="text-decoration: underline;color:#2D6495;">Click to upload</span> or<br>
+                  drag and drop
+              </div>
+          
+              <div class="upload-help">
+                  (JPG or PNG)
+              </div>
+          
+              <input
+                  type="file"
+                  id="vehicleIconFile"
+                  accept="image/jpeg,image/png"
+                  hidden
+              />
+          </label>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="vehicleName"
-              >Vehicle Type Name</label
-            >
+    
+          <div class="form-group"  style="margin-bottom: 30px;">
+            <label class="form-label">Vehicle Type Name</label>
             <input
               class="form-control"
               type="text"
-              id="vehicleName"
-              name="vehicleName"
+              placeholder=""
             />
           </div>
+    
           <div class="modal-actions">
             <button
               class="btn btn-primary"
+              style="padding:16px 42.5px;"
               type="button"
               data-show-toast
               data-modal-close
             >
               Add Vehicle Type
             </button>
-            <button class="btn btn-secondary" type="button" data-modal-close>
+    
+            <button
+              class="btn btn-secondary"
+              style="padding:16px 65px;"
+              type="button"
+              data-modal-close
+            >
               Cancel
             </button>
           </div>
@@ -436,47 +466,41 @@
     <div class="modal-overlay hidden" id="editVehicleModal">
       <div class="modal">
         <button class="modal-close" data-modal-close aria-label="Close">
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <line x1="6" y1="6" x2="18" y2="18" />
-            <line x1="6" y1="18" x2="18" y2="6" />
-          </svg>
+          ✕
         </button>
         <h3>Edit Vehicle Type</h3>
         <div class="note-box">
          <img
             src="assets/images/danger-icon.svg"
             alt="Warning"/>
-          Any changes made to these categories will apply across the entire
+          Any changes made to these categories will apply <br> across the entire
           platform.
         </div>
         <form>
           <div class="form-group">
             <label class="form-label">Vehicle Type Icon</label>
-            <div class="upload-zone compact">
-              <span class="ph-ic"
-                ><svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
+              <div style="border:1px dashed #9AC0DD;
+              border-radius:12px;background-color:#F8FBFC;padding:12px;display:inline-block;"
                 >
-                  <path d="M5 11l2-5h10l2 5" />
-                  <rect x="3" y="11" width="18" height="6" rx="2" />
-                  <circle cx="7" cy="17" r="1.5" />
-                  <circle cx="17" cy="17" r="1.5" /></svg
-              ></span>
+                <div style="
+                background:#fff;
+                border:1px solid #E8ECEE;
+                border-radius:10px;
+                padding:12px;
+                display:inline-flex;
+                align-items:center;
+                justify-content:center;
+               
+            ">
+                <img
+                    src="assets/images/vehicles/car.svg"
+                    alt="Current Icon"
+                    style="width:48px;height:48px;"
+                >
+            </div>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" style="margin-top: 20px;">
             <label class="form-label" for="editVehicleName"
               >Vehicle Type Name</label
             >
@@ -498,7 +522,7 @@
               <option>Inactive</option>
             </select>
           </div>
-          <div class="modal-actions">
+          <div class="modal-actions" style="margin-top: 30px;">
             <button
               class="btn btn-primary"
               type="button"
@@ -519,35 +543,14 @@
     <div class="modal-overlay hidden" id="deleteVehicleModal">
       <div class="modal">
         <button class="modal-close" data-modal-close aria-label="Close">
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <line x1="6" y1="6" x2="18" y2="18" />
-            <line x1="6" y1="18" x2="18" y2="6" />
-          </svg>
+          ✕
         </button>
         <h3>Delete [Vehicle Name]?</h3>
         <div class="note-box">
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              d="M10.3 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.7 3.86a2 2 0 0 0-3.4 0z"
-            />
-            <line x1="12" y1="9" x2="12" y2="13" />
-            <line x1="12" y1="17" x2="12.01" y2="17" />
-          </svg>
-          Any changes made to these categories will apply across the entire
+          <img
+              src="assets/images/danger-icon.svg"
+              alt="Warning"/>
+          Any changes made to these categories will apply <br> across the entire
           platform
         </div>
         <div class="modal-actions">
