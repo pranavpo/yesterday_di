@@ -1,7 +1,7 @@
 /* =========================================================
    Yesterday Admin CMS — Core stylesheet
    ========================================================= */
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 /* ---------- Design tokens ---------- */
 :root {
   /* Brand */
@@ -83,6 +83,7 @@ body {
 
 body {
   font-family:
+    "Public Sans",
     "Plus Jakarta Sans",
     -apple-system,
     BlinkMacSystemFont,
@@ -426,9 +427,9 @@ select.form-control {
 }
 
 .auth-link {
-  color: var(--brand-blue);
+  color: #6B9ABD;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 /* Code inputs */
