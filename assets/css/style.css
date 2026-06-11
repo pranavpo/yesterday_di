@@ -546,6 +546,10 @@ select.form-control {
 }
 
 .sidebar-toggle {
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -555,6 +559,8 @@ select.form-control {
   align-items: center;
   justify-content: center;
   color: var(--text-muted);
+  z-index: 10;
+  flex-shrink: 0;
 }
 
 .sidebar-nav {
@@ -633,11 +639,14 @@ select.form-control {
 }
 
 .topbar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 32px;
+  padding: 20px 32px;
   gap: 16px;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
 }
 
 .page-title {
@@ -679,6 +688,11 @@ select.form-control {
   width: 18px;
   height: 18px;
   color: var(--text-muted);
+}
+
+/* Hidden by default — JS inserts this; only shown on mobile via responsive.css */
+.menu-btn {
+  display: none;
 }
 
 .bell-btn {
@@ -985,7 +999,11 @@ select.form-control {
 }
 
 .filter-select {
+  appearance: none;
   background: #fff;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2397A1B2' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 8px 36px 8px 12px;
@@ -993,6 +1011,8 @@ select.form-control {
   font-weight: 500;
   color: var(--text-secondary);
   min-width: 110px;
+  cursor: pointer;
+  outline: none;
 }
 
 .table-title {

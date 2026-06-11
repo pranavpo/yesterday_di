@@ -84,7 +84,6 @@
     display: inline-flex; align-items: center; justify-content: center;
     color: var(--brand-navy);
   }
-  @media (min-width: 721px) { .menu-btn { display: none; } }
 
   .auth-form-wrap { padding: 0; }
   .auth-title { font-size: 24px; }
