@@ -1,10 +1,7 @@
 /* =========================================================
    Yesterday Admin CMS — Core stylesheet
    ========================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
-/* ---------- Design tokens ---------- */
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
   font-family: "Public Sans", sans-serif;
@@ -73,10 +70,9 @@ body {
   --radius-xl: 22px;
   --radius-pill: 999px;
 
-  --Neutral-900: #0E2741;
+  --Neutral-900: #0e2741;
   --Neutral-600: #707683;
-  --Primary-500: #2D6495
-
+  --Primary-500: #2d6495;
 }
 
 /* ---------- Reset ---------- */
@@ -252,7 +248,7 @@ textarea.form-control {
 }
 
 .field-error {
-  color: #F93642;
+  color: #f93642;
   font-size: 13px;
 }
 
@@ -294,12 +290,12 @@ select.form-control {
   flex-shrink: 0;
 }
 
-.checkbox input:checked+.box {
+.checkbox input:checked + .box {
   background: var(--brand-blue);
   border-color: var(--brand-blue);
 }
 
-.checkbox input:checked+.box::after {
+.checkbox input:checked + .box::after {
   content: "";
   width: 11px;
   height: 6px;
@@ -342,11 +338,11 @@ select.form-control {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-.toggle input:checked+.slider {
+.toggle input:checked + .slider {
   background: var(--brand-blue);
 }
 
-.toggle input:checked+.slider::before {
+.toggle input:checked + .slider::before {
   transform: translateX(16px);
 }
 
@@ -418,7 +414,7 @@ select.form-control {
   font-size: 32px;
   line-height: 40px;
   letter-spacing: 0px;
-  color: var(--Neutral-900, #0E2741);
+  color: var(--Neutral-900, #0e2741);
   margin: 0;
   padding: 0;
 }
@@ -449,7 +445,7 @@ select.form-control {
 }
 
 .auth-link {
-  color: #6B9ABD;
+  color: #6b9abd;
   font-weight: 600;
   font-size: 12px;
 }
@@ -1994,7 +1990,7 @@ select.form-control {
   font-weight: 500;
 }
 
-.info-grid-2>div {
+.info-grid-2 > div {
   padding: 8px 0;
 }
 
@@ -2577,7 +2573,7 @@ select.form-control {
   margin: 0 0 12px;
 }
 
-.detail-paragraph+.detail-paragraph {
+.detail-paragraph + .detail-paragraph {
   margin-top: 4px;
 }
 
