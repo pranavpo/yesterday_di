@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yesterday Admin — Delivery Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg">
+</head>
+<body>
+
+<div class="app-shell" id="appShell">
+  <!-- ====================== Sidebar ====================== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head"><img class="logo-mark" src="assets/images/logo-mark.svg" alt="Yesterday"></div>
+    <nav class="sidebar-nav" aria-label="Main">
+      <a class="nav-item" href="dashboard.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2h-4v-7H10v7H5a2 2 0 0 1-2-2v-9z"/></svg><span>Dashboard</span></a>
+      <a class="nav-item" href="users.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.5"/><path d="M2 21c0-3.6 2.9-6.5 7-6.5s7 2.9 7 6.5"/><circle cx="17" cy="8" r="2.5"/><path d="M16 14.5c2.8.4 5 2.7 5 5.5"/></svg><span>User Manager</span></a>
+      <a class="nav-item active" href="deliveries.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="13" height="10" rx="2"/><path d="M15 10h4l2 3v4h-6z"/><circle cx="6.5" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg><span>Delivery Manager</span></a>
+      <a class="nav-item" href="categories.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Category Manager</span></a>
+      <a class="nav-item" href="vehicles.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 13l2-5h10l2 3h4v6h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg><span>Vehicle Manager</span></a>
+      <a class="nav-item" href="subscription.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5c0-1.4 1.3-2 3-2s3 .6 3 2-1.3 2-3 2-3 .8-3 2 1.3 2 3 2 3-.6 3-2"/></svg><span>Subscription</span></a>
+      <a class="nav-item" href="messages.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H7l-3 3z"/></svg><span>Messages &amp; Support</span></a>
+      <a class="nav-item" href="static.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h11l4 4v14H5z"/><path d="M8 12h8M8 16h5"/></svg><span>Static Content</span></a>
+      <a class="nav-item" href="faqs.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9.5 10c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5c0 2-2.5 2-2.5 4"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg><span>FAQs</span></a>
+      <a class="nav-item" href="notifications.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="9" r="3"/><circle cx="17" cy="8" r="2.5"/><path d="M2 20c0-3.4 2.7-6 6-6s6 2.6 6 6"/><path d="M14 15c2.5 0 6 2 6 5"/></svg><span>Notifications</span></a>
+      <a class="nav-item" href="settings.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 0 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 0 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3h.1a1.7 1.7 0 0 0 1-1.5V3a2 2 0 0 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8v.1a1.7 1.7 0 0 0 1.5 1H21a2 2 0 0 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg><span>Settings</span></a>
+      <a class="nav-item logout" href="index.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg><span>Logout</span></a>
+    </nav>
+  </aside>
+
+  <!-- ====================== Main ====================== -->
+  <main class="main">
+    <header class="topbar">
+      <h1 class="page-title">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+        Deliveries Manager
+      </h1>
+      <div class="topbar-actions">
+        <div class="search-box">
+          <svg class="search-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" placeholder="Search Deliveries">
+        </div>
+        <button class="bell-btn" id="bellBtn" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z"/><path d="M10 21a2 2 0 0 0 4 0"/></svg></button>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="page-header-row" style="justify-content: space-between;">
+        <a class="detail-back" href="deliveries.html" style="margin:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          Delivery Details
+        </a>
+        <div style="display:flex; gap:12px;">
+          <button class="btn btn-primary" id="viewReportsBtn">View Reports</button>
+          <button class="btn btn-danger" id="cancelDeliveryBtn">Cancel Delivery</button>
+        </div>
+      </div>
+
+      <!-- Status timeline -->
+      <section class="card">
+        <div class="status-timeline" id="statusTimeline">
+          <div class="status-step s-open">
+            <span class="step-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></span>
+            <div class="step-text"><span class="step-name">Open</span><span class="step-when">11/ 05 - 11.30</span></div>
+          </div>
+          <span class="status-arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+          <div class="status-step s-await">
+            <span class="step-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/></svg></span>
+            <div class="step-text"><span class="step-name">Awaiting Pickup</span><span class="step-when">11/ 05 - 11.30</span></div>
+          </div>
+          <span class="status-arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+          <div class="status-step s-transit">
+            <span class="step-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="8" width="13" height="9" rx="2"/><path d="M15 11h4l2 3v3h-6z"/><circle cx="6.5" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></span>
+            <div class="step-text"><span class="step-name">In Transit</span><span class="step-when">11/ 05 - 13.30</span></div>
+          </div>
+          <span class="status-arrow muted"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+          <div class="status-step muted">
+            <span class="step-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><polyline points="8 12 11 15 16 9"/></svg></span>
+            <div class="step-text"><span class="step-name">Completed</span><span class="step-when">--</span></div>
+          </div>
+          <span class="status-arrow muted"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+          <div class="status-step muted">
+            <span class="step-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg></span>
+            <div class="step-text"><span class="step-name">Cancelled</span><span class="step-when">--</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Two info cards row -->
+      <section class="info-two-col">
+        <div class="card">
+          <h3 class="section-id"># Y-0127</h3>
+          <div class="info-grid-2">
+            <div><div class="label">Date</div><div class="value">11/04/2025</div></div>
+            <div><div class="label">Time</div><div class="value">11:30 AM</div></div>
+            <div><div class="label">Price</div><div class="value">$85.00</div></div>
+            <div><div class="label">Platform Fee</div><div class="value">$5.00</div></div>
+            <div><div class="label">Customer Pays</div><div class="value">$90.00</div></div>
+            <div></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="section-id">Delivery Information</h3>
+          <div class="info-grid-2">
+            <div><div class="label">Pick Up Address</div><div class="value">123 Smith St, Mackay</div></div>
+            <div><div class="label">Pick Up Location</div><div class="value">Apartment</div></div>
+            <div><div class="label">Drop-off Address</div><div class="value">78 King Rd, Townsville</div></div>
+            <div><div class="label">Drop-off Location</div><div class="value">House</div></div>
+            <div><div class="label">Drop-off Date</div><div class="value">25 April, 2026</div></div>
+            <div><div class="label">Drop-off Time</div><div class="value">3:00 PM</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Three cards: Item / Sender / Driver -->
+      <section class="three-card-row">
+        <div class="card item-card">
+          <h3 class="card-title" style="margin:0 0 14px;">Item Details</h3>
+          <div class="item-row">
+            <div class="item-img" aria-hidden="true"></div>
+            <div>
+              <div class="item-name">Sofa Set</div>
+              <div class="item-tag">Bulky Item</div>
+              <div class="item-tag" style="font-size:13px; color:var(--text-muted);">No dangerous goods</div>
+            </div>
+          </div>
+          <div class="item-specs">
+            <div><div class="label">Weight</div><div class="value">89kg</div></div>
+            <div><div class="label">Dimensions</div><div class="value">30 × 20 × 15 cm</div></div>
+          </div>
+          <a class="link-blue" href="#" style="display:inline-block; margin-top:12px;">View all photos (9)</a>
+        </div>
+
+        <div class="card person-card">
+          <h3 class="card-title" style="margin:0 0 14px;">Sender</h3>
+          <div class="person-row">
+            <span class="avatar lg">ZG</span>
+            <div class="person-info">
+              <span class="person-name">Zoe Graham</span>
+              <span class="person-meta">zoe.g@gmail.com</span>
+              <span class="person-meta">0 435 410 334</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span class="rating-chip"><svg class="thumb" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21h4V9H2zm19.8-10.6c.1-.5-.1-1-.4-1.3a1.7 1.7 0 0 0-1.3-.6h-6.2l.9-4.4c.1-.5 0-1.1-.4-1.4-.4-.4-.9-.6-1.4-.5l-.5.1-.5 4c-.1.6-.4 1.2-.9 1.6L8 11.5V21h11.1c.9 0 1.6-.6 1.8-1.5l1.5-7.1c0-.3.1-.6 0-.9z"/></svg> 160</span>
+            <span class="text-secondary">(200)</span>
+          </div>
+          <div class="success-rate" style="margin-top:6px;">89% Success Rate</div>
+          <a class="link-blue" href="user-details.html" style="display:inline-block; margin-top:10px;">View user details</a>
+        </div>
+
+        <div class="card person-card">
+          <h3 class="card-title" style="margin:0 0 14px;">Driver</h3>
+          <div class="person-row">
+            <span class="avatar lg" style="background:#3E5D7E;">
+              <img src="assets/images/avatar-luke.svg" alt="">
+            </span>
+            <div class="person-info">
+              <span class="person-name">Mark Jackson</span>
+              <span class="person-meta">zoe.g@gmail.com</span>
+              <span class="person-meta">0 435 410 334</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span class="rating-chip"><svg class="thumb" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21h4V9H2zm19.8-10.6c.1-.5-.1-1-.4-1.3a1.7 1.7 0 0 0-1.3-.6h-6.2l.9-4.4c.1-.5 0-1.1-.4-1.4-.4-.4-.9-.6-1.4-.5l-.5.1-.5 4c-.1.6-.4 1.2-.9 1.6L8 11.5V21h11.1c.9 0 1.6-.6 1.8-1.5l1.5-7.1c0-.3.1-.6 0-.9z"/></svg> 160</span>
+            <span class="text-secondary">(200)</span>
+            <span class="success-rate" style="margin-left:auto;">89% Success Rate</span>
+          </div>
+          <div class="success-rate" style="margin-top:6px;"><strong style="color:var(--brand-navy);">Vehicle Type:</strong> Truck</div>
+          <a class="link-blue" href="user-details.html" style="display:inline-block; margin-top:10px;">View user details</a>
+        </div>
+      </section>
+
+      <!-- Map -->
+      <section class="card map-card">
+        <div class="map-placeholder" aria-label="Delivery route map">
+          <svg class="map-bg" viewBox="0 0 1000 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1000" height="280" fill="#EFE9D9"/>
+            <!-- horizontal roads -->
+            <g stroke="#FFFFFF" stroke-width="14" stroke-linecap="round">
+              <line x1="0" y1="60" x2="1000" y2="60"/>
+              <line x1="0" y1="140" x2="1000" y2="140"/>
+              <line x1="0" y1="210" x2="1000" y2="210"/>
+            </g>
+            <!-- vertical roads -->
+            <g stroke="#FFFFFF" stroke-width="10" stroke-linecap="round">
+              <line x1="120" y1="0" x2="120" y2="280"/>
+              <line x1="300" y1="0" x2="300" y2="280"/>
+              <line x1="500" y1="0" x2="500" y2="280"/>
+              <line x1="700" y1="0" x2="700" y2="280"/>
+              <line x1="860" y1="0" x2="860" y2="280"/>
+            </g>
+            <!-- park / area -->
+            <rect x="160" y="170" width="120" height="60" fill="#C8DCB1" rx="6"/>
+            <rect x="540" y="80" width="100" height="44" fill="#D5C3A0" rx="4"/>
+            <rect x="740" y="170" width="90" height="40" fill="#CFB89B" rx="4"/>
+            <!-- route line -->
+            <path d="M150 220 C 250 200, 320 160, 420 145 C 520 130, 600 130, 720 100 C 800 90, 860 70, 900 60" fill="none" stroke="#2B5687" stroke-width="3" stroke-dasharray="6 4"/>
+          </svg>
+          <span class="map-pin" style="left:13%; top:74%; background:#F59E0B;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+          </span>
+          <span class="map-pin" style="left:88%; top:18%; background:var(--brand-blue);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+          </span>
+        </div>
+      </section>
+
+      <!-- Photos -->
+      <section class="photos-row">
+        <div class="card photo-block">
+          <h4>Pick Up Photos (4)</h4>
+          <div class="photo-thumbs">
+            <div class="photo-thumb"></div><div class="photo-thumb"></div><div class="photo-thumb"></div><div class="photo-thumb"></div>
+          </div>
+        </div>
+        <div class="card photo-block">
+          <h4>Drop Off Photos (4)</h4>
+          <div class="photo-thumbs">
+            <div class="photo-thumb"></div><div class="photo-thumb"></div><div class="photo-thumb"></div><div class="photo-thumb"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<!-- ============ Cancel/Delete Delivery modal ============ -->
+<div class="modal-overlay hidden" id="cancelDeliveryModal">
+  <div class="modal">
+    <button class="modal-close" data-modal-close aria-label="Close"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg></button>
+    <h3>Delete Delivery?</h3>
+    <div class="note-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.3 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.7 3.86a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      This action will affect both the sender and driver. The delivery will be removed from the platform and any active progress, communication, or booking status may be interrupted.
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-primary">Delete Delivery</button>
+      <button class="btn btn-secondary" data-modal-close>Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ No Reports Found modal ============ -->
+<div class="modal-overlay hidden" id="noReportsModal">
+  <div class="modal sm">
+    <button class="modal-close" data-modal-close aria-label="Close"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg></button>
+    <h3>No Reports Found</h3>
+    <p>No reports have been filed for this delivery.</p>
+    <button class="btn btn-primary btn-block" data-modal-close>Okay</button>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script>
+  // Page-level triggers
+  (function () {
+    var cancelBtn = document.getElementById('cancelDeliveryBtn');
+    if (cancelBtn) cancelBtn.addEventListener('click', function () { document.getElementById('cancelDeliveryModal').classList.remove('hidden'); });
+    var viewBtn = document.getElementById('viewReportsBtn');
+    if (viewBtn) viewBtn.addEventListener('click', function () { document.getElementById('noReportsModal').classList.remove('hidden'); });
+  })();
+</script>
+</body>
+</html>
