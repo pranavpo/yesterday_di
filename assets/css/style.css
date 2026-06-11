@@ -1,6 +1,7 @@
 /* =========================================================
    Yesterday Admin CMS — Core stylesheet
    ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* ---------- Design tokens ---------- */
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
@@ -71,6 +72,11 @@ body {
   --radius-lg: 16px;
   --radius-xl: 22px;
   --radius-pill: 999px;
+
+  --Neutral-900: #0E2741;
+  --Neutral-600: #707683;
+  --Primary-500: #2D6495
+
 }
 
 /* ---------- Reset ---------- */
@@ -88,6 +94,7 @@ body {
 
 body {
   font-family:
+    "Public Sans",
     "Plus Jakarta Sans",
     -apple-system,
     BlinkMacSystemFont,
@@ -190,17 +197,9 @@ svg {
 }
 
 /* ---------- Forms ---------- */
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-label {
-  display: block;
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-  font-weight: 500;
-}
+/* .form-group {
+  margin-bottom: 24px;
+} */
 
 .form-control,
 input.form-control,
@@ -253,9 +252,8 @@ textarea.form-control {
 }
 
 .field-error {
-  color: #dc2626;
+  color: #F93642;
   font-size: 13px;
-  margin-top: 6px;
 }
 
 /* Select with chevron */
@@ -296,12 +294,12 @@ select.form-control {
   flex-shrink: 0;
 }
 
-.checkbox input:checked + .box {
+.checkbox input:checked+.box {
   background: var(--brand-blue);
   border-color: var(--brand-blue);
 }
 
-.checkbox input:checked + .box::after {
+.checkbox input:checked+.box::after {
   content: "";
   width: 11px;
   height: 6px;
@@ -344,11 +342,11 @@ select.form-control {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-.toggle input:checked + .slider {
+.toggle input:checked+.slider {
   background: var(--brand-blue);
 }
 
-.toggle input:checked + .slider::before {
+.toggle input:checked+.slider::before {
   transform: translateX(16px);
 }
 
@@ -388,6 +386,7 @@ select.form-control {
 
 .auth-form-wrap {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0 40px;
@@ -395,29 +394,48 @@ select.form-control {
 
 .auth-form {
   width: 100%;
-  max-width: 440px;
+  max-width: 386px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.auth-form .login-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  color: var(--Neutral-600);
+  font-weight: 500;
 }
 
 .auth-title {
-  font-size: 30px;
-  font-weight: 700;
-  color: var(--brand-navy);
-  margin: 0 0 8px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 0px;
+  color: var(--Neutral-900, #0E2741);
+  margin: 0;
+  padding: 0;
 }
 
 .auth-subtitle {
   color: var(--text-secondary);
-  margin: 0 0 32px;
+  /* margin: 0 0 32px; */
   line-height: 1.55;
 }
 
 .auth-back {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  /* gap: 8px; */
   color: var(--text-muted);
   font-weight: 600;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 .auth-back:hover {
@@ -428,20 +446,19 @@ select.form-control {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 4px 0 24px;
 }
 
 .auth-link {
-  color: var(--brand-blue);
+  color: #6B9ABD;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 /* Code inputs */
 .code-input-row {
   display: flex;
   gap: 12px;
-  margin: 8px 0 12px;
+  /* margin: 8px 0 12px; */
 }
 
 .code-input {
@@ -464,12 +481,13 @@ select.form-control {
 
 .resend-text {
   color: var(--text-secondary);
-  font-size: 14px;
-  margin: 4px 0 24px;
+  font-size: 16px;
+  text-align: center;
+  /* margin: 4px 0 24px; */
 }
 
 .resend-text strong {
-  color: var(--brand-navy);
+  color: var(--Primary-500);
 }
 
 /* Success modal (centered overlay used over auth) */
@@ -1976,7 +1994,7 @@ select.form-control {
   font-weight: 500;
 }
 
-.info-grid-2 > div {
+.info-grid-2>div {
   padding: 8px 0;
 }
 
@@ -2559,7 +2577,7 @@ select.form-control {
   margin: 0 0 12px;
 }
 
-.detail-paragraph + .detail-paragraph {
+.detail-paragraph+.detail-paragraph {
   margin-top: 4px;
 }
 
