@@ -13,6 +13,148 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg" />
   </head>
   <body>
+    <style>
+  .content {
+  padding: 24px 28px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1px solid #E7E9EC;
+  border-radius: 20px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.stat-card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.stat-label {
+font-weight: 300;
+font-style: Light;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: -2%;
+color: #111827;
+
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a2e;
+  line-height: 120%;
+}
+
+
+.pill-tab-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+  border-radius: 12px;
+}
+
+.pill-tab {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 9px 20px;
+  border-radius: 12px;
+  background: #E8ECF0;
+  color: #555;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.pill-tab:hover {
+  background: #dcdde1;
+  color: #222;
+}
+
+.pill-tab.active {
+  background: #2D6495;
+  color: #fff;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f0f1f5;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 16px;
+  height: 44px;
+  width: 260px;
+}
+
+.search-box img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 1;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  width: 100%;
+}
+
+.search-box input::placeholder {
+  color: #707683;
+}
+
+/* ===== TABLE DATA TEXT ===== */
+.data-table td {
+  font-size: 14px;
+  font-weight: 400;
+  color: #56687A;
+}
+
+/* ===== BADGES ===== */
+.badge {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 12px;
+  white-space: nowrap;
+  gap: 10px;
+}
+
+.badge-open      { background: #FFEEDB; color: #F08910; }
+.badge-await     { background: #DBEDFF; color: #105EF0; }
+.badge-transit   { background: #F3DBFF; color: #9610F0; }
+.badge-complete  { background: #CEECD7; color: #31B057; }
+.badge-cancelled { background: #FDE7EB; color: #EE1133; }
+  
+    </style>
     <div class="app-shell" id="appShell">
       <!-- ====================== Sidebar ====================== -->
       <aside class="sidebar" id="sidebar">
@@ -67,7 +209,7 @@
               class="nav-icon"
               src="assets/images/sidebar/message-support.svg"
               alt="Messages & Support"
-            /><span>Messages &amp; Support</span></a
+            /><span>Messages & Support</span></a
           >
           <a class="nav-item" href="static.html"
             ><img
@@ -131,30 +273,11 @@
           </h1>
           <div class="topbar-actions">
             <div class="search-box">
-              <svg
-                class="search-ic"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-              >
-                <circle cx="11" cy="11" r="7" />
-                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              </svg>
-              <input type="search" placeholder="Search Deliveries" />
+             <img src="assets/images/Search.png" alt="Open icon" />
+              <input type="search" placeholder="Search  Deliveries" />
             </div>
             <button class="bell-btn" id="bellBtn" aria-label="Notifications">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-              >
-                <path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z" />
-                <path d="M10 21a2 2 0 0 0 4 0" />
-              </svg>
+              <img src="assets/images/notification.png" alt="Open icon" width="20" height="20"/>
             </button>
           </div>
         </header>
@@ -162,110 +285,58 @@
         <div class="content">
           <!-- Status stats -->
           <section class="stats-grid">
-            <div class="stat-card simple">
-              <span class="stat-icon senders"
-                ><svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                >
-                  <path d="M6 7h12l-1 13H7z" />
-                  <path d="M9 7a3 3 0 0 1 6 0" /></svg
-              ></span>
-              <div class="stat-text">
-                <div class="stat-label">Open</div>
-                <div class="stat-value">84</div>
-              </div>
-            </div>
-            <div class="stat-card simple">
-              <span class="stat-icon users"
-                ><svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                >
-                  <path d="M3 7l9-4 9 4-9 4z" />
-                  <path d="M3 7v10l9 4 9-4V7" /></svg
-              ></span>
-              <div class="stat-text">
-                <div class="stat-label">Awaiting Pickup</div>
-                <div class="stat-value">61</div>
-              </div>
-            </div>
-            <div class="stat-card simple">
-              <span class="stat-icon drivers"
-                ><svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                >
-                  <rect x="2" y="8" width="13" height="9" rx="2" />
-                  <path d="M15 11h4l2 3v3h-6z" />
-                  <circle cx="6.5" cy="18" r="1.8" />
-                  <circle cx="17" cy="18" r="1.8" /></svg
-              ></span>
-              <div class="stat-text">
-                <div class="stat-label">In Transit</div>
-                <div class="stat-value">289</div>
-              </div>
-            </div>
-            <div class="stat-card simple">
-              <span class="stat-icon revenue"
-                ><svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <circle cx="12" cy="12" r="9" />
-                  <polyline points="8 12 11 15 16 9" /></svg
-              ></span>
-              <div class="stat-text">
-                <div class="stat-label">Completed</div>
-                <div class="stat-value">1,575</div>
-              </div>
-            </div>
-            <div class="stat-card simple">
-              <span class="stat-icon reports"
-                ><svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <circle cx="12" cy="12" r="9" />
-                  <line x1="9" y1="9" x2="15" y2="15" />
-                  <line x1="15" y1="9" x2="9" y2="15" /></svg
-              ></span>
-              <div class="stat-text">
-                <div class="stat-label">Cancelled</div>
-                <div class="stat-value">27</div>
-              </div>
-            </div>
-          </section>
+        <div class="stat-card">
+          <span class="stat-icon">
+            <img src="assets/images/openstat.png" alt="Open icon" width="41" height="42" />
+          </span>
+          <div>
+            <div class="stat-label">Open</div>
+            <div class="stat-value">84</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">
+            <img src="assets/images/awaitingpick.png" alt="Awaiting Pickup icon" width="41" height="42" />
+          </span>
+          <div>
+            <div class="stat-label">Awaiting Pickup</div>
+            <div class="stat-value">61</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">
+            <img src="assets/images/intransit.png" alt="In Transit icon" width="41" height="42" />
+          </span>
+          <div>
+            <div class="stat-label">In Transit</div>
+            <div class="stat-value">289</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">
+            <img src="assets/images/completedstat.png" alt="Completed icon" width="41" height="42" />
+          </span>
+          <div>
+            <div class="stat-label">Completed</div>
+            <div class="stat-value">1,575</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">
+            <img src="assets/images/cancelledstat.png" alt="Cancelled icon" width="41" height="42" />
+          </span>
+          <div>
+            <div class="stat-label">Cancelled</div>
+            <div class="stat-value">27</div>
+          </div>
+        </div>
+      </section>
 
           <!-- Pill filters -->
           <div class="pill-tab-row" id="deliveryFilters" role="tablist">
-            <button class="pill-tab active" data-filter="all">
-              All Deliveries
-            </button>
+            <button class="pill-tab active" data-filter="all">All Deliveries</button>
             <button class="pill-tab" data-filter="open">Open</button>
-            <button class="pill-tab" data-filter="await">
-              Awaiting Pickup
-            </button>
+            <button class="pill-tab" data-filter="await">Awaiting Pickup</button>
             <button class="pill-tab" data-filter="transit">In transit</button>
             <button class="pill-tab" data-filter="complete">Completed</button>
             <button class="pill-tab" data-filter="cancelled">Cancelled</button>
@@ -848,3 +919,4 @@
     <script src="assets/js/main.js"></script>
   </body>
 </html>
+
