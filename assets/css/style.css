@@ -452,11 +452,11 @@ select.form-control {
 }
 
 .code-input {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   border-radius: 12px;
-  border: 1.5px solid transparent;
-  background: var(--bg-input);
+  border: 1.5px solid #e8ecf0;
+  background: #f3f6f7;
   text-align: center;
   font-size: 22px;
   font-weight: 700;
@@ -1085,16 +1085,16 @@ select.form-control {
 }
 
 .avatar {
-  width: 32px;
-  height: 32px;
+  width: 62px;
+  height: 62px;
   border-radius: 50%;
-  background: var(--brand-blue);
-  color: #fff;
+  background: #2d6495;
+  color: #f3f7f6;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 12px;
+  font-weight: 500;
+  font-size: 20px;
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -1145,7 +1145,7 @@ select.form-control {
   padding: 4px 12px;
   border-radius: 12px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -1744,7 +1744,7 @@ select.form-control {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 23px;
 }
 
 .modal-overlay.hidden {
@@ -2377,7 +2377,9 @@ select.form-control {
 
 /* ---------- Small modal variant (no note box) ---------- */
 .modal.sm {
-  width: 380px;
+  width: 460px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 /* ---------- Messages & Support: split layout ---------- */
@@ -2974,8 +2976,8 @@ select.form-control {
 .profile-section h2 {
   margin: 0;
   font-size: 20px;
-  color: var(--brand-navy);
-  font-weight: 700;
+  color: #27364b;
+  font-weight: 500;
 }
 
 .profile-summary {
@@ -3009,14 +3011,15 @@ select.form-control {
 }
 
 .profile-field .label {
-  color: var(--text-secondary);
-  font-size: 13px;
+  color: #56687a;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .profile-field .value {
-  color: var(--brand-navy);
+  color: #0e2741;
   font-size: 16px;
-  padding: 8px 0;
+  padding: 5px 0;
   border-bottom: 1px solid #f1f3f6;
 }
 
@@ -3036,8 +3039,8 @@ select.form-control {
 
 /* Status success badge already exists as badge-active / badge-complete */
 .badge-module {
-  background: var(--role-sender-bg);
-  color: var(--role-sender-fg);
+  background: #dbedff;
+  color: #105ef0;
 }
 
 /* ---------- Modals: success / icon variant ---------- */
@@ -3064,6 +3067,18 @@ select.form-control {
 /* Code input wrapper inside modal */
 .modal .code-input-row {
   justify-content: center;
+  gap: 16px;
+  margin: 20px 0 16px;
+}
+
+.modal .code-input {
+  width: 64px;
+  height: 64px;
+  font-size: 18px;
+}
+
+.modal .resend-text {
+  margin: 0 0 24px;
 }
 
 /* ---------- Misc utilities ---------- */
