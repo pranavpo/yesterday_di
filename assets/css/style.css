@@ -6,6 +6,7 @@
 body {
   font-family: "Public Sans", sans-serif;
 }
+
 :root {
   /* Brand */
   --brand-navy: #13284b;
@@ -280,12 +281,12 @@ select.form-control {
   flex-shrink: 0;
 }
 
-.checkbox input:checked + .box {
+.checkbox input:checked+.box {
   background: var(--brand-blue);
   border-color: var(--brand-blue);
 }
 
-.checkbox input:checked + .box::after {
+.checkbox input:checked+.box::after {
   content: "";
   width: 11px;
   height: 6px;
@@ -328,11 +329,11 @@ select.form-control {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-.toggle input:checked + .slider {
+.toggle input:checked+.slider {
   background: var(--brand-blue);
 }
 
-.toggle input:checked + .slider::before {
+.toggle input:checked+.slider::before {
   transform: translateX(16px);
 }
 
@@ -861,6 +862,8 @@ select.form-control {
   border-radius: var(--radius-lg);
   padding: 22px;
   box-shadow: var(--shadow-sm);
+  width: 100%;
+  overflow: hidden;
 }
 
 .card-header {
@@ -1983,7 +1986,7 @@ select.form-control {
   font-weight: 500;
 }
 
-.info-grid-2 > div {
+.info-grid-2>div {
   padding: 8px 0;
 }
 
@@ -2574,7 +2577,7 @@ select.form-control {
   margin: 0 0 12px;
 }
 
-.detail-paragraph + .detail-paragraph {
+.detail-paragraph+.detail-paragraph {
   margin-top: 4px;
 }
 
@@ -3099,6 +3102,7 @@ select.form-control {
 
 .chart-card {
   position: relative;
-  height: 400px; /* adjust as needed */
+  height: 400px;
+  /* adjust as needed */
   width: 100%;
 }
