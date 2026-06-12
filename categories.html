@@ -133,28 +133,29 @@
             <div class="search-box">
               <svg
                 class="search-ic"
+                width="24"
+                height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <circle cx="11" cy="11" r="7" />
-                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                <path
+                  d="M11.5 21.75C5.85 21.75 1.25 17.15 1.25 11.5C1.25 5.85 5.85 1.25 11.5 1.25C17.15 1.25 21.75 5.85 21.75 11.5C21.75 17.15 17.15 21.75 11.5 21.75ZM11.5 2.75C6.67 2.75 2.75 6.68 2.75 11.5C2.75 16.32 6.67 20.25 11.5 20.25C16.33 20.25 20.25 16.32 20.25 11.5C20.25 6.68 16.33 2.75 11.5 2.75Z"
+                  fill="#707683"
+                />
+                <path
+                  d="M21.9995 22.7504C21.8095 22.7504 21.6195 22.6804 21.4695 22.5304L19.4695 20.5304C19.1795 20.2404 19.1795 19.7604 19.4695 19.4704C19.7595 19.1804 20.2395 19.1804 20.5295 19.4704L22.5295 21.4704C22.8195 21.7604 22.8195 22.2404 22.5295 22.5304C22.3795 22.6804 22.1895 22.7504 21.9995 22.7504Z"
+                  fill="#707683"
+                />
               </svg>
+
               <input type="search" placeholder="Search Categories" />
             </div>
             <button class="bell-btn" id="bellBtn" aria-label="Notifications">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-              >
-                <path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z" />
-                <path d="M10 21a2 2 0 0 0 4 0" />
-              </svg>
+              <img
+                src="assets/images/notification-icon.svg"
+                alt="Notifications"
+              />
             </button>
           </div>
         </header>
@@ -168,20 +169,12 @@
 
           <div class="banner warning">
             <span class="ic"
-              ><svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
               >
-                <path
-                  d="M10.3 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.7 3.86a2 2 0 0 0-3.4 0z"
-                />
-                <line x1="12" y1="9" x2="12" y2="13" />
-                <line x1="12" y1="17" x2="12.01" y2="17" /></svg
-            ></span>
+            <img
+                src="assets/images/danger-icon.svg"
+                alt="Warning"
+              /></span
+            </span>
             <div>
               <strong
                 >Any changes made to these categories will apply across the
@@ -229,36 +222,21 @@
                         data-edit-category
                         aria-label="Edit"
                       >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.8"
-                        >
-                          <path d="M12 20h9" />
-                          <path
-                            d="M16.5 3.5a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z"
-                          />
-                        </svg></button
+                      <img
+                          src="assets/images/edit-icon.svg"
+                          alt="Edit"
+                        />
+                       </button
                       ><button
                         class="row-action danger"
                         data-delete-category
                         aria-label="Delete"
                       >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.8"
-                        >
-                          <polyline points="3 6 5 6 21 6" />
-                          <path d="M19 6l-1 14H6L5 6" />
-                          <path d="M10 11v6M14 11v6" />
-                        </svg></button
+                      <img
+                          src="assets/images/delete-icon.svg"
+                          alt="Delete"
+                        />
+                       </button
                     ></span>
                   </td>
                 </tr>
@@ -276,36 +254,21 @@
                         data-edit-category
                         aria-label="Edit"
                       >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.8"
-                        >
-                          <path d="M12 20h9" />
-                          <path
-                            d="M16.5 3.5a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z"
-                          />
-                        </svg></button
+                      <img
+                          src="assets/images/edit-icon.svg"
+                          alt="Edit"
+                        />
+                       </button
                       ><button
                         class="row-action danger"
                         data-delete-category
                         aria-label="Delete"
                       >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.8"
-                        >
-                          <polyline points="3 6 5 6 21 6" />
-                          <path d="M19 6l-1 14H6L5 6" />
-                          <path d="M10 11v6M14 11v6" />
-                        </svg></button
+                      <img
+                          src="assets/images/delete-icon.svg"
+                          alt="Delete"
+                        />
+                       </button
                     ></span>
                   </td>
                 </tr>
@@ -323,36 +286,21 @@
                         data-edit-category
                         aria-label="Edit"
                       >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.8"
-                        >
-                          <path d="M12 20h9" />
-                          <path
-                            d="M16.5 3.5a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z"
-                          />
-                        </svg></button
+                      <img
+                          src="assets/images/edit-icon.svg"
+                          alt="Edit"
+                        />
+                       </button
                       ><button
                         class="row-action danger"
                         data-delete-category
                         aria-label="Delete"
                       >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.8"
-                        >
-                          <polyline points="3 6 5 6 21 6" />
-                          <path d="M19 6l-1 14H6L5 6" />
-                          <path d="M10 11v6M14 11v6" />
-                        </svg></button
+                      <img
+                          src="assets/images/delete-icon.svg"
+                          alt="Delete"
+                        />
+                       </button
                     ></span>
                   </td>
                 </tr>
@@ -370,36 +318,21 @@
                         data-edit-category
                         aria-label="Edit"
                       >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.8"
-                        >
-                          <path d="M12 20h9" />
-                          <path
-                            d="M16.5 3.5a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z"
-                          />
-                        </svg></button
+                      <img
+                          src="assets/images/edit-icon.svg"
+                          alt="Edit"
+                        />
+                       </button
                       ><button
                         class="row-action danger"
                         data-delete-category
                         aria-label="Delete"
                       >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.8"
-                        >
-                          <polyline points="3 6 5 6 21 6" />
-                          <path d="M19 6l-1 14H6L5 6" />
-                          <path d="M10 11v6M14 11v6" />
-                        </svg></button
+                      <img
+                          src="assets/images/delete-icon.svg"
+                          alt="Delete"
+                        />
+                       </button
                     ></span>
                   </td>
                 </tr>
@@ -417,36 +350,21 @@
                         data-edit-category
                         aria-label="Edit"
                       >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.8"
-                        >
-                          <path d="M12 20h9" />
-                          <path
-                            d="M16.5 3.5a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z"
-                          />
-                        </svg></button
+                      <img
+                          src="assets/images/edit-icon.svg"
+                          alt="Edit"
+                        />
+                       </button
                       ><button
                         class="row-action danger"
                         data-delete-category
                         aria-label="Delete"
                       >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.8"
-                        >
-                          <polyline points="3 6 5 6 21 6" />
-                          <path d="M19 6l-1 14H6L5 6" />
-                          <path d="M10 11v6M14 11v6" />
-                        </svg></button
+                      <img
+                          src="assets/images/delete-icon.svg"
+                          alt="Delete"
+                        />
+                       </button
                     ></span>
                   </td>
                 </tr>
@@ -464,36 +382,21 @@
                         data-edit-category
                         aria-label="Edit"
                       >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.8"
-                        >
-                          <path d="M12 20h9" />
-                          <path
-                            d="M16.5 3.5a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z"
-                          />
-                        </svg></button
+                      <img
+                          src="assets/images/edit-icon.svg"
+                          alt="Edit"
+                        />
+                       </button
                       ><button
                         class="row-action danger"
                         data-delete-category
                         aria-label="Delete"
                       >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.8"
-                        >
-                          <polyline points="3 6 5 6 21 6" />
-                          <path d="M19 6l-1 14H6L5 6" />
-                          <path d="M10 11v6M14 11v6" />
-                        </svg></button
+                      <img
+                          src="assets/images/delete-icon.svg"
+                          alt="Delete"
+                        />
+                       </button
                     ></span>
                   </td>
                 </tr>
@@ -511,37 +414,80 @@
                         data-edit-category
                         aria-label="Edit"
                       >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.8"
-                        >
-                          <path d="M12 20h9" />
-                          <path
-                            d="M16.5 3.5a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z"
-                          />
-                        </svg></button
+                      <img
+                          src="assets/images/edit-icon.svg"
+                          alt="Edit"
+                        />
+                       </button
                       ><button
                         class="row-action danger"
                         data-delete-category
                         aria-label="Delete"
                       >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.8"
-                        >
-                          <polyline points="3 6 5 6 21 6" />
-                          <path d="M19 6l-1 14H6L5 6" />
-                          <path d="M10 11v6M14 11v6" />
-                        </svg></button
+                      <img
+                          src="assets/images/delete-icon.svg"
+                          alt="Delete"
+                        />
+                       </button
                     ></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- ============ Add New Category modal ============ -->
+    <div class="modal-overlay hidden" id="addCategoryModal">
+      <div class="modal">
+        <button class="modal-close" data-modal-close aria-label="Close">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="6" y1="6" x2="18" y2="18" />
+            <line x1="6" y1="18" x2="18" y2="6" />
+          </svg>
+        </button>
+        <h3>Add New Category</h3>
+        <p>
+          Once saved, this category will appear live in the app immediately.
+        </p>
+        <form>
+          <div class="form-group">
+            <label class="form-label" for="newCategoryName"
+              >Category Name</label
+            >
+            <input
+            style="margin-bottom: 16px;"
+              class="form-control"
+              type="text"
+              id="newCategoryName"
+              name="newCategoryName"
+            />
+          </div>
+          <div class="modal-actions">
+            <button 
+              class="btn btn-primary"
+              type="button"
+              data-show-toast
+              data-modal-close
+            >
+              Add Category
+            </button>
+            <button class="btn btn-secondary" type="button" data-modal-close>
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+                        
                   </td>
                 </tr>
               </tbody>
@@ -618,21 +564,10 @@
         </button>
         <h3>Edit Category</h3>
         <div class="note-box">
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              d="M10.3 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.7 3.86a2 2 0 0 0-3.4 0z"
-            />
-            <line x1="12" y1="9" x2="12" y2="13" />
-            <line x1="12" y1="17" x2="12.01" y2="17" />
-          </svg>
-          Any changes made to these categories will apply across the entire
+          <img
+              src="assets/images/danger-icon.svg"
+              alt="Warning"/>
+          Any changes made to these categories will apply <br/> across the entire
           platform
         </div>
         <form>
@@ -650,6 +585,7 @@
           <div class="form-group">
             <label class="form-label" for="editCategoryStatus">Status</label>
             <select
+            style="margin-bottom: 16px;"
               class="form-control"
               id="editCategoryStatus"
               name="editCategoryStatus"
@@ -693,21 +629,10 @@
         </button>
         <h3>Delete [Category Name]?</h3>
         <div class="note-box">
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              d="M10.3 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.7 3.86a2 2 0 0 0-3.4 0z"
-            />
-            <line x1="12" y1="9" x2="12" y2="13" />
-            <line x1="12" y1="17" x2="12.01" y2="17" />
-          </svg>
-          Any changes made to these categories will apply across the entire
+         <img
+            src="assets/images/danger-icon.svg"
+            alt="Warning"/>
+          Any changes made to these categories will apply <br/> across the entire
           platform
         </div>
         <div class="modal-actions">

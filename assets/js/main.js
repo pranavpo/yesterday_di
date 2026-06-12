@@ -35,7 +35,12 @@
         menuBtn.className = 'menu-btn';
         menuBtn.setAttribute('aria-label', 'Open menu');
         menuBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
-        topbar.insertBefore(menuBtn, topbar.firstChild);
+        var pageTitle = qs('.page-title', topbar);
+        if (pageTitle) {
+          pageTitle.insertBefore(menuBtn, pageTitle.firstChild);
+        } else {
+          topbar.insertBefore(menuBtn, topbar.firstChild);
+        }
         on(menuBtn, 'click', function () { shell.classList.toggle('show-sidebar'); });
       }
     }
@@ -96,25 +101,52 @@
     /* ---------- Date picker popover (dashboard) ---------- */
     var dateBtn = qs('#dateSortBtn');
     var datePicker = qs('#datePicker');
+
     if (dateBtn && datePicker) {
       on(dateBtn, 'click', function (e) {
         e.stopPropagation();
+
         datePicker.classList.toggle('hidden');
-        // Position popover below button
-        var rect = dateBtn.getBoundingClientRect();
-        var content = qs('.content');
-        var contentRect = content.getBoundingClientRect();
-        datePicker.style.left = (rect.right - 320 - contentRect.left) + 'px';
-        datePicker.style.top = (rect.bottom - contentRect.top + 8) + 'px';
+
+        if (!datePicker.classList.contains('hidden')) {
+          var rect = dateBtn.getBoundingClientRect();
+          var content = qs('.content');
+          var contentRect = content.getBoundingClientRect();
+
+          // Position below button
+          var top = rect.bottom - contentRect.top + 8;
+
+          // Initial left position
+          var left = rect.left - contentRect.left;
+
+          // Prevent overflow right
+          var maxLeft = contentRect.width - datePicker.offsetWidth - 16;
+          left = Math.min(left, maxLeft);
+
+          // Prevent overflow left
+          left = Math.max(16, left);
+
+          datePicker.style.left = left + 'px';
+          datePicker.style.top = top + 'px';
+        }
       });
+
       // Close on outside click
       document.addEventListener('click', function (e) {
-        if (!datePicker.contains(e.target) && e.target !== dateBtn) {
+        if (
+          !datePicker.contains(e.target) &&
+          e.target !== dateBtn &&
+          !dateBtn.contains(e.target)
+        ) {
           datePicker.classList.add('hidden');
         }
       });
+
       var apply = qs('#applyDate');
-      on(apply, 'click', function () { datePicker.classList.add('hidden'); });
+
+      on(apply, 'click', function () {
+        datePicker.classList.add('hidden');
+      });
     }
 
     /* ---------- Notifications panel ---------- */
@@ -296,3 +328,193 @@
     });
   });
 })();
+
+const ctx = document.getElementById("overviewChart").getContext("2d");
+
+const darkGradient = ctx.createLinearGradient(0, 0, 0, 350);
+darkGradient.addColorStop(0, "rgba(39, 98, 155, 0.65)");
+darkGradient.addColorStop(1, "rgba(39, 98, 155, 0)");
+
+const lightGradient = ctx.createLinearGradient(0, 0, 0, 350);
+lightGradient.addColorStop(0, "rgba(207, 223, 241, 0.8)");
+lightGradient.addColorStop(1, "rgba(207, 223, 241, 0)");
+
+Chart.register(window["chartjs-plugin-annotation"]);
+
+// Adds gap between legend and chart plot area
+const legendMargin = {
+    id: "legendMargin",
+    beforeInit(chart) {
+        const originalFit = chart.legend.fit;
+        chart.legend.fit = function () {
+            originalFit.bind(chart.legend)();
+            this.height += 16; // gap in px between legend and chart
+        };
+    }
+};
+
+const chart = new Chart(ctx, {
+    type: "line",
+    plugins: [legendMargin],
+
+    data: {
+        labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN"],
+
+        datasets: [
+            {
+                label: "Driver Subscription",
+                data: [2200, 2600, 4000, 2100, 1000, 2800],
+                borderColor: "#2D6495",
+                backgroundColor: darkGradient,
+                fill: true,
+                tension: 0.45,
+                pointRadius: 0,
+                borderWidth: 3
+            },
+            {
+                label: "Service Fee",
+                data: [800, 1700, 2100, 3500, 1400, 1900],
+                borderColor: "#D6E2F0",
+                backgroundColor: lightGradient,
+                fill: true,
+                tension: 0.45,
+                pointRadius: 0,
+                borderWidth: 3
+            }
+        ]
+    },
+
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+
+        layout: {
+            padding: {
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+            }
+        },
+
+        interaction: {
+            mode: "index",
+            intersect: false
+        },
+
+        plugins: {
+            legend: {
+                position: "top",
+                align: "start",
+
+                labels: {
+                    usePointStyle: true,
+                    pointStyle: "circle",
+                    boxWidth: 8,
+                    boxHeight: 8,
+                    padding: 16
+                },
+
+                onClick(e, legendItem, legend) {
+                    const chart = legend.chart;
+                    const selectedIndex = legendItem.datasetIndex;
+
+                    chart.data.datasets.forEach((dataset, index) => {
+                        const isActive = index === selectedIndex;
+                        dataset.borderColor = isActive ? "#2D6495" : "#D6E2F0";
+                        dataset.backgroundColor = isActive ? darkGradient : lightGradient;
+                    });
+
+                    chart.update();
+                }
+            },
+
+            tooltip: {
+                backgroundColor: "#1E2A3B",
+                padding: 12,
+                displayColors: false,
+
+                callbacks: {
+                    label(context) {
+                        return (context.parsed.y / 1000).toFixed(1) + "K";
+                    }
+                }
+            },
+
+            annotation: {
+                annotations: {
+                    marchLine: {
+                        type: "line",
+                        xMin: "MAR",
+                        xMax: "MAR",
+                        borderColor: "#D6DCE5",
+                        borderWidth: 2
+                    },
+
+                    marchPoint: {
+                        type: "point",
+                        xValue: "MAR",
+                        yValue: 4000,
+                        radius: 7,
+                        backgroundColor: "#fff",
+                        borderColor: "#D6E2F0",
+                        borderWidth: 4
+                    },
+
+                    marchLabel: {
+                        type: "label",
+                        xValue: "MAR",
+                        yValue: 4500,
+                        backgroundColor: "#1E2A3B",
+                        color: "#fff",
+                        content: ["4.5K"],
+                        borderRadius: 8,
+                        padding: 10
+                    }
+                }
+            }
+        },
+
+        scales: {
+            x: {
+                grid: {
+                    color: "#E7EDF3",
+                    borderDash: [5, 5],
+                    drawBorder: false
+                },
+
+                ticks: {
+                    color: "#64748B",
+                    font: {
+                        size: 12,
+                        weight: "500"
+                    }
+                }
+            },
+
+            y: {
+                min: 0,
+                max: 5000,
+
+                afterFit(scale) {
+                    scale.width = 40; // fixes left alignment with "Overview" title & legend
+                },
+
+                ticks: {
+                    stepSize: 1000,
+                    color: "#64748B",
+
+                    callback(value) {
+                        return value === 0 ? "0" : value / 1000 + "K";
+                    }
+                },
+
+                grid: {
+                    color: "#E7EDF3",
+                    borderDash: [5, 5],
+                    drawBorder: false
+                }
+            }
+        }
+    }
+});

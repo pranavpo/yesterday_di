@@ -125,30 +125,18 @@
           </h1>
           <div class="topbar-actions">
             <div class="search-box">
-              <svg
+              <img
                 class="search-ic"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-              >
-                <circle cx="11" cy="11" r="7" />
-                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              </svg>
+                src="assets/images/search-icon.svg"
+                alt="Search"
+              />
               <input type="search" placeholder="Search" />
             </div>
             <button class="bell-btn" id="bellBtn">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-              >
-                <path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z" />
-                <path d="M10 21a2 2 0 0 0 4 0" />
-              </svg>
+              <img
+                src="assets/images/notification-icon.svg"
+                alt="Notifications"
+              />
             </button>
           </div>
         </header>
@@ -160,15 +148,25 @@
             <div id="profileView">
               <div class="profile-head">
                 <h2>Profile</h2>
-                <button class="btn btn-secondary btn-sm" id="editProfileBtn">
+                <button class="btn btn-primary btn-sm" id="editProfileBtn">
                   Edit Details
                 </button>
               </div>
               <div class="profile-summary">
                 <span class="avatar lg">AA</span>
                 <div>
-                  <div class="name">Admin Name</div>
-                  <div class="email">Admin@email.com</div>
+                  <div
+                    class="name"
+                    style="color: #27364b; font-size: 20px; font-weight: 500"
+                  >
+                    Admin Name
+                  </div>
+                  <div
+                    class="email"
+                    style="color: #64748b; font-size: 16px; font-weight: 400"
+                  >
+                    Admin@email.com
+                  </div>
                 </div>
               </div>
               <div class="profile-fields">
@@ -195,8 +193,18 @@
               <div class="profile-summary">
                 <span class="avatar lg">AA</span>
                 <div>
-                  <div class="name">Admin Name</div>
-                  <div class="email">Admin@email.com</div>
+                  <div
+                    class="name"
+                    style="color: #27364b; font-size: 20px; font-weight: 500"
+                  >
+                    Admin Name
+                  </div>
+                  <div
+                    class="email"
+                    style="color: #64748b; font-size: 16px; font-weight: 400"
+                  >
+                    Admin@email.com
+                  </div>
                 </div>
               </div>
               <form id="profileForm">
@@ -210,7 +218,14 @@
                     <input class="form-control" type="email" name="email" />
                   </div>
                 </div>
-                <h3 style="margin: 24px 0 14px; color: var(--brand-navy)">
+                <h3
+                  style="
+                    margin: 24px 0 14px;
+                    color: #27364b;
+                    font-weight: 500;
+                    font-size: 20px;
+                  "
+                >
                   Change Password
                 </h3>
                 <div class="profile-fields">
@@ -553,9 +568,11 @@
             <line x1="6" y1="18" x2="18" y2="6" />
           </svg>
         </button>
-        <h3>Enter Code</h3>
-        <p>
-          Please enter the code we've sent to <strong>email@gmail.com</strong>
+        <h3 style="color: #0e2741; font-weight: 700; font-size: 28px">
+          Enter Code
+        </h3>
+        <p style="color: #515c6d; font-size: 14px; font-weight: 400">
+          Please enter the code we've sent to email@gmail.com
         </p>
         <div class="code-input-row" id="settingsCodeRow">
           <input

@@ -1,984 +1,743 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yesterday Admin — Dashboard</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-    <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg" />
-  </head>
-  <body>
-    <div class="app-shell" id="appShell">
-      <!-- ====================== Sidebar ====================== -->
-      <aside class="sidebar" id="sidebar">
-        <div class="sidebar-head">
-          <img class="logo-mark" src="assets/images/logo.svg" alt="Yesterday" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yesterday Admin — Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg" />
+</head>
+
+<body>
+  <div class="app-shell" id="appShell">
+    <!-- ====================== Sidebar ====================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <img class="logo-mark" src="assets/images/logo.svg" alt="Yesterday" />
+      </div>
+      <nav class="sidebar-nav" aria-label="Main">
+        <a class="nav-item active" href="dashboard.html">
+          <img class="nav-icon" src="assets/images/sidebar/dashboard.svg" alt="Dashboard" />
+          <span>Dashboard</span>
+        </a>
+        <a class="nav-item" href="users.html">
+          <img class="nav-icon" src="assets/images/sidebar/user-manager.svg" alt="User Manager" />
+          <span>User Manager</span>
+        </a>
+        <a class="nav-item" href="deliveries.html">
+          <img class="nav-icon" src="assets/images/sidebar/delivery.manager.svg" alt="Delivery Manager" />
+          <span>Delivery Manager</span>
+        </a>
+        <a class="nav-item" href="categories.html">
+          <img class="nav-icon" src="assets/images/sidebar/category-manager.svg" alt="Category Manager" />
+          <span>Category Manager</span>
+        </a>
+        <a class="nav-item" href="vehicles.html">
+          <img class="nav-icon" src="assets/images/sidebar/vehicle-manager.svg" alt="Vehicle Manager" />
+          <span>Vehicle Manager</span>
+        </a>
+        <a class="nav-item" href="subscription.html">
+          <img class="nav-icon" src="assets/images/sidebar/subscription.svg" alt="Subscription" />
+          <span>Subscription</span>
+        </a>
+        <a class="nav-item" href="messages.html">
+          <img class="nav-icon" src="assets/images/sidebar/message-support.svg" alt="Messages & Support" />
+          <span>Messages &amp; Support</span>
+        </a>
+        <a class="nav-item" href="static.html">
+          <img class="nav-icon" src="assets/images/sidebar/static-content.svg" alt="Static Content" />
+          <span>Static Content</span>
+        </a>
+        <a class="nav-item" href="faqs.html">
+          <img class="nav-icon" src="assets/images/sidebar/faqs.svg" alt="FAQs" />
+          <span>FAQs</span>
+        </a>
+        <a class="nav-item" href="notifications.html">
+          <img class="nav-icon" src="assets/images/sidebar/notifications.svg" alt="Notifications" />
+          <span>Notifications</span>
+        </a>
+        <a class="nav-item" href="settings.html">
+          <img class="nav-icon" src="assets/images/sidebar/settings.svg" alt="Settings" />
+          <span>Settings</span>
+        </a>
+        <a class="nav-item logout" href="index.html">
+          <img class="nav-icon" src="assets/images/sidebar/logout.svg" alt="Logout" />
+          <span>Logout</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- ====================== Main ====================== -->
+    <main class="main">
+      <!-- Top bar -->
+      <header class="topbar">
+        <h1 class="page-title">
+          <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          Dashboard
+        </h1>
+
+        <div class="topbar-actions">
+          <button class="bell-btn" id="bellBtn" aria-label="Notifications">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z" />
+              <path d="M10 21a2 2 0 0 0 4 0" />
+            </svg>
+          </button>
         </div>
-        <nav class="sidebar-nav" aria-label="Main">
-          <a class="nav-item active" href="dashboard.html">
-            <img
-              class="nav-icon"
-              src="assets/images/sidebar/dashboard.svg"
-              alt="Dashboard"
-            />
-            <span>Dashboard</span>
-          </a>
-          <a class="nav-item" href="users.html">
-            <img
-              class="nav-icon"
-              src="assets/images/sidebar/user-manager.svg"
-              alt="User Manager"
-            />
-            <span>User Manager</span>
-          </a>
-          <a class="nav-item" href="deliveries.html">
-            <img
-              class="nav-icon"
-              src="assets/images/sidebar/delivery.manager.svg"
-              alt="Delivery Manager"
-            />
-            <span>Delivery Manager</span>
-          </a>
-          <a class="nav-item" href="categories.html">
-            <img
-              class="nav-icon"
-              src="assets/images/sidebar/category-manager.svg"
-              alt="Category Manager"
-            />
-            <span>Category Manager</span>
-          </a>
-          <a class="nav-item" href="vehicles.html">
-            <img
-              class="nav-icon"
-              src="assets/images/sidebar/vehicle-manager.svg"
-              alt="Vehicle Manager"
-            />
-            <span>Vehicle Manager</span>
-          </a>
-          <a class="nav-item" href="subscription.html">
-            <img
-              class="nav-icon"
-              src="assets/images/sidebar/subscription.svg"
-              alt="Subscription"
-            />
-            <span>Subscription</span>
-          </a>
-          <a class="nav-item" href="messages.html">
-            <img
-              class="nav-icon"
-              src="assets/images/sidebar/message-support.svg"
-              alt="Messages & Support"
-            />
-            <span>Messages &amp; Support</span>
-          </a>
-          <a class="nav-item" href="static.html">
-            <img
-              class="nav-icon"
-              src="assets/images/sidebar/static-content.svg"
-              alt="Static Content"
-            />
-            <span>Static Content</span>
-          </a>
-          <a class="nav-item" href="faqs.html">
-            <img
-              class="nav-icon"
-              src="assets/images/sidebar/faqs.svg"
-              alt="FAQs"
-            />
-            <span>FAQs</span>
-          </a>
-          <a class="nav-item" href="notifications.html">
-            <img
-              class="nav-icon"
-              src="assets/images/sidebar/notifications.svg"
-              alt="Notifications"
-            />
-            <span>Notifications</span>
-          </a>
-          <a class="nav-item" href="settings.html">
-            <img
-              class="nav-icon"
-              src="assets/images/sidebar/settings.svg"
-              alt="Settings"
-            />
-            <span>Settings</span>
-          </a>
-          <a class="nav-item logout" href="index.html">
-            <img
-              class="nav-icon"
-              src="assets/images/sidebar/logout.svg"
-              alt="Logout"
-            />
-            <span>Logout</span>
-          </a>
-        </nav>
-      </aside>
+      </header>
 
-      <!-- ====================== Main ====================== -->
-      <main class="main">
-        <!-- Top bar -->
-        <header class="topbar">
-          <h1 class="page-title">
-            <button
-              class="sidebar-toggle"
-              id="sidebarToggle"
-              aria-label="Toggle sidebar"
-            >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <polyline points="15 18 9 12 15 6" />
-              </svg>
-            </button>
-            Dashboard
-          </h1>
-
-          <div class="topbar-actions">
-            <button class="bell-btn" id="bellBtn" aria-label="Notifications">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-              >
-                <path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z" />
-                <path d="M10 21a2 2 0 0 0 4 0" />
-              </svg>
+      <!-- Content -->
+      <div class="content">
+        <!-- Sort + export row -->
+        <div class="page-header-row">
+          <div class="sort-control">
+            <span>Sort by</span>
+            <button class="filter-select" id="dateSortBtn" type="button" style="text-align: left; min-width: 100px">
+              Date
             </button>
           </div>
-        </header>
+          <button class="btn btn-primary btn-sm" id="exportBtn">
+            Export
+          </button>
+        </div>
 
-        <!-- Content -->
-        <div class="content">
-          <!-- Sort + export row -->
-          <div class="page-header-row">
-            <div class="sort-control">
-              <span>Sort by</span>
-              <button
-                class="filter-select"
-                id="dateSortBtn"
-                type="button"
-                style="text-align: left; min-width: 100px"
-              >
-                Date
+        <!-- Date picker popover anchored to dateSortBtn -->
+        <div class="popover hidden" id="datePicker" style="margin-top: -8px">
+          <div class="cal-head">
+            <h4>February 2025</h4>
+            <div class="cal-nav">
+              <button aria-label="Previous month">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
               </button>
-            </div>
-            <button class="btn btn-primary btn-sm" id="exportBtn">
-              Export
-            </button>
-          </div>
-
-          <!-- Date picker popover anchored to dateSortBtn -->
-          <div class="popover hidden" id="datePicker" style="margin-top: -8px">
-            <div class="cal-head">
-              <h4>February 2025</h4>
-              <div class="cal-nav">
-                <button aria-label="Previous month">
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <polyline points="15 18 9 12 15 6" />
-                  </svg>
-                </button>
-                <button aria-label="Next month">
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="cal-grid">
-              <div class="dow">S</div>
-              <div class="dow">M</div>
-              <div class="dow">T</div>
-              <div class="dow">W</div>
-              <div class="dow">T</div>
-              <div class="dow">F</div>
-              <div class="dow">S</div>
-              <div class="day mute">27</div>
-              <div class="day mute">28</div>
-              <div class="day mute">29</div>
-              <div class="day mute">30</div>
-              <div class="day mute">1</div>
-              <div class="day mute">2</div>
-              <div class="day mute">3</div>
-              <div class="day">4</div>
-              <div class="day">5</div>
-              <div class="day">6</div>
-              <div class="day">7</div>
-              <div class="day">8</div>
-              <div class="day">9</div>
-              <div class="day">10</div>
-              <div class="day">11</div>
-              <div class="day">12</div>
-              <div class="day">13</div>
-              <div class="day selected">14</div>
-              <div class="day in-range">15</div>
-              <div class="day selected">16</div>
-              <div class="day">17</div>
-              <div class="day">18</div>
-              <div class="day">19</div>
-              <div class="day">20</div>
-              <div class="day">21</div>
-              <div class="day">22</div>
-              <div class="day">23</div>
-              <div class="day">24</div>
-              <div class="day">25</div>
-              <div class="day">26</div>
-              <div class="day">27</div>
-              <div class="day">28</div>
-              <div class="day mute">29</div>
-              <div class="day mute">30</div>
-              <div class="day mute">31</div>
-            </div>
-            <div class="cal-actions">
-              <button class="btn btn-primary btn-block" id="applyDate">
-                Apply
+              <button aria-label="Next month">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </button>
             </div>
           </div>
-
-          <!-- ============ Stats grid ============ -->
-          <section class="stats-grid">
-            <div class="stat-card">
-              <span class="stat-icon users">
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                >
-                  <circle cx="12" cy="8" r="3.5" />
-                  <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
-                </svg>
-              </span>
-              <div class="stat-text">
-                <div class="stat-label">Active Users</div>
-                <div class="stat-value">32,098</div>
-                <div class="stat-delta up">+18.3%</div>
-              </div>
-            </div>
-            <div class="stat-card">
-              <span class="stat-icon revenue">
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                >
-                  <circle cx="12" cy="12" r="9" />
-                  <path
-                    d="M12 6v12M9 9c0-1.4 1.3-2 3-2s3 .6 3 2-1.3 2-3 2-3 .8-3 2 1.3 2 3 2 3-.6 3-2"
-                  />
-                </svg>
-              </span>
-              <div class="stat-text">
-                <div class="stat-label">Total Revenue</div>
-                <div class="stat-value">$84,345</div>
-                <div class="stat-delta up">+18.3%</div>
-              </div>
-            </div>
-            <div class="stat-card">
-              <span class="stat-icon senders">
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                >
-                  <path d="M5 4h11l3 3v13H5z" />
-                  <path d="M5 4v16l3-2 3 2V4" />
-                </svg>
-              </span>
-              <div class="stat-text">
-                <div class="stat-label">Total Senders</div>
-                <div class="stat-value">14,345</div>
-                <div class="stat-delta up">+18.3%</div>
-              </div>
-            </div>
-            <div class="stat-card">
-              <span class="stat-icon drivers">
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                >
-                  <rect x="2" y="8" width="13" height="9" rx="2" />
-                  <path d="M15 11h4l2 3v3h-6z" />
-                  <circle cx="6.5" cy="18" r="1.8" />
-                  <circle cx="17" cy="18" r="1.8" />
-                </svg>
-              </span>
-              <div class="stat-text">
-                <div class="stat-label">Total Drivers</div>
-                <div class="stat-value">24,345</div>
-                <div class="stat-delta up">+18.3%</div>
-              </div>
-            </div>
-            <div class="stat-card">
-              <span class="stat-icon reports">
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                >
-                  <path d="M5 21V4M5 4h12l-2 4 2 4H5" />
-                </svg>
-              </span>
-              <div class="stat-text">
-                <div class="stat-label">Open Reports</div>
-                <div class="stat-value">07</div>
-                <div class="stat-delta down">-10.3%</div>
-              </div>
-            </div>
-          </section>
-
-          <!-- ============ Overview chart + quick summary ============ -->
-          <section class="overview-row">
-            <!-- Chart -->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Overview</h3>
-                <div class="legend">
-                  <span><span class="dot dark"></span>Driver Subscription</span>
-                  <span><span class="dot light"></span>Service Fee</span>
-                </div>
-              </div>
-              <div class="chart-wrap" id="chartWrap">
-                <!-- inline SVG chart -->
-                <svg
-                  viewBox="0 0 700 280"
-                  preserveAspectRatio="none"
-                  aria-label="Revenue overview chart"
-                >
-                  <defs>
-                    <linearGradient id="gDark" x1="0" x2="0" y1="0" y2="1">
-                      <stop
-                        offset="0%"
-                        stop-color="#2B5687"
-                        stop-opacity="0.7"
-                      />
-                      <stop
-                        offset="100%"
-                        stop-color="#2B5687"
-                        stop-opacity="0.05"
-                      />
-                    </linearGradient>
-                    <linearGradient id="gLight" x1="0" x2="0" y1="0" y2="1">
-                      <stop
-                        offset="0%"
-                        stop-color="#B6D3F1"
-                        stop-opacity="0.85"
-                      />
-                      <stop
-                        offset="100%"
-                        stop-color="#B6D3F1"
-                        stop-opacity="0.05"
-                      />
-                    </linearGradient>
-                  </defs>
-
-                  <!-- Y grid lines -->
-                  <g stroke="#E9ECF2" stroke-dasharray="3 4">
-                    <line x1="60" y1="40" x2="690" y2="40" />
-                    <line x1="60" y1="88" x2="690" y2="88" />
-                    <line x1="60" y1="136" x2="690" y2="136" />
-                    <line x1="60" y1="184" x2="690" y2="184" />
-                    <line x1="60" y1="232" x2="690" y2="232" />
-                  </g>
-
-                  <!-- Y labels -->
-                  <g
-                    font-size="11"
-                    fill="#97A1B2"
-                    font-family="Plus Jakarta Sans"
-                  >
-                    <text x="40" y="44" text-anchor="end">5K</text>
-                    <text x="40" y="92" text-anchor="end">4K</text>
-                    <text x="40" y="140" text-anchor="end">3K</text>
-                    <text x="40" y="188" text-anchor="end">2K</text>
-                    <text x="40" y="236" text-anchor="end">1K</text>
-                    <text x="40" y="272" text-anchor="end">0</text>
-                  </g>
-
-                  <!-- X labels -->
-                  <g
-                    font-size="11"
-                    fill="#97A1B2"
-                    font-family="Plus Jakarta Sans"
-                    text-anchor="middle"
-                  >
-                    <text x="110" y="275">JAN</text>
-                    <text x="226" y="275">FEB</text>
-                    <text x="342" y="275">MAR</text>
-                    <text x="458" y="275">APR</text>
-                    <text x="574" y="275">MAY</text>
-                    <text x="675" y="275">JUN</text>
-                  </g>
-
-                  <!-- Service Fee area (light) — peaks around APR -->
-                  <path
-                    d="M60 230 C 130 220, 200 200, 270 180 C 320 170, 360 120, 420 105 C 480 100, 520 150, 580 200 C 620 230, 660 240, 690 245 L 690 268 L 60 268 Z"
-                    fill="url(#gLight)"
-                  />
-                  <path
-                    d="M60 230 C 130 220, 200 200, 270 180 C 320 170, 360 120, 420 105 C 480 100, 520 150, 580 200 C 620 230, 660 240, 690 245"
-                    fill="none"
-                    stroke="#B6D3F1"
-                    stroke-width="2"
-                  />
-
-                  <!-- Driver Subscription area (dark) — peaks around MAR at 4.5K -->
-                  <path
-                    d="M60 192 C 130 200, 200 180, 270 130 C 310 100, 340 78, 380 100 C 430 130, 470 230, 530 245 C 580 255, 640 240, 690 220 L 690 268 L 60 268 Z"
-                    fill="url(#gDark)"
-                  />
-                  <path
-                    d="M60 192 C 130 200, 200 180, 270 130 C 310 100, 340 78, 380 100 C 430 130, 470 230, 530 245 C 580 255, 640 240, 690 220"
-                    fill="none"
-                    stroke="#2B5687"
-                    stroke-width="2"
-                  />
-
-                  <!-- Tooltip indicator at MAR -->
-                  <line
-                    x1="342"
-                    y1="92"
-                    x2="342"
-                    y2="268"
-                    stroke="#2B5687"
-                    stroke-dasharray="3 3"
-                    stroke-opacity="0.5"
-                  />
-                  <circle
-                    cx="342"
-                    cy="92"
-                    r="6"
-                    fill="#fff"
-                    stroke="#2B5687"
-                    stroke-width="3"
-                  />
-                </svg>
-
-                <!-- Tooltip pill -->
-                <div class="chart-tooltip" style="left: 48.85%; top: 22%">
-                  4.5K
-                </div>
-              </div>
-            </div>
-
-            <!-- Quick summary -->
-            <aside class="card">
-              <div class="card-header">
-                <h3 class="card-title">Quick Summary</h3>
-              </div>
-              <div class="summary-list">
-                <div class="summary-row">
-                  <span class="left">
-                    <span class="icon-tile bag"
-                      ><svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                      >
-                        <path d="M6 7h12l-1 13H7z" />
-                        <path d="M9 7a3 3 0 0 1 6 0" /></svg
-                    ></span>
-                    Open
-                  </span>
-                  <span class="count">321</span>
-                </div>
-                <div class="summary-row">
-                  <span class="left">
-                    <span class="icon-tile pickup"
-                      ><svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                      >
-                        <path d="M3 7l9-4 9 4-9 4z" />
-                        <path d="M3 7v10l9 4 9-4V7" /></svg
-                    ></span>
-                    Awaiting Pickup
-                  </span>
-                  <span class="count">919</span>
-                </div>
-                <div class="summary-row">
-                  <span class="left">
-                    <span class="icon-tile transit"
-                      ><svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                      >
-                        <rect x="2" y="8" width="13" height="9" rx="2" />
-                        <path d="M15 11h4l2 3v3h-6z" />
-                        <circle cx="6.5" cy="18" r="1.8" />
-                        <circle cx="17" cy="18" r="1.8" /></svg
-                    ></span>
-                    In Transit
-                  </span>
-                  <span class="count">475</span>
-                </div>
-                <div class="summary-row">
-                  <span class="left">
-                    <span class="icon-tile complete"
-                      ><svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <circle cx="12" cy="12" r="9" />
-                        <polyline points="8 12 11 15 16 9" /></svg
-                    ></span>
-                    Complete
-                  </span>
-                  <span class="count">1,974</span>
-                </div>
-                <div class="summary-row">
-                  <span class="left">
-                    <span class="icon-tile cancelled"
-                      ><svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                      >
-                        <rect x="2" y="8" width="13" height="9" rx="2" />
-                        <path d="M15 11h4l2 3v3h-6z" />
-                        <line x1="4" y1="6" x2="20" y2="20" /></svg
-                    ></span>
-                    Cancelled
-                  </span>
-                  <span class="count">54</span>
-                </div>
-              </div>
-            </aside>
-          </section>
-
-          <!-- ============ Recent deliveries table ============ -->
-          <section class="card table-card">
-            <div class="table-toolbar">
-              <h3 class="table-title">Recent Deliveries</h3>
-              <div class="filters">
-                <select class="filter-select" aria-label="Filter by date">
-                  <option>Date</option>
-                  <option>This Week</option>
-                  <option>This Month</option>
-                </select>
-                <select class="filter-select" aria-label="Filter by location">
-                  <option>Locations</option>
-                  <option>Sydney</option>
-                  <option>Gold Coast</option>
-                </select>
-                <select class="filter-select" aria-label="Filter by status">
-                  <option>Status</option>
-                  <option>Open</option>
-                  <option>Completed</option>
-                  <option>Cancelled</option>
-                </select>
-              </div>
-            </div>
-
-            <table class="data-table responsive-cards">
-              <thead>
-                <tr>
-                  <th>Delivery ID</th>
-                  <th>Item</th>
-                  <th>Sender</th>
-                  <th>Driver</th>
-                  <th>Route</th>
-                  <th>Price</th>
-                  <th>Status</th>
-                  <th>Date</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-label="Delivery ID">Y-0127</td>
-                  <td data-label="Item">Sofa Set</td>
-                  <td data-label="Sender">
-                    <div class="cell-user">
-                      <span class="avatar">SB</span><span>Samuel Bright</span>
-                    </div>
-                  </td>
-                  <td data-label="Driver">
-                    <div class="cell-user">
-                      <span class="avatar">MW</span><span>Mary White</span>
-                    </div>
-                  </td>
-                  <td data-label="Route">GC - SYD</td>
-                  <td data-label="Price">$127</td>
-                  <td data-label="Status">
-                    <span class="badge badge-open">Open</span>
-                  </td>
-                  <td data-label="Date">15/12/26</td>
-                  <td>
-                    <button class="row-action" aria-label="View">
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.6"
-                      >
-                        <path
-                          d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                        />
-                        <circle cx="12" cy="12" r="3" />
-                      </svg>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td data-label="Delivery ID">Y-0127</td>
-                  <td data-label="Item">Washing Machine</td>
-                  <td data-label="Sender">
-                    <div class="cell-user">
-                      <span class="avatar">JS</span><span>John Smith</span>
-                    </div>
-                  </td>
-                  <td data-label="Driver">
-                    <div class="cell-user">
-                      <span class="avatar">JJ</span><span>Jack Johnson</span>
-                    </div>
-                  </td>
-                  <td data-label="Route">GC - SYD</td>
-                  <td data-label="Price">$1,127</td>
-                  <td data-label="Status">
-                    <span class="badge badge-await">Awaiting Pickup</span>
-                  </td>
-                  <td data-label="Date">15/12/26</td>
-                  <td>
-                    <button class="row-action" aria-label="View">
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.6"
-                      >
-                        <path
-                          d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                        />
-                        <circle cx="12" cy="12" r="3" />
-                      </svg>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td data-label="Delivery ID">Y-0127</td>
-                  <td data-label="Item">Small Parcel</td>
-                  <td data-label="Sender">
-                    <div class="cell-user">
-                      <span class="avatar">SB</span><span>Samuel Bright</span>
-                    </div>
-                  </td>
-                  <td data-label="Driver">
-                    <div class="cell-user">
-                      <span class="avatar">MW</span><span>Mary White</span>
-                    </div>
-                  </td>
-                  <td data-label="Route">GC - SYD</td>
-                  <td data-label="Price">$65</td>
-                  <td data-label="Status">
-                    <span class="badge badge-transit">In transit</span>
-                  </td>
-                  <td data-label="Date">15/12/26</td>
-                  <td>
-                    <button class="row-action" aria-label="View">
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.6"
-                      >
-                        <path
-                          d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                        />
-                        <circle cx="12" cy="12" r="3" />
-                      </svg>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td data-label="Delivery ID">Y-0127</td>
-                  <td data-label="Item">Office Chair</td>
-                  <td data-label="Sender">
-                    <div class="cell-user">
-                      <span class="avatar">SB</span><span>Samuel Bright</span>
-                    </div>
-                  </td>
-                  <td data-label="Driver">
-                    <div class="cell-user">
-                      <span class="avatar">MW</span><span>Mary White</span>
-                    </div>
-                  </td>
-                  <td data-label="Route">GC - SYD</td>
-                  <td data-label="Price">$200</td>
-                  <td data-label="Status">
-                    <span class="badge badge-complete">Completed</span>
-                  </td>
-                  <td data-label="Date">15/12/26</td>
-                  <td>
-                    <button class="row-action" aria-label="View">
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.6"
-                      >
-                        <path
-                          d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                        />
-                        <circle cx="12" cy="12" r="3" />
-                      </svg>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td data-label="Delivery ID">Y-0127</td>
-                  <td data-label="Item">Books (5kg)</td>
-                  <td data-label="Sender">
-                    <div class="cell-user">
-                      <span class="avatar">SB</span><span>Samuel Bright</span>
-                    </div>
-                  </td>
-                  <td data-label="Driver">
-                    <div class="cell-user">
-                      <span class="avatar">MW</span><span>Mary White</span>
-                    </div>
-                  </td>
-                  <td data-label="Route">GC - SYD</td>
-                  <td data-label="Price">$127</td>
-                  <td data-label="Status">
-                    <span class="badge badge-cancelled">Cancelled</span>
-                  </td>
-                  <td data-label="Date">15/12/26</td>
-                  <td>
-                    <button class="row-action" aria-label="View">
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.6"
-                      >
-                        <path
-                          d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                        />
-                        <circle cx="12" cy="12" r="3" />
-                      </svg>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
+          <div class="cal-grid">
+            <div class="dow">S</div>
+            <div class="dow">M</div>
+            <div class="dow">T</div>
+            <div class="dow">W</div>
+            <div class="dow">T</div>
+            <div class="dow">F</div>
+            <div class="dow">S</div>
+            <div class="day mute">27</div>
+            <div class="day mute">28</div>
+            <div class="day mute">29</div>
+            <div class="day mute">30</div>
+            <div class="day mute">1</div>
+            <div class="day mute">2</div>
+            <div class="day mute">3</div>
+            <div class="day">4</div>
+            <div class="day">5</div>
+            <div class="day">6</div>
+            <div class="day">7</div>
+            <div class="day">8</div>
+            <div class="day">9</div>
+            <div class="day">10</div>
+            <div class="day">11</div>
+            <div class="day">12</div>
+            <div class="day">13</div>
+            <div class="day selected">14</div>
+            <div class="day in-range">15</div>
+            <div class="day selected">16</div>
+            <div class="day">17</div>
+            <div class="day">18</div>
+            <div class="day">19</div>
+            <div class="day">20</div>
+            <div class="day">21</div>
+            <div class="day">22</div>
+            <div class="day">23</div>
+            <div class="day">24</div>
+            <div class="day">25</div>
+            <div class="day">26</div>
+            <div class="day">27</div>
+            <div class="day">28</div>
+            <div class="day mute">29</div>
+            <div class="day mute">30</div>
+            <div class="day mute">31</div>
+          </div>
+          <div class="cal-actions">
+            <button class="btn btn-primary btn-block" id="applyDate">
+              Apply
+            </button>
+          </div>
         </div>
-      </main>
-    </div>
 
-    <!-- ============ Notifications panel ============ -->
-    <div
-      class="notif-panel hidden"
-      id="notifPanel"
-      role="dialog"
-      aria-label="Notifications"
-    >
-      <div class="head">
-        <h4>Notifications</h4>
-        <button
-          class="dots-btn"
-          id="notifDots"
-          aria-label="Notification options"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <circle cx="6" cy="12" r="1.6" />
-            <circle cx="12" cy="12" r="1.6" />
-            <circle cx="18" cy="12" r="1.6" />
-          </svg>
-        </button>
+        <!-- ============ Stats grid ============ -->
+        <section class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-icon users">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16 2.16675C19.5372 2.16675 22.4199 5.04952 22.4199 8.58667C22.4067 12.0665 19.6846 14.8827 16.2373 14.9939H16.1416C16.045 14.9813 15.9428 14.9816 15.8496 14.9919C12.2662 14.8642 9.58008 12.0497 9.58008 8.58667C9.58012 5.04954 12.4629 2.16679 16 2.16675ZM16 3.16675C13.0173 3.16679 10.5801 5.60392 10.5801 8.58667C10.5801 11.5229 12.8737 13.8901 15.7959 13.9929L15.8545 13.9949L15.9023 13.9851C15.8926 13.9867 15.894 13.9861 15.9121 13.9851C15.9298 13.9841 15.9548 13.9832 15.9863 13.9832C16.0499 13.9832 16.128 13.9862 16.2021 13.9919L16.2324 13.9939L16.2627 13.9929C19.1444 13.8606 21.4051 11.4931 21.4199 8.5896V8.58667C21.4199 5.6039 18.9828 3.16675 16 3.16675Z"
+                  stroke="#2D6495" />
+                <path
+                  d="M16.2363 17.0833C18.7766 17.0833 21.2873 17.7291 23.1748 18.9895H23.1758C24.9123 20.1473 25.8193 21.6864 25.8193 23.3069C25.8192 24.8286 25.031 26.287 23.4922 27.427L23.1748 27.6506C21.2733 28.9181 18.7623 29.5666 16.2266 29.5667C13.6897 29.5667 11.1654 28.918 9.27832 27.6516L9.27539 27.6497L8.95801 27.428C7.42009 26.3003 6.63281 24.854 6.63281 23.3333C6.63281 21.71 7.52932 20.1581 9.27734 18.9885L9.27637 18.9875C11.1778 17.7268 13.6968 17.0833 16.2363 17.0833ZM16.2266 18.093C13.9237 18.093 11.5903 18.6631 9.8291 19.8372C8.46098 20.7492 7.63281 21.9799 7.63281 23.3469C7.63295 24.7035 8.47777 25.9335 9.83008 26.8303V26.8293C11.5912 28.0097 13.9239 28.5833 16.2266 28.5833C18.53 28.5832 20.8638 28.0096 22.625 26.8284L22.624 26.8274C23.9914 25.9154 24.8193 24.6862 24.8193 23.3196C24.8192 21.963 23.9744 20.733 22.6221 19.8362H22.6211C20.8603 18.6631 18.5285 18.0931 16.2266 18.093Z"
+                  fill="#292D32" stroke="#2D6495" />
+              </svg>
+
+
+            </span>
+            <div class="stat-text">
+              <div class="stat-label">Active Users</div>
+              <div class="stat-value">32,098</div>
+              <div class="stat-delta up">+18.3%</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon revenue">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11.5625 19.1064C11.5625 20.8264 12.8825 22.213 14.5225 22.213H17.8692C19.2958 22.213 20.4558 20.9997 20.4558 19.5064C20.4558 17.8797 19.7492 17.3064 18.6958 16.933L13.3225 15.0664C12.2692 14.693 11.5625 14.1197 11.5625 12.493C11.5625 10.9997 12.7225 9.78638 14.1492 9.78638H17.4958C19.1358 9.78638 20.4558 11.173 20.4558 12.893"
+                  stroke="#31B057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16 8V24" stroke="#31B057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M19.9993 29.3334H11.9993C5.33268 29.3334 2.66602 26.6667 2.66602 20.0001V12.0001C2.66602 5.33341 5.33268 2.66675 11.9993 2.66675H19.9993C26.666 2.66675 29.3327 5.33341 29.3327 12.0001V20.0001C29.3327 26.6667 26.666 29.3334 19.9993 29.3334Z"
+                  stroke="#31B057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+
+
+            </span>
+            <div class="stat-text">
+              <div class="stat-label">Total Revenue</div>
+              <div class="stat-value">$84,345</div>
+              <div class="stat-delta up">+18.3%</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon senders">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M29.334 8.00008V11.2267C29.334 13.3334 28.0006 14.6667 25.894 14.6667H21.334V5.34675C21.334 3.86675 22.5473 2.66675 24.0273 2.66675C25.4806 2.68008 26.814 3.26675 27.774 4.22675C28.734 5.20008 29.334 6.53341 29.334 8.00008Z"
+                  stroke="#F08910" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M2.66602 9.33341V28.0001C2.66602 29.1067 3.91935 29.7334 4.79935 29.0668L7.07935 27.3601C7.61268 26.9601 8.35935 27.0134 8.83935 27.4934L11.0527 29.7201C11.5727 30.2401 12.426 30.2401 12.946 29.7201L15.186 27.4801C15.6527 27.0134 16.3994 26.9601 16.9194 27.3601L19.1994 29.0668C20.0794 29.7201 21.3327 29.0934 21.3327 28.0001V5.33341C21.3327 3.86675 22.5327 2.66675 23.9993 2.66675H9.33268H7.99935C3.99935 2.66675 2.66602 5.05341 2.66602 8.00008V9.33341Z"
+                  stroke="#F08910" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M8.33398 13.3333H15.6673" stroke="#F08910" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+
+
+            </span>
+            <div class="stat-text">
+              <div class="stat-label">Total Senders</div>
+              <div class="stat-value">14,345</div>
+              <div class="stat-delta up">+18.3%</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon drivers">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M19.9993 2.66675V16.0001C19.9993 17.4667 18.7993 18.6667 17.3327 18.6667H2.66602V8.00008C2.66602 5.05341 5.05268 2.66675 7.99935 2.66675H19.9993Z"
+                  stroke="#9610F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M29.3327 18.6667V22.6667C29.3327 24.8801 27.546 26.6667 25.3327 26.6667H23.9993C23.9993 25.2001 22.7993 24.0001 21.3327 24.0001C19.866 24.0001 18.666 25.2001 18.666 26.6667H13.3327C13.3327 25.2001 12.1327 24.0001 10.666 24.0001C9.19935 24.0001 7.99935 25.2001 7.99935 26.6667H6.66602C4.45268 26.6667 2.66602 24.8801 2.66602 22.6667V18.6667H17.3327C18.7993 18.6667 19.9993 17.4667 19.9993 16.0001V6.66675H22.4527C23.4127 6.66675 24.2927 7.18676 24.7727 8.01343L27.0527 12.0001H25.3327C24.5993 12.0001 23.9993 12.6001 23.9993 13.3334V17.3334C23.9993 18.0667 24.5993 18.6667 25.3327 18.6667H29.3327Z"
+                  stroke="#9610F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M10.6667 29.3333C12.1394 29.3333 13.3333 28.1394 13.3333 26.6667C13.3333 25.1939 12.1394 24 10.6667 24C9.19391 24 8 25.1939 8 26.6667C8 28.1394 9.19391 29.3333 10.6667 29.3333Z"
+                  stroke="#9610F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M21.3327 29.3333C22.8054 29.3333 23.9993 28.1394 23.9993 26.6667C23.9993 25.1939 22.8054 24 21.3327 24C19.8599 24 18.666 25.1939 18.666 26.6667C18.666 28.1394 19.8599 29.3333 21.3327 29.3333Z"
+                  stroke="#9610F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M29.3333 16V18.6667H25.3333C24.6 18.6667 24 18.0667 24 17.3333V13.3333C24 12.6 24.6 12 25.3333 12H27.0533L29.3333 16Z"
+                  stroke="#9610F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+
+
+            </span>
+            <div class="stat-text">
+              <div class="stat-label">Total Drivers</div>
+              <div class="stat-value">24,345</div>
+              <div class="stat-delta up">+18.3%</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon reports">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.86719 2.66675V29.3334" stroke="#EE1133" stroke-width="2" stroke-miterlimit="10"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M6.86719 5.33325H21.8005C25.4005 5.33325 26.2005 7.33325 23.6672 9.86659L22.0672 11.4666C21.0005 12.5333 21.0005 14.2666 22.0672 15.1999L23.6672 16.7999C26.2005 19.3333 25.2672 21.3333 21.8005 21.3333H6.86719"
+                  stroke="#EE1133" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+
+
+            </span>
+            <div class="stat-text">
+              <div class="stat-label">Open Reports</div>
+              <div class="stat-value">07</div>
+              <div class="stat-delta down">-10.3%</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ Overview chart + quick summary ============ -->
+        <section class="overview-row">
+          <!-- Chart -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Overview</h3>
+              <!-- <div class="legend">
+                <span><span class="dot dark"></span>Driver Subscription</span>
+                <span><span class="dot light"></span>Service Fee</span>
+              </div> -->
+            </div>
+            <div class="chart-card">
+              <!-- <h3>Overview</h3> -->
+              <canvas id="overviewChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Quick summary -->
+          <aside class="card">
+            <div class="card-header">
+              <h3 class="card-title">Quick Summary</h3>
+            </div>
+            <div class="summary-list">
+              <div class="summary-row">
+                <span class="left">
+                  <span class="icon-tile bag"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.25 6.39167V5.58334C6.25 3.70834 7.75833 1.86667 9.63333 1.69167C11.8667 1.47501 13.75 3.23334 13.75 5.42501V6.57501"
+                        stroke="#F08910" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path
+                        d="M7.49937 18.3334H12.4994C15.8494 18.3334 16.4494 16.9917 16.6244 15.3584L17.2494 10.3584C17.4744 8.32508 16.891 6.66675 13.3327 6.66675H6.66603C3.1077 6.66675 2.52437 8.32508 2.74937 10.3584L3.37437 15.3584C3.54937 16.9917 4.14937 18.3334 7.49937 18.3334Z"
+                        stroke="#F08910" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M12.9121 9.99992H12.9196" stroke="#F08910" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M7.07811 9.99992H7.08559" stroke="#F08910" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+
+                  </span>
+                  Open
+                </span>
+                <span class="count">321</span>
+              </div>
+              <div class="summary-row">
+                <span class="left">
+                  <span class="icon-tile pickup"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2.64258 6.19995L10.0009 10.4583L17.3092 6.22495" stroke="#105EF0" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M10 18.0083V10.45" stroke="#105EF0" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path
+                        d="M8.27552 2.06658L3.82552 4.53324C2.81719 5.09158 1.99219 6.49158 1.99219 7.64158V12.3499C1.99219 13.4999 2.81719 14.8999 3.82552 15.4582L8.27552 17.9332C9.22552 18.4582 10.7839 18.4582 11.7339 17.9332L16.1839 15.4582C17.1922 14.8999 18.0172 13.4999 18.0172 12.3499V7.64158C18.0172 6.49158 17.1922 5.09158 16.1839 4.53324L11.7339 2.05824C10.7755 1.53324 9.22552 1.53324 8.27552 2.06658Z"
+                        stroke="#105EF0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                  </span>
+                  Awaiting Pickup
+                </span>
+                <span class="count">919</span>
+              </div>
+              <div class="summary-row">
+                <span class="left">
+                  <span class="icon-tile transit"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12.4993 1.66675V10.0001C12.4993 10.9167 11.7493 11.6667 10.8327 11.6667H1.66602V5.00008C1.66602 3.15841 3.15768 1.66675 4.99935 1.66675H12.4993Z"
+                        stroke="#9610F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M18.3327 11.6667V14.1667C18.3327 15.5501 17.216 16.6667 15.8327 16.6667H14.9993C14.9993 15.7501 14.2493 15.0001 13.3327 15.0001C12.416 15.0001 11.666 15.7501 11.666 16.6667H8.33268C8.33268 15.7501 7.58268 15.0001 6.66602 15.0001C5.74935 15.0001 4.99935 15.7501 4.99935 16.6667H4.16602C2.78268 16.6667 1.66602 15.5501 1.66602 14.1667V11.6667H10.8327C11.7493 11.6667 12.4993 10.9167 12.4993 10.0001V4.16675H14.0327C14.6327 4.16675 15.1827 4.49176 15.4827 5.00842L16.9077 7.50008H15.8327C15.3743 7.50008 14.9993 7.87508 14.9993 8.33341V10.8334C14.9993 11.2917 15.3743 11.6667 15.8327 11.6667H18.3327Z"
+                        stroke="#9610F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M6.66667 18.3333C7.58714 18.3333 8.33333 17.5871 8.33333 16.6667C8.33333 15.7462 7.58714 15 6.66667 15C5.74619 15 5 15.7462 5 16.6667C5 17.5871 5.74619 18.3333 6.66667 18.3333Z"
+                        stroke="#9610F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M13.3327 18.3333C14.2532 18.3333 14.9993 17.5871 14.9993 16.6667C14.9993 15.7462 14.2532 15 13.3327 15C12.4122 15 11.666 15.7462 11.666 16.6667C11.666 17.5871 12.4122 18.3333 13.3327 18.3333Z"
+                        stroke="#9610F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M18.3333 10V11.6667H15.8333C15.375 11.6667 15 11.2917 15 10.8333V8.33333C15 7.875 15.375 7.5 15.8333 7.5H16.9083L18.3333 10Z"
+                        stroke="#9610F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  In Transit
+                </span>
+                <span class="count">475</span>
+              </div>
+              <div class="summary-row">
+                <span class="left">
+                  <span class="icon-tile complete"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M9.99935 18.3334C14.5827 18.3334 18.3327 14.5834 18.3327 10.0001C18.3327 5.41675 14.5827 1.66675 9.99935 1.66675C5.41602 1.66675 1.66602 5.41675 1.66602 10.0001C1.66602 14.5834 5.41602 18.3334 9.99935 18.3334Z"
+                        stroke="#31B057" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M6.45898 9.99993L8.81732 12.3583L13.5423 7.6416" stroke="#31B057" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  Complete
+                </span>
+                <span class="count">1,974</span>
+              </div>
+              <div class="summary-row">
+                <span class="left">
+                  <span class="icon-tile cancelled"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12.4993 1.66675V10.0001C12.4993 10.9167 11.7493 11.6667 10.8327 11.6667H1.66602V5.00008C1.66602 3.15841 3.15768 1.66675 4.99935 1.66675H12.4993Z"
+                        stroke="#EE1133" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M18.3327 11.6667V14.1667C18.3327 15.5501 17.216 16.6667 15.8327 16.6667H14.9993C14.9993 15.7501 14.2493 15.0001 13.3327 15.0001C12.416 15.0001 11.666 15.7501 11.666 16.6667H8.33268C8.33268 15.7501 7.58268 15.0001 6.66602 15.0001C5.74935 15.0001 4.99935 15.7501 4.99935 16.6667H4.16602C2.78268 16.6667 1.66602 15.5501 1.66602 14.1667V11.6667H10.8327C11.7493 11.6667 12.4993 10.9167 12.4993 10.0001V4.16675H14.0327C14.6327 4.16675 15.1827 4.49176 15.4827 5.00842L16.9077 7.50008H15.8327C15.3743 7.50008 14.9993 7.87508 14.9993 8.33341V10.8334C14.9993 11.2917 15.3743 11.6667 15.8327 11.6667H18.3327Z"
+                        stroke="#EE1133" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M6.66667 18.3333C7.58714 18.3333 8.33333 17.5871 8.33333 16.6667C8.33333 15.7462 7.58714 15 6.66667 15C5.74619 15 5 15.7462 5 16.6667C5 17.5871 5.74619 18.3333 6.66667 18.3333Z"
+                        stroke="#EE1133" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M13.3327 18.3333C14.2532 18.3333 14.9993 17.5871 14.9993 16.6667C14.9993 15.7462 14.2532 15 13.3327 15C12.4122 15 11.666 15.7462 11.666 16.6667C11.666 17.5871 12.4122 18.3333 13.3327 18.3333Z"
+                        stroke="#EE1133" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M18.3333 10V11.6667H15.8333C15.375 11.6667 15 11.2917 15 10.8333V8.33333C15 7.875 15.375 7.5 15.8333 7.5H16.9083L18.3333 10Z"
+                        stroke="#EE1133" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  Cancelled
+                </span>
+                <span class="count">54</span>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <!-- ============ Recent deliveries table ============ -->
+        <section class="card table-card">
+          <div class="table-toolbar">
+            <h3 class="table-title">Recent Deliveries</h3>
+            <div class="filters">
+              <select class="filter-select" aria-label="Filter by date">
+                <option>Date</option>
+                <option>This Week</option>
+                <option>This Month</option>
+              </select>
+              <select class="filter-select" aria-label="Filter by location">
+                <option>Locations</option>
+                <option>Sydney</option>
+                <option>Gold Coast</option>
+              </select>
+              <select class="filter-select" aria-label="Filter by status">
+                <option>Status</option>
+                <option>Open</option>
+                <option>Completed</option>
+                <option>Cancelled</option>
+              </select>
+            </div>
+          </div>
+
+          <table class="data-table responsive-cards">
+            <thead>
+              <tr>
+                <th>Delivery ID</th>
+                <th>Item</th>
+                <th>Sender</th>
+                <th>Driver</th>
+                <th>Route</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Delivery ID">Y-0127</td>
+                <td data-label="Item">Sofa Set</td>
+                <td data-label="Sender">
+                  <div class="cell-user">
+                    <span class="avatar">SB</span><span>Samuel Bright</span>
+                  </div>
+                </td>
+                <td data-label="Driver">
+                  <div class="cell-user">
+                    <span class="avatar">MW</span><span>Mary White</span>
+                  </div>
+                </td>
+                <td data-label="Route">GC - SYD</td>
+                <td data-label="Price">$127</td>
+                <td data-label="Status">
+                  <span class="badge badge-open">Open</span>
+                </td>
+                <td data-label="Date">15/12/26</td>
+                <td>
+                  <button class="row-action" aria-label="View">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.6">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Delivery ID">Y-0127</td>
+                <td data-label="Item">Washing Machine</td>
+                <td data-label="Sender">
+                  <div class="cell-user">
+                    <span class="avatar">JS</span><span>John Smith</span>
+                  </div>
+                </td>
+                <td data-label="Driver">
+                  <div class="cell-user">
+                    <span class="avatar">JJ</span><span>Jack Johnson</span>
+                  </div>
+                </td>
+                <td data-label="Route">GC - SYD</td>
+                <td data-label="Price">$1,127</td>
+                <td data-label="Status">
+                  <span class="badge badge-await">Awaiting Pickup</span>
+                </td>
+                <td data-label="Date">15/12/26</td>
+                <td>
+                  <button class="row-action" aria-label="View">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.6">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Delivery ID">Y-0127</td>
+                <td data-label="Item">Small Parcel</td>
+                <td data-label="Sender">
+                  <div class="cell-user">
+                    <span class="avatar">SB</span><span>Samuel Bright</span>
+                  </div>
+                </td>
+                <td data-label="Driver">
+                  <div class="cell-user">
+                    <span class="avatar">MW</span><span>Mary White</span>
+                  </div>
+                </td>
+                <td data-label="Route">GC - SYD</td>
+                <td data-label="Price">$65</td>
+                <td data-label="Status">
+                  <span class="badge badge-transit">In transit</span>
+                </td>
+                <td data-label="Date">15/12/26</td>
+                <td>
+                  <button class="row-action" aria-label="View">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.6">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Delivery ID">Y-0127</td>
+                <td data-label="Item">Office Chair</td>
+                <td data-label="Sender">
+                  <div class="cell-user">
+                    <span class="avatar">SB</span><span>Samuel Bright</span>
+                  </div>
+                </td>
+                <td data-label="Driver">
+                  <div class="cell-user">
+                    <span class="avatar">MW</span><span>Mary White</span>
+                  </div>
+                </td>
+                <td data-label="Route">GC - SYD</td>
+                <td data-label="Price">$200</td>
+                <td data-label="Status">
+                  <span class="badge badge-complete">Completed</span>
+                </td>
+                <td data-label="Date">15/12/26</td>
+                <td>
+                  <button class="row-action" aria-label="View">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.6">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Delivery ID">Y-0127</td>
+                <td data-label="Item">Books (5kg)</td>
+                <td data-label="Sender">
+                  <div class="cell-user">
+                    <span class="avatar">SB</span><span>Samuel Bright</span>
+                  </div>
+                </td>
+                <td data-label="Driver">
+                  <div class="cell-user">
+                    <span class="avatar">MW</span><span>Mary White</span>
+                  </div>
+                </td>
+                <td data-label="Route">GC - SYD</td>
+                <td data-label="Price">$127</td>
+                <td data-label="Status">
+                  <span class="badge badge-cancelled">Cancelled</span>
+                </td>
+                <td data-label="Date">15/12/26</td>
+                <td>
+                  <button class="row-action" aria-label="View">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.6">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
       </div>
-      <div class="notif-list">
-        <div class="notif-item unread">
-          <span class="ic"
-            ><img src="assets/images/logo-mark.svg" alt=""
-          /></span>
-          <div class="body">
-            Placeholder notification.<br />Placeholder text only
-          </div>
-          <span class="when">2m</span>
-        </div>
-        <div class="notif-item">
-          <span class="ic"
-            ><img src="assets/images/logo-mark.svg" alt=""
-          /></span>
-          <div class="body">Placeholder notification.</div>
-          <span class="when">2h</span>
-        </div>
-        <div class="notif-item unread">
-          <span class="ic"
-            ><img src="assets/images/logo-mark.svg" alt=""
-          /></span>
-          <div class="body">
-            Placeholder notification. Placeholder text only.
-          </div>
-          <span class="when">3h</span>
-        </div>
-        <div class="notif-item">
-          <span class="ic"
-            ><img src="assets/images/logo-mark.svg" alt=""
-          /></span>
-          <div class="body">Placeholder notification</div>
-          <span class="when">11:30</span>
-        </div>
-        <div class="notif-item">
-          <span class="ic"
-            ><img src="assets/images/logo-mark.svg" alt=""
-          /></span>
-          <div class="body">
-            Placeholder notification.<br />Placeholder text only
-          </div>
-          <span class="when">11/02/2025</span>
-        </div>
-        <div class="notif-item">
-          <span class="ic"
-            ><img src="assets/images/logo-mark.svg" alt=""
-          /></span>
-          <div class="body">Placeholder notification</div>
-          <span class="when">11:30</span>
-        </div>
-        <div class="notif-item">
-          <span class="ic"
-            ><img src="assets/images/logo-mark.svg" alt=""
-          /></span>
-          <div class="body">
-            Placeholder notification.<br />Placeholder text only
-          </div>
-          <span class="when">11/02/2025</span>
-        </div>
-        <div class="notif-item">
-          <span class="ic"
-            ><img src="assets/images/logo-mark.svg" alt=""
-          /></span>
-          <div class="body">
-            Placeholder notification.<br />Placeholder text only
-          </div>
-          <span class="when">11/02/2025</span>
-        </div>
-        <div class="notif-item">
-          <span class="ic"
-            ><img src="assets/images/logo-mark.svg" alt=""
-          /></span>
-          <div class="body">
-            Placeholder notification.<br />Placeholder text only
-          </div>
-          <span class="when">11/02/2025</span>
-        </div>
-        <div class="notif-item">
-          <span class="ic"
-            ><img src="assets/images/logo-mark.svg" alt=""
-          /></span>
-          <div class="body">
-            Placeholder notification.<br />Placeholder text only
-          </div>
-          <span class="when">11/02/2025</span>
-        </div>
-      </div>
-    </div>
+    </main>
+  </div>
 
-    <!-- Notifications options menu -->
-    <div class="notif-options hidden" id="notifOptions">
-      <button type="button">
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-        >
-          <path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z" />
-          <path d="M10 21a2 2 0 0 0 4 0" />
+  <!-- ============ Notifications panel ============ -->
+  <div class="notif-panel hidden" id="notifPanel" role="dialog" aria-label="Notifications">
+    <div class="head">
+      <h4>Notifications</h4>
+      <button class="dots-btn" id="notifDots" aria-label="Notification options">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="6" cy="12" r="1.6" />
+          <circle cx="12" cy="12" r="1.6" />
+          <circle cx="18" cy="12" r="1.6" />
         </svg>
-        Make all as read
-      </button>
-      <button type="button">
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-        >
-          <polyline points="3 6 5 6 21 6" />
-          <path d="M19 6l-1 14H6L5 6" />
-          <path d="M10 11v6M14 11v6" />
-        </svg>
-        Clear all notifications
       </button>
     </div>
+    <div class="notif-list">
+      <div class="notif-item unread">
+        <span class="ic"><img src="assets/images/logo-mark.svg" alt="" /></span>
+        <div class="body">
+          Placeholder notification.<br />Placeholder text only
+        </div>
+        <span class="when">2m</span>
+      </div>
+      <div class="notif-item">
+        <span class="ic"><img src="assets/images/logo-mark.svg" alt="" /></span>
+        <div class="body">Placeholder notification.</div>
+        <span class="when">2h</span>
+      </div>
+      <div class="notif-item unread">
+        <span class="ic"><img src="assets/images/logo-mark.svg" alt="" /></span>
+        <div class="body">
+          Placeholder notification. Placeholder text only.
+        </div>
+        <span class="when">3h</span>
+      </div>
+      <div class="notif-item">
+        <span class="ic"><img src="assets/images/logo-mark.svg" alt="" /></span>
+        <div class="body">Placeholder notification</div>
+        <span class="when">11:30</span>
+      </div>
+      <div class="notif-item">
+        <span class="ic"><img src="assets/images/logo-mark.svg" alt="" /></span>
+        <div class="body">
+          Placeholder notification.<br />Placeholder text only
+        </div>
+        <span class="when">11/02/2025</span>
+      </div>
+      <div class="notif-item">
+        <span class="ic"><img src="assets/images/logo-mark.svg" alt="" /></span>
+        <div class="body">Placeholder notification</div>
+        <span class="when">11:30</span>
+      </div>
+      <div class="notif-item">
+        <span class="ic"><img src="assets/images/logo-mark.svg" alt="" /></span>
+        <div class="body">
+          Placeholder notification.<br />Placeholder text only
+        </div>
+        <span class="when">11/02/2025</span>
+      </div>
+      <div class="notif-item">
+        <span class="ic"><img src="assets/images/logo-mark.svg" alt="" /></span>
+        <div class="body">
+          Placeholder notification.<br />Placeholder text only
+        </div>
+        <span class="when">11/02/2025</span>
+      </div>
+      <div class="notif-item">
+        <span class="ic"><img src="assets/images/logo-mark.svg" alt="" /></span>
+        <div class="body">
+          Placeholder notification.<br />Placeholder text only
+        </div>
+        <span class="when">11/02/2025</span>
+      </div>
+      <div class="notif-item">
+        <span class="ic"><img src="assets/images/logo-mark.svg" alt="" /></span>
+        <div class="body">
+          Placeholder notification.<br />Placeholder text only
+        </div>
+        <span class="when">11/02/2025</span>
+      </div>
+    </div>
+  </div>
 
-    <script src="assets/js/main.js"></script>
-  </body>
+  <!-- Notifications options menu -->
+  <div class="notif-options hidden" id="notifOptions">
+    <button type="button">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="37" height="37" rx="11.5" fill="white" stroke="#E8ECEE" />
+        <path
+          d="M19.1973 14.2417C19.2274 14.2417 19.2585 14.2541 19.2842 14.2798C19.3098 14.3054 19.3223 14.3366 19.3223 14.3667V17.1421C19.3221 17.2114 19.267 17.2671 19.1973 17.2671C19.1672 17.2671 19.136 17.2545 19.1104 17.229C19.0848 17.2035 19.0724 17.1721 19.0723 17.1421V14.3667C19.0723 14.3366 19.0847 14.3054 19.1104 14.2798C19.136 14.2541 19.1671 14.2417 19.1973 14.2417Z"
+          fill="#292D32" stroke="#2D6495" />
+        <path
+          d="M19.2139 10.5333C22.346 10.5333 24.8886 13.076 24.8887 16.2081V17.9581C24.8887 18.2461 24.9533 18.5927 25.041 18.9064C25.1289 19.2207 25.2539 19.5504 25.4014 19.798V19.799L26.46 21.5656L26.4609 21.5665C26.7726 22.0839 26.8269 22.701 26.6191 23.2706C26.4143 23.832 25.9644 24.2646 25.3877 24.4591L25.3867 24.4601C23.3996 25.1332 21.3122 25.4581 19.2139 25.4581C17.1168 25.4581 15.0285 25.125 13.0391 24.4591L13.0371 24.4581C12.4113 24.2518 11.9596 23.8138 11.7666 23.2863C11.5727 22.7559 11.6298 22.1289 11.9668 21.5646L11.9678 21.5656L13.0264 19.799L13.0273 19.798C13.1744 19.5512 13.2986 19.2243 13.3867 18.9103C13.4747 18.5968 13.5391 18.2499 13.5391 17.9581V16.2081C13.5392 13.0761 16.0818 10.5334 19.2139 10.5333ZM24.6475 16.2238C24.6383 13.2247 22.2075 10.7921 19.2139 10.7921C16.2211 10.7922 13.7891 13.2241 13.7891 16.2169V17.9669C13.789 18.553 13.5459 19.4376 13.2451 19.9318L13.2432 19.9357L12.1865 21.7081C11.9059 22.1722 11.8158 22.715 12.0039 23.2169C12.1923 23.7192 12.61 24.0617 13.1221 24.2325H13.123C17.0588 25.5416 21.3865 25.5416 25.3223 24.2325L25.3213 24.2316C25.8239 24.067 26.2153 23.689 26.3926 23.1925C26.5788 22.6942 26.5148 22.1572 26.2529 21.713L26.251 21.7101L25.1934 19.9435L25.1914 19.9396L25.0811 19.7374C24.8331 19.229 24.6475 18.4875 24.6475 17.9747V16.2238Z"
+          fill="#292D32" stroke="#2D6495" />
+        <path
+          d="M16.5967 25.1833C16.6982 25.7001 16.9531 26.1802 17.3262 26.5535C17.8177 27.045 18.4948 27.3337 19.1973 27.3337C20.4856 27.3336 21.5628 26.405 21.7979 25.1833H22.0508C21.8129 26.5445 20.6253 27.5836 19.1973 27.5837C18.4402 27.5837 17.6913 27.271 17.1504 26.7302C16.7295 26.3093 16.4494 25.7619 16.3447 25.1833H16.5967Z"
+          fill="#292D32" stroke="#2D6495" />
+      </svg>
+
+      </svg>
+      Make all as read
+    </button>
+    <button type="button">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="37" height="37" rx="11.5" fill="white" stroke="#E8ECEE" />
+        <path
+          d="M26.6973 13.9833C23.9223 13.7083 21.1306 13.5667 18.3473 13.5667C16.6973 13.5667 15.0473 13.65 13.3973 13.8167L11.6973 13.9833"
+          stroke="#2D6495" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+          d="M16.2812 13.1417L16.4646 12.0501C16.5979 11.2584 16.6979 10.6667 18.1062 10.6667H20.2896C21.6979 10.6667 21.8063 11.2917 21.9313 12.0584L22.1146 13.1417"
+          stroke="#2D6495" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+          d="M24.9049 16.6167L24.3633 25.0084C24.2716 26.3167 24.1966 27.3334 21.8716 27.3334H16.5216C14.1966 27.3334 14.1216 26.3167 14.0299 25.0084L13.4883 16.6167"
+          stroke="#2D6495" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M17.8047 22.75H20.5797" stroke="#2D6495" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M17.1133 19.4167H21.2799" stroke="#2D6495" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+
+      Clear all notifications
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
 </html>
