@@ -854,7 +854,7 @@ select.form-control {
 /* ---------- Overview chart + quick summary ---------- */
 .overview-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
@@ -862,7 +862,7 @@ select.form-control {
   background: #fff;
   border-radius: var(--radius-lg);
   padding: 22px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 12px rgba(19, 40, 75, 0.08), 0 1px 3px rgba(19, 40, 75, 0.04);
   width: 100%;
   overflow: hidden;
 }
@@ -899,11 +899,12 @@ select.form-control {
 }
 
 .legend .dot.dark {
-  background: var(--brand-navy);
+  background: #2D6495;
 }
 
 .legend .dot.light {
-  background: var(--brand-blue-soft);
+  background: #E2EEF7;
+  border: 1.5px solid #c5ddef;
 }
 
 .chart-wrap {
@@ -2209,17 +2210,21 @@ select.form-control {
 /* ---------- Donut chart ---------- */
 .donut-card {
   padding: 22px;
+  display: flex;
+  flex-direction: column;
 }
 
 .donut-wrap {
   display: flex;
   align-items: center;
-  gap: 22px;
+  justify-content: space-between;
+  gap: 16px;
+  height: 100%;
 }
 
 .donut-wrap svg {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   flex-shrink: 0;
 }
 
@@ -2227,23 +2232,26 @@ select.form-control {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  flex: 1;
+  min-width: 0;
 }
 
 .donut-legend .item {
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 12px 16px;
+  padding: 12px 14px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-width: 200px;
+  gap: 10px;
+  min-width: 0;
 }
 
 .donut-legend .swatch {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .donut-legend .swatch.dark {
@@ -2257,17 +2265,20 @@ select.form-control {
 .donut-legend .text {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .donut-legend .text .name {
   color: var(--text-secondary);
   font-size: 13px;
+  white-space: nowrap;
 }
 
 .donut-legend .text .val {
   font-weight: 700;
   color: var(--brand-navy);
-  font-size: 15px;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
 /* ---------- Toast ---------- */
