@@ -186,7 +186,7 @@
     bottom: 0;
     width: 260px;
     transform: translateX(-100%);
-    transition: transform .2s;
+    transition: transform 0.2s;
     z-index: 80;
   }
 
@@ -366,6 +366,50 @@
   }
 }
 
+/* HACKY SOLUTION FOR USER CARD IN USER MANAGER */
+@media (max-width: 850px) {
+  .user-header-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .user-header-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .block-toggle-wrap {
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 16px;
+  }
+
+  .meta-block {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .name {
+    word-break: break-word;
+  }
+
+  .divider-v {
+    display: none;
+  }
+}
+
+/* HACKY SOLUTION END */
+
+@media (max-width: 540px) {
+  .detail-actions {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 420px) {
   .stats-grid {
     grid-template-columns: 1fr;
@@ -387,6 +431,135 @@
 
   .auth-brand .wordmark {
     font-size: 28px;
+  }
+
+  .detail-actions {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* ---------- Small mobile (320px) ---------- */
+@media (max-width: 375px) {
+  .content {
+    padding: 0 12px 24px;
+  }
+
+  .topbar {
+    padding: 12px;
+  }
+
+  .page-title {
+    font-size: 17px;
+  }
+
+  .page-header-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .sort-control {
+    font-size: 13px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .stat-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .stat-value {
+    font-size: 16px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+
+  .overview-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .card-title {
+    font-size: 15px;
+  }
+
+  .legend {
+    font-size: 11px;
+    gap: 10px;
+  }
+
+  .donut-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .donut-wrap svg {
+    width: 160px;
+    height: 160px;
+  }
+
+  .table-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .filter-select {
+    font-size: 12px;
+    padding: 6px 28px 6px 10px;
+    min-width: 90px;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 12px 16px;
+  }
+
+  .modal.sm {
+    width: calc(100vw - 24px);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .modal .code-input {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .modal .code-input-row {
+    gap: 6px;
+  }
+
+  .search-box {
+    min-width: 0;
   }
 }
 
