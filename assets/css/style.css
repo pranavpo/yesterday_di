@@ -6,6 +6,7 @@
 body {
   font-family: "Public Sans", sans-serif;
 }
+
 :root {
   /* Brand */
   --brand-navy: #13284b;
@@ -862,6 +863,8 @@ select.form-control {
   border-radius: var(--radius-lg);
   padding: 22px;
   box-shadow: var(--shadow-sm);
+  width: 100%;
+  overflow: hidden;
 }
 
 .card-header {
@@ -3107,6 +3110,7 @@ select.form-control {
 
 .chart-card {
   position: relative;
-  height: 400px; /* adjust as needed */
+  height: 400px;
+  /* adjust as needed */
   width: 100%;
 }
