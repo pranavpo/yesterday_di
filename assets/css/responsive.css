@@ -107,13 +107,13 @@
     grid-template-columns: 1fr;
   }
 
-  /* Tables — make horizontally scrollable wrapper */
-  .table-card {
-    overflow-x: auto;
-  }
-
+  /* Tables — scroll the table itself, not the card */
   .data-table {
-    min-width: 720px;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    min-width: 0;
   }
 }
 
@@ -122,20 +122,48 @@
   .topbar {
     padding: 16px;
     flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Hide the desktop sidebar collapse arrow */
+  .sidebar-toggle {
+    display: none;
+  }
+
+  .main {
+    overflow-x: hidden;
   }
 
   .content {
     padding: 0 16px 32px;
+    margin-top: 26px;
   }
 
   .page-title {
     font-size: 20px;
+    flex: 1;
+    min-width: 0;
+    gap: 8px;
   }
 
+  /* Dissolve topbar-actions so bell & search participate directly in topbar flex */
+  .topbar-actions {
+    display: contents;
+  }
+
+  /* Bell stays on row 1, pushed to the right by page-title flex:1 */
+  .bell-btn {
+    order: 2;
+    flex-shrink: 0;
+  }
+
+  /* Search drops to row 2, full topbar width */
   .search-box {
+    order: 3;
+    flex: 0 0 100%;
     min-width: 0;
     width: 100%;
-    order: 3;
   }
 
   .stats-grid {
@@ -290,44 +318,46 @@
     max-width: 95%;
   }
 
-  /* Table — collapse to card layout on very small screens */
+  /* Tables — only the table scrolls, toolbar stays fixed */
+  .table-card,
+  .users-card {
+    overflow-x: visible;
+  }
+
+  .data-table,
   .data-table.responsive-cards {
-    min-width: 0;
     display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    min-width: 0;
   }
 
   .data-table.responsive-cards thead {
-    display: none;
+    display: table-header-group;
   }
 
-  .data-table.responsive-cards tbody,
-  .data-table.responsive-cards tr,
-  .data-table.responsive-cards td {
-    display: block;
-    width: 100%;
+  .data-table.responsive-cards tbody {
+    display: table-row-group;
   }
 
   .data-table.responsive-cards tr {
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 10px 12px;
-    margin-bottom: 10px;
+    display: table-row;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 0;
   }
 
   .data-table.responsive-cards td {
-    border-bottom: 0;
-    padding: 6px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
+    display: table-cell;
+    border-bottom: 1px solid var(--border);
+    padding: 14px 12px;
+    flex: unset;
   }
 
   .data-table.responsive-cards td::before {
-    content: attr(data-label);
-    color: var(--text-secondary);
-    font-size: 12px;
-    font-weight: 600;
+    content: none;
   }
 }
 
@@ -343,10 +373,6 @@
   .code-input {
     width: 42px;
     height: 48px;
-  }
-
-  .topbar-actions {
-    flex-wrap: wrap;
   }
 
   .auth-brand .logo-large {
