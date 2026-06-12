@@ -125,12 +125,6 @@ textarea {
   color: inherit;
 }
 
-img,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;
@@ -168,10 +162,6 @@ svg {
   background: #fff;
   color: #2d6495;
   border: 1.5px solid #2d6495;
-}
-
-.btn-secondary:hover {
-  background: #2d6495;
 }
 
 .btn-danger {
@@ -1188,13 +1178,13 @@ select.form-control {
 }
 
 .badge-pending {
-  background: #FFEEDB;
-  color: #F08910;
+  background: #ffeedb;
+  color: #f08910;
 }
 
 .badge-resolved {
-  background: #CEECD7;
-  color: #31B057;
+  background: #ceecd7;
+  color: #31b057;
 }
 
 .badge-paid {
@@ -2475,13 +2465,13 @@ select.form-control {
 }
 
 .badge-type-contact {
-  background: #DBEDFF;
-  color: #105EF0;
+  background: #dbedff;
+  color: #105ef0;
 }
 
 .badge-type-report {
-  background: #F3DBFF;
-  color: #9610F0;
+  background: #f3dbff;
+  color: #9610f0;
 }
 
 /* Detail panel (right) */
@@ -2697,8 +2687,8 @@ select.form-control {
 
 /* Chat ---------- */
 .chat-banner {
-  background: #EFF4FF;
-  border: 1.5px solid #7A9EE2;
+  background: #eff4ff;
+  border: 1.5px solid #7a9ee2;
   border-radius: 12px;
   padding: 16px;
   color: #707683;
@@ -2800,11 +2790,11 @@ select.form-control {
 
 /* Edit Details outlined button */
 .static-section .static-head .btn {
-  border: 1.5px solid #2D6495;
+  border: 1.5px solid #2d6495;
   padding: 12px 16px;
-  color: #2D6495;
+  color: #2d6495;
   background: transparent;
-  font-family: 'Public Sans', 'Plus Jakarta Sans', sans-serif;
+  font-family: "Public Sans", "Plus Jakarta Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 22px;
@@ -2815,13 +2805,13 @@ select.form-control {
 }
 
 .static-section .static-head .btn:hover {
-  background: #EFF4FF;
+  background: #eff4ff;
 }
 
 /* Sender / user-type select in static view */
 .static-section .static-view .form-control {
-  background: #F3F6F7;
-  border: 1.5px solid #E8ECF0;
+  background: #f3f6f7;
+  border: 1.5px solid #e8ecf0;
   border-radius: 8px;
   padding: 12px;
 }
@@ -2879,7 +2869,7 @@ select.form-control {
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 18px 20px;
+  padding: 20px 30px;
 }
 
 .faq-card .faq-head {
@@ -2890,9 +2880,9 @@ select.form-control {
 }
 
 .faq-card .faq-q {
-  font-weight: 700;
-  color: var(--brand-navy);
-  font-size: 16px;
+  color: #0e2741;
+  font-weight: 500;
+  font-size: 20px;
   flex: 1;
 }
 
@@ -2917,11 +2907,9 @@ select.form-control {
 
 .faq-card .faq-a {
   display: none;
-  color: var(--brand-navy);
+  color: #56687a;
   line-height: 1.55;
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid #f1f3f6;
+  margin-top: 20px;
   font-size: 14px;
 }
 
