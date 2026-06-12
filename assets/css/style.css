@@ -252,9 +252,10 @@ textarea.form-control {
 /* Select with chevron */
 select.form-control {
   appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2397A1B2' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-image: url("../images/select.svg");
   background-repeat: no-repeat;
   background-position: right 14px center;
+  background-size: 20px 20px;
   padding-right: 38px;
 }
 
@@ -276,10 +277,10 @@ select.form-control {
 }
 
 .checkbox .box {
-  width: 20px;
-  height: 20px;
-  border-radius: 6px;
-  border: 1.5px solid var(--border-strong);
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  border: 1.5px solid #2d6495;
   background: #fff;
   display: inline-flex;
   align-items: center;
@@ -287,12 +288,12 @@ select.form-control {
   flex-shrink: 0;
 }
 
-.checkbox input:checked+.box {
-  background: var(--brand-blue);
-  border-color: var(--brand-blue);
+.checkbox input:checked + .box {
+  background: #2d6495;
+  border-color: #2d6495;
 }
 
-.checkbox input:checked+.box::after {
+.checkbox input:checked + .box::after {
   content: "";
   width: 11px;
   height: 6px;
@@ -335,11 +336,11 @@ select.form-control {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-.toggle input:checked+.slider {
+.toggle input:checked + .slider {
   background: var(--brand-blue);
 }
 
-.toggle input:checked+.slider::before {
+.toggle input:checked + .slider::before {
   transform: translateX(16px);
 }
 
@@ -457,11 +458,11 @@ select.form-control {
 }
 
 .code-input {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   border-radius: 12px;
-  border: 1.5px solid transparent;
-  background: var(--bg-input);
+  border: 1.5px solid #e8ecf0;
+  background: #f3f6f7;
   text-align: center;
   font-size: 22px;
   font-weight: 700;
@@ -727,8 +728,8 @@ select.form-control {
 }
 
 .search-box .search-ic {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   color: var(--text-muted);
 }
 
@@ -1052,9 +1053,10 @@ select.form-control {
 .filter-select {
   appearance: none;
   background: #fff;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2397A1B2' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-image: url("../images/select.svg");
   background-repeat: no-repeat;
   background-position: right 12px center;
+  background-size: 20px 20px;
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 8px 36px 8px 12px;
@@ -1087,10 +1089,10 @@ select.form-control {
 }
 
 .data-table thead th {
-  color: var(--text-secondary);
-  font-weight: 500;
+  color: #56687a;
+  font-weight: 400;
   border-bottom: 1px solid var(--border);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .data-table tbody tr:last-child {
@@ -1098,7 +1100,9 @@ select.form-control {
 }
 
 .data-table td {
-  color: var(--brand-navy);
+  color: #56687a;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .cell-user {
@@ -1108,16 +1112,16 @@ select.form-control {
 }
 
 .avatar {
-  width: 32px;
-  height: 32px;
+  width: 62px;
+  height: 62px;
   border-radius: 50%;
-  background: var(--brand-blue);
-  color: #fff;
+  background: #2d6495;
+  color: #f3f7f6;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 12px;
+  font-weight: 500;
+  font-size: 20px;
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -1168,7 +1172,7 @@ select.form-control {
   padding: 4px 12px;
   border-radius: 12px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -1238,13 +1242,13 @@ select.form-control {
 }
 
 .badge-role-both {
-  background: var(--role-both-bg);
-  color: var(--role-both-fg);
+  background: #f3dbff;
+  color: #9610f0;
 }
 
 .badge-plan-monthly {
-  background: var(--role-both-bg);
-  color: var(--role-both-fg);
+  background: #dbedff;
+  color: #105ef0;
 }
 
 .badge-plan-annual {
@@ -1793,7 +1797,7 @@ select.form-control {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 23px;
 }
 
 .modal-overlay.hidden {
@@ -2051,7 +2055,7 @@ select.form-control {
   font-weight: 500;
 }
 
-.info-grid-2>div {
+.info-grid-2 > div {
   padding: 8px 0;
 }
 
@@ -2438,7 +2442,9 @@ select.form-control {
 
 /* ---------- Small modal variant (no note box) ---------- */
 .modal.sm {
-  width: 380px;
+  width: 460px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 /* ---------- Messages & Support: split layout ---------- */
@@ -2642,7 +2648,7 @@ select.form-control {
   margin: 0 0 12px;
 }
 
-.detail-paragraph+.detail-paragraph {
+.detail-paragraph + .detail-paragraph {
   margin-top: 4px;
 }
 
@@ -3001,7 +3007,7 @@ select.form-control {
 
 /* ---------- Notifications (broadcast) ---------- */
 .broadcast-form-card {
-  padding: 24px;
+  padding: 20px 30px;
 }
 
 .broadcast-form-card .form-row {
@@ -3014,6 +3020,10 @@ select.form-control {
   grid-column: 1 / -1;
 }
 
+#broadcastForm {
+  max-width: 751px;
+  width: 100%;
+}
 /* ---------- Settings: profile header ---------- */
 .profile-section {
   padding: 24px;
@@ -3031,8 +3041,8 @@ select.form-control {
 .profile-section h2 {
   margin: 0;
   font-size: 20px;
-  color: var(--brand-navy);
-  font-weight: 700;
+  color: #27364b;
+  font-weight: 500;
 }
 
 .profile-summary {
@@ -3066,14 +3076,15 @@ select.form-control {
 }
 
 .profile-field .label {
-  color: var(--text-secondary);
-  font-size: 13px;
+  color: #56687a;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .profile-field .value {
-  color: var(--brand-navy);
+  color: #0e2741;
   font-size: 16px;
-  padding: 8px 0;
+  padding: 5px 0;
   border-bottom: 1px solid #f1f3f6;
 }
 
@@ -3093,8 +3104,8 @@ select.form-control {
 
 /* Status success badge already exists as badge-active / badge-complete */
 .badge-module {
-  background: var(--role-sender-bg);
-  color: var(--role-sender-fg);
+  background: #dbedff;
+  color: #105ef0;
 }
 
 /* ---------- Modals: success / icon variant ---------- */
@@ -3121,6 +3132,18 @@ select.form-control {
 /* Code input wrapper inside modal */
 .modal .code-input-row {
   justify-content: center;
+  gap: 16px;
+  margin: 20px 0 16px;
+}
+
+.modal .code-input {
+  width: 64px;
+  height: 64px;
+  font-size: 18px;
+}
+
+.modal .resend-text {
+  margin: 0 0 24px;
 }
 
 /* ---------- Misc utilities ---------- */
