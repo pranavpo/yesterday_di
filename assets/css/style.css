@@ -3,6 +3,7 @@
    ========================================================= */
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 body {
   font-family: "Public Sans", sans-serif;
 }
@@ -288,12 +289,12 @@ select.form-control {
   flex-shrink: 0;
 }
 
-.checkbox input:checked + .box {
+.checkbox input:checked+.box {
   background: #2d6495;
   border-color: #2d6495;
 }
 
-.checkbox input:checked + .box::after {
+.checkbox input:checked+.box::after {
   content: "";
   width: 11px;
   height: 6px;
@@ -336,11 +337,11 @@ select.form-control {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-.toggle input:checked + .slider {
+.toggle input:checked+.slider {
   background: var(--brand-blue);
 }
 
-.toggle input:checked + .slider::before {
+.toggle input:checked+.slider::before {
   transform: translateX(16px);
 }
 
@@ -854,28 +855,33 @@ select.form-control {
 }
 
 .stat-label {
-  font-size: 13px;
-  color: var(--text-secondary);
+  font-weight: 300;
+  font-style: Light;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: -2%;
+  color: #111827;
 }
 
 .stat-value {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--brand-navy);
-  line-height: 1.1;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -2%;
+  color: #111827
 }
 
 .stat-delta {
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .stat-delta.up {
-  color: #15803d;
+  color: #3CD984;
 }
 
 .stat-delta.down {
-  color: #dc2626;
+  color: #F93642;
 }
 
 /* ---------- Overview chart + quick summary ---------- */
@@ -986,8 +992,10 @@ select.form-control {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 15px;
-  color: var(--text-secondary);
+  font-size: 16px;
+  color: #0E2741;
+  letter-spacing: 0px;
+  font-weight: 400;
 }
 
 .summary-row .icon-tile {
@@ -1025,9 +1033,9 @@ select.form-control {
 }
 
 .summary-row .count {
-  font-weight: 700;
-  color: var(--brand-navy);
+  font-weight: 600;
   font-size: 16px;
+  color: #111827;
 }
 
 /* ---------- Tables ---------- */
@@ -1112,6 +1120,24 @@ select.form-control {
 }
 
 .avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #2d6495;
+  color: #f3f7f6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 10px;
+  flex-shrink: 0;
+  overflow: hidden;
+  line-height: 130px;
+  letter-spacing: 0px;
+}
+
+/* original avatar code commented */
+/* .avatar {
   width: 62px;
   height: 62px;
   border-radius: 50%;
@@ -1124,7 +1150,7 @@ select.form-control {
   font-size: 20px;
   flex-shrink: 0;
   overflow: hidden;
-}
+} */
 
 .avatar.lg {
   width: 64px;
@@ -1852,7 +1878,6 @@ select.form-control {
   line-height: 140%;
   letter-spacing: 0%;
   color: #515C6D
-
 }
 
 .modal .note-box {
@@ -2055,7 +2080,7 @@ select.form-control {
   font-weight: 500;
 }
 
-.info-grid-2 > div {
+.info-grid-2>div {
   padding: 8px 0;
 }
 
@@ -2648,7 +2673,7 @@ select.form-control {
   margin: 0 0 12px;
 }
 
-.detail-paragraph + .detail-paragraph {
+.detail-paragraph+.detail-paragraph {
   margin-top: 4px;
 }
 
@@ -3024,6 +3049,7 @@ select.form-control {
   max-width: 751px;
   width: 100%;
 }
+
 /* ---------- Settings: profile header ---------- */
 .profile-section {
   padding: 24px;
