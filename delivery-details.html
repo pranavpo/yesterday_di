@@ -116,6 +116,10 @@
   color: #111827;
   font-size: 14px;
 }
+.status-step.s-open .step-ic {
+    background:none;
+    color:none;
+  }
 
 .status-step .step-when {
   color:#ABB7C2;
@@ -434,23 +438,25 @@
     padding: 16px;
   }
 
+  
   /* Back + action buttons row */
   .delivery-page-header-row {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: center;
     gap: 12px;
   }
 
   .delivery-page-header-row > div {
     width: 100%;
     display: flex;
-    gap: 10px;
+    gap: 12px;
+    flex-shrink: 0;
   }
 
   .btn-primary,
   .btn-danger {
-    flex: 1;
-    padding: 10px 16px;
-    text-align: center;
+    white-space: nowrap;
+    padding: 10px 24px;
   }
 
   /* Status timeline — scroll horizontally */
@@ -592,6 +598,24 @@
    375px — Standard Mobile
    ─────────────────────────────────────────── */
 @media (max-width: 375px) {
+
+  .step-text .step-name,
+  .step-text .step-transit {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .step-text .step-when {
+    font-size: 12px;
+    color: #ABB7C2;
+  }
+
+  .status-step.muted .step-name {
+    font-size: 14px;
+    color: #ABB7C2;
+    font-weight: 400;
+  }
 
   .content {
     padding: 12px;
@@ -1045,7 +1069,6 @@
           <section class="card">
             <div class="status-timeline" id="statusTimeline">
               <div class="status-step s-open">
-                <span class="step-ic">
                 <img src="assets/images/openstat.png" alt="Open icon" width="41" height="42" />
                 </span>
                 <div class="step-text">
@@ -1108,12 +1131,12 @@
                 <span class="step-ic">
                   <span id="completedPlaceholder">
                     <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect width="41" height="41" rx="10" fill="#f0f1f5"/>
+                      <rect width="41" height="42" rx="10" fill="#f0f1f5"/>
                       <circle cx="20.5" cy="20.5" r="9" stroke="#c0c4d0" stroke-width="1.8"/>
                       <polyline points="16,20.5 19,23.5 25,17.5" stroke="#c0c4d0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                     </svg>
                   </span>
-                  <img id="completedIcon" src="" alt="Completed icon" width="41" height="41" data-active="assets/images/completedstat.png" style="display:none;" />
+                  <img id="completedIcon" src="assets/images/completedstat.png" alt="Completed icon" width="41" height="42" data-active="assets/images/completedstat.png" style="display:none;" />
                 </span>
                 <div class="step-text">
                   <span class="step-name" id="completedLabel">Completed</span
@@ -1122,8 +1145,8 @@
               </div>
               <span class="status-arrow muted"
                 ><svg
-                  width="22"
-                  height="22"
+                  width="42"
+                  height="41"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -1135,12 +1158,12 @@
               <div class="status-step muted">
                 <span class="step-ic"
                   ><svg
-                    width="20"
-                    height="20"
+                    width="22"
+                    height="22"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
+                    stroke-width="1.8"
                   >
                     <circle cx="12" cy="12" r="9" />
                     <line x1="9" y1="9" x2="15" y2="15" />
