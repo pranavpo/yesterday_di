@@ -539,7 +539,8 @@ select.form-control {
 .app-shell {
   display: grid;
   grid-template-columns: 260px 1fr;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* Sidebar */
@@ -549,6 +550,7 @@ select.form-control {
   display: flex;
   flex-direction: column;
   padding: 24px 18px;
+  overflow-y: auto;
 }
 
 .sidebar-head {
@@ -656,6 +658,8 @@ select.form-control {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .topbar {
@@ -667,6 +671,7 @@ select.form-control {
   gap: 16px;
   background: #fff;
   border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
 }
 
 .page-title {
@@ -766,6 +771,13 @@ select.form-control {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.content > * {
+  flex-shrink: 0;
 }
 
 /* Page header (sort + export) */
