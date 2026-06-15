@@ -1132,7 +1132,6 @@ select.form-control {
 .data-table thead th {
   color: #56687a;
   font-weight: 400;
-  border-bottom: 1px solid var(--border);
   font-size: 14px;
 }
 
@@ -2530,7 +2529,7 @@ select.form-control {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 20px;
-  align-items: flex-start;
+  align-items: stretch;
   margin-top: 26px;
 }
 
@@ -2560,15 +2559,20 @@ select.form-control {
 }
 
 .inbox-tabs button {
-  padding: 8px 22px;
+  padding: 8px 12px;
   border-radius: 999px;
   font-size: 13px;
   font-weight: 600;
   color: var(--text-secondary);
+  width: 125px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .inbox-tabs button.active {
-  background: var(--brand-blue);
+  background: #2D6495;
   color: #fff;
 }
 
