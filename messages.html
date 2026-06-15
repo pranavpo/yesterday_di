@@ -677,9 +677,15 @@
 
               <!-- Delivery Details tab -->
               <div class="detail-rtab hidden" data-rtab-panel="delivery">
-                <div class="detail-img" aria-hidden="true">
-                  <div class="dots">
-                    <span class="active"></span><span></span><span></span>
+                <div class="delivery-img-wrap">
+                  <img
+                    src="assets/images/delivery-details.svg"
+                    alt="Delivery illustration"
+                  />
+                  <div class="carousel-dots">
+                    <span class="dot"></span>
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
                   </div>
                 </div>
                 <div
@@ -814,9 +820,7 @@
                     <div class="meta-label">User</div>
                     <div class="cell-user" style="margin-top: 8px">
                       <span class="avatar"
-                        ><img
-                          src="assets/images/avatar-luke.svg"
-                          alt="" /></span
+                        ><img src="assets/images/sophie.svg" alt="" /></span
                       ><span>Sophie Brown</span>
                     </div>
                   </div>
@@ -940,7 +944,10 @@
           </div>
           <textarea class="form-control" id="blockNotes" rows="4"></textarea>
         </div>
-        <div class="modal-actions">
+        <div
+          class="modal-actions"
+          style="justify-content: flex-end; gap: 22px; margin-top: 20px"
+        >
           <button class="btn btn-primary" id="confirmBlockBtn">
             Block User
           </button>
