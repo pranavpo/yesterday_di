@@ -1165,7 +1165,8 @@ select.form-control {
   flex-shrink: 0;
   overflow: hidden;
 }
-*/ .avatar.lg {
+
+.avatar.lg {
   width: 64px;
   height: 64px;
   font-size: 22px;
