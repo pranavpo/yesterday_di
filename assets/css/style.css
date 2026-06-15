@@ -921,7 +921,7 @@ select.form-control {
   gap: 20px;
 }
 
-.overview-row.dashboard{
+.overview-row.dashboard {
   grid-template-columns: 2fr 1fr;
 }
 
@@ -1520,6 +1520,7 @@ select.form-control {
   width: 28px;
   height: 28px;
   border-radius: 8px;
+  justify-self: center;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2576,7 +2577,7 @@ select.form-control {
 }
 
 .inbox-tabs button.active {
-  background: #2D6495;
+  background: #2d6495;
   color: #fff;
 }
 
@@ -2587,9 +2588,9 @@ select.form-control {
 
 .inbox-row {
   display: grid;
-  grid-template-columns: minmax(140px, 1.2fr) auto auto auto auto;
+  grid-template-columns: 1fr 130px 120px 100px 40px;
   align-items: center;
-  gap: 16px;
+  gap: 30px;
   padding: 12px 8px;
   cursor: pointer;
 }
@@ -2612,6 +2613,10 @@ select.form-control {
 .inbox-row .who span:last-child {
   color: var(--brand-navy);
   font-size: 14px;
+}
+
+.inbox-row .badge {
+  justify-self: start;
 }
 
 .inbox-row .date {
@@ -3311,13 +3316,13 @@ select.form-control {
   width: 100%;
 }
 
-.overview-row .card{
+.overview-row .card {
   height: 386px;
   display: flex;
   flex-direction: column;
 }
 
-.chart-card{
+.chart-card {
   flex: 1;
   min-height: 0;
   position: relative;
@@ -3325,7 +3330,7 @@ select.form-control {
 
 /* QUICK SUMMARY */
 
-.overview-row .summary-list .summary-row{
+.overview-row .summary-list .summary-row {
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(162, 161, 168, 0.1);
 }
