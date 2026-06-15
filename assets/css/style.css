@@ -2,7 +2,7 @@
    Yesterday Admin CMS — Core stylesheet
    ========================================================= */
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 body {
   font-family: "Public Sans", sans-serif;
 }
@@ -100,7 +100,7 @@ body {
     sans-serif;
   font-size: 14px;
   color: var(--text-primary);
-  background: #FBFBFB;
+  background: #fbfbfb;
   -webkit-font-smoothing: antialiased;
   line-height: 1.45;
 }
@@ -171,9 +171,9 @@ textarea {
 }
 
 .btn-danger-2 {
-  background: #FEEBEC;
-  color: #F93642;
-  border: 1.5px solid #FDAFB3;
+  background: #feebec;
+  color: #f93642;
+  border: 1.5px solid #fdafb3;
 }
 
 .btn-danger:hover {
@@ -889,7 +889,9 @@ select.form-control {
   background: #fff;
   border-radius: var(--radius-lg);
   padding: 22px;
-  box-shadow: 0 2px 12px rgba(19, 40, 75, 0.08), 0 1px 3px rgba(19, 40, 75, 0.04);
+  box-shadow:
+    0 2px 12px rgba(19, 40, 75, 0.08),
+    0 1px 3px rgba(19, 40, 75, 0.04);
   width: 100%;
   overflow: hidden;
 }
@@ -926,11 +928,11 @@ select.form-control {
 }
 
 .legend .dot.dark {
-  background: #2D6495;
+  background: #2d6495;
 }
 
 .legend .dot.light {
-  background: #E2EEF7;
+  background: #e2eef7;
   border: 1.5px solid #c5ddef;
 }
 
@@ -1070,9 +1072,9 @@ select.form-control {
 }
 
 .table-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--brand-navy);
+  font-size: 20px;
+  font-weight: 500;
+  color: #27364b;
   margin: 0;
 }
 
@@ -1113,16 +1115,16 @@ select.form-control {
 }
 
 .avatar {
-  width: 62px;
-  height: 62px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: #2d6495;
-  color: #f3f7f6;
+  color: #f8fbfc;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 10px;
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -1253,8 +1255,8 @@ select.form-control {
 }
 
 .badge-plan-annual {
-  background: var(--role-sender-bg);
-  color: var(--role-sender-fg);
+  background: #dbedff;
+  color: #105ef0;
 }
 
 .rating-pill {
@@ -1578,7 +1580,7 @@ select.form-control {
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  background-color: #F3F4F6;
+  background-color: #f3f4f6;
 
   /* smooth scrolling on mobile */
   -webkit-overflow-scrolling: touch;
@@ -1641,7 +1643,7 @@ select.form-control {
   flex-direction: column;
   gap: 6px;
   padding: 6px 0 14px;
-  border-bottom: 1px solid #A2A1A81A;
+  border-bottom: 1px solid #a2a1a81a;
   /* border-bottom: 1px solid #A2A1A8; */
 }
 
@@ -1841,7 +1843,6 @@ select.form-control {
   /* leading-trim: NONE; */
   line-height: 40px;
   letter-spacing: 0px;
-
 }
 
 .modal p {
@@ -1852,8 +1853,7 @@ select.form-control {
   /* leading-trim: NONE; */
   line-height: 140%;
   letter-spacing: 0%;
-  color: #515C6D
-
+  color: #515c6d;
 }
 
 .modal .note-box {
@@ -2274,42 +2274,44 @@ select.form-control {
 
 /* ---------- Donut chart ---------- */
 .donut-card {
-  padding: 22px;
+  padding: 20px 24px;
   display: flex;
   flex-direction: column;
 }
 
 .donut-wrap {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  height: 100%;
+  flex: 1;
 }
 
 .donut-wrap svg {
-  width: 200px;
-  height: 200px;
-  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .donut-legend {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  flex: 1;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
   min-width: 0;
 }
 
 .donut-legend .item {
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 12px 14px;
+  border-radius: 10px;
+  padding: 10px 12px;
   display: flex;
   align-items: center;
   gap: 10px;
-  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .donut-legend .swatch {
@@ -2320,30 +2322,32 @@ select.form-control {
 }
 
 .donut-legend .swatch.dark {
-  background: var(--brand-navy);
+  background: #2d6495;
 }
 
 .donut-legend .swatch.light {
-  background: var(--brand-blue-soft);
+  background: #e2eef7;
+  border: 1.5px solid #c5ddef;
 }
 
 .donut-legend .text {
   display: flex;
   flex-direction: column;
+  gap: 2px;
   min-width: 0;
+  flex: 1;
 }
 
 .donut-legend .text .name {
   color: var(--text-secondary);
   font-size: 13px;
-  white-space: nowrap;
+  font-weight: 400;
 }
 
 .donut-legend .text .val {
   font-weight: 700;
   color: var(--brand-navy);
-  font-size: 14px;
-  white-space: nowrap;
+  font-size: 15px;
 }
 
 /* ---------- Toast ---------- */
