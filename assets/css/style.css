@@ -222,7 +222,7 @@ textarea.form-control {
   border: 1.5px solid #e8ecf0;
   border-radius: var(--radius-md);
   padding: 8px 12px;
-  color: #3F4244;
+  color: #3f4244;
   font-weight: 500;
   font-size: 14px;
   outline: none;
@@ -311,12 +311,12 @@ select.form-control {
   flex-shrink: 0;
 }
 
-.checkbox input:checked+.box {
+.checkbox input:checked + .box {
   background: #2d6495;
   border-color: #2d6495;
 }
 
-.checkbox input:checked+.box::after {
+.checkbox input:checked + .box::after {
   content: "";
   width: 11px;
   height: 6px;
@@ -359,11 +359,11 @@ select.form-control {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-.toggle input:checked+.slider {
+.toggle input:checked + .slider {
   background: var(--brand-blue);
 }
 
-.toggle input:checked+.slider::before {
+.toggle input:checked + .slider::before {
   transform: translateX(16px);
 }
 
@@ -372,33 +372,33 @@ select.form-control {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   min-height: 100vh;
-  padding: 35px 31px;
+  padding: 35px 31px 25px 31px;
   gap: 40px;
   background: var(--bg-app);
 }
 
 .auth-brand {
-  background: #1f2735;
-  border-radius: var(--radius-xl);
+  background: #202020;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60px;
-  gap: 24px;
+  gap: 57.89px;
   color: #b8cad2;
 }
 
 .auth-brand .logo-large {
-  width: 240px;
-  height: 260px;
+  width: 278px;
+  height: 207px;
 }
 
 .auth-brand .wordmark {
   font-size: 56px;
   font-weight: 400;
   letter-spacing: 0.5px;
-  color: #afc5cc;
+  line-height: 53.33px;
+  color: #83adac;
 }
 
 .auth-form-wrap {
@@ -467,7 +467,7 @@ select.form-control {
   letter-spacing: 0%;
   text-align: center;
   vertical-align: middle;
-  color: #939BA6;
+  color: #939ba6;
 }
 
 .auth-back p {
@@ -818,7 +818,7 @@ select.form-control {
   overflow-y: auto;
 }
 
-.content>* {
+.content > * {
   flex-shrink: 0;
 }
 
@@ -2147,7 +2147,7 @@ select.form-control {
   font-weight: 500;
 }
 
-.info-grid-2>div {
+.info-grid-2 > div {
   padding: 8px 0;
 }
 
@@ -2759,7 +2759,7 @@ select.form-control {
   margin: 0 0 12px;
 }
 
-.detail-paragraph+.detail-paragraph {
+.detail-paragraph + .detail-paragraph {
   margin-top: 4px;
 }
 
