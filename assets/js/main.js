@@ -353,6 +353,15 @@ const legendMargin = {
     }
 };
 
+// const legendAlignLeft = {
+//     id: "legendAlignLeft",
+//     beforeDraw(chart) {
+//         if (chart.legend) {
+//             chart.legend.left -= 12;
+//         }
+//     }
+// };
+
 const chart = new Chart(ctx, {
     type: "line",
     plugins: [legendMargin],

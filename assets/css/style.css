@@ -3308,5 +3308,20 @@ select.form-control {
 }
 
 .overview-row .card{
-  max-height: 386px;
+  height: 386px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-card{
+  flex: 1;
+  min-height: 0;
+  position: relative;
+}
+
+/* QUICK SUMMARY */
+
+.overview-row .summary-list .summary-row{
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(162, 161, 168, 0.1);
 }
