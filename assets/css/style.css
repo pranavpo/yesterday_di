@@ -2591,7 +2591,6 @@ select.form-control {
   align-items: center;
   gap: 16px;
   padding: 12px 8px;
-  border-bottom: 1px solid #f1f3f6;
   cursor: pointer;
 }
 
@@ -2601,10 +2600,6 @@ select.form-control {
 
 .inbox-row.selected {
   background: #f2f7fc;
-}
-
-.inbox-row:last-child {
-  border-bottom: 0;
 }
 
 .inbox-row .who {
