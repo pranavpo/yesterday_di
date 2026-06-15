@@ -411,10 +411,15 @@ select.form-control {
 
 .auth-form {
   width: 100%;
-  max-width: 386px;
+  max-width: 327px;
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.auth-form.larger{
+  width: 100%;
+  max-width: 384px;
 }
 
 .auth-form .login-form-group {
@@ -1710,7 +1715,8 @@ select.form-control {
 
 /* Detail field rows */
 .detail-grid {
-  max-width: 768px;
+  /* max-width: 768px; */
+  max-width: 68.81%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px 32px;
@@ -1746,7 +1752,7 @@ select.form-control {
 
 /* Vehicle cards */
 .vehicle-cards {
-  max-width: 720px;
+  max-width: 68.81%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
@@ -1806,7 +1812,8 @@ select.form-control {
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   margin-top: 12px;
-  max-width: 808px;
+  /* max-width: 808px; */
+  max-width: 50%;
 }
 
 .review-card {
