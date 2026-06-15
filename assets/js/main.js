@@ -343,14 +343,14 @@ Chart.register(window["chartjs-plugin-annotation"]);
 
 // Adds gap between legend and chart plot area
 const legendMargin = {
-    id: "legendMargin",
-    beforeInit(chart) {
-        const originalFit = chart.legend.fit;
-        chart.legend.fit = function () {
-            originalFit.bind(chart.legend)();
-            this.height += 16; // gap in px between legend and chart
-        };
-    }
+  id: "legendMargin",
+  beforeInit(chart) {
+    const originalFit = chart.legend.fit;
+    chart.legend.fit = function () {
+      originalFit.bind(chart.legend)();
+      this.height += 16; // gap in px between legend and chart
+    };
+  }
 };
 
 // const legendAlignLeft = {
@@ -363,167 +363,135 @@ const legendMargin = {
 // };
 
 const chart = new Chart(ctx, {
-    type: "line",
-    plugins: [legendMargin],
+  type: "line",
+  plugins: [legendMargin],
 
-    data: {
-        labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN"],
+  data: {
+    labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN"],
 
-        datasets: [
-            {
-                label: "Driver Subscription",
-                data: [2200, 2600, 4000, 2100, 1000, 2800],
-                borderColor: "#2D6495",
-                backgroundColor: darkGradient,
-                fill: true,
-                tension: 0.45,
-                pointRadius: 0,
-                borderWidth: 3
-            },
-            {
-                label: "Service Fee",
-                data: [800, 1700, 2100, 3500, 1400, 1900],
-                borderColor: "#D6E2F0",
-                backgroundColor: lightGradient,
-                fill: true,
-                tension: 0.45,
-                pointRadius: 0,
-                borderWidth: 3
-            }
-        ]
+    datasets: [
+      {
+        label: "Driver Subscription",
+        data: [2200, 2600, 4000, 2100, 1000, 2800],
+        borderColor: "#2D6495",
+        backgroundColor: darkGradient,
+        fill: true,
+        tension: 0.45,
+        pointRadius: 0,
+        borderWidth: 3
+      },
+      {
+        label: "Service Fee",
+        data: [800, 1700, 2100, 3500, 1400, 1900],
+        borderColor: "#D6E2F0",
+        backgroundColor: lightGradient,
+        fill: true,
+        tension: 0.45,
+        pointRadius: 0,
+        borderWidth: 3
+      }
+    ]
+  },
+
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+
+    layout: {
+      padding: {
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0
+      }
     },
 
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
+    interaction: {
+      mode: "index",
+      intersect: false
+    },
 
-        layout: {
-            padding: {
-                left: 0,
-                right: 0,
-                top: 0,
-                bottom: 0
-            }
+    plugins: {
+      legend: {
+        position: "top",
+        align: "start",
+
+        labels: {
+          usePointStyle: true,
+          pointStyle: "circle",
+          boxWidth: 8,
+          boxHeight: 8,
+          padding: 16
         },
 
-        interaction: {
-            mode: "index",
-            intersect: false
-        },
+        onClick(e, legendItem, legend) {
+          const chart = legend.chart;
+          const selectedIndex = legendItem.datasetIndex;
 
-        plugins: {
-            legend: {
-                position: "top",
-                align: "start",
+          chart.data.datasets.forEach((dataset, index) => {
+            const isActive = index === selectedIndex;
+            dataset.borderColor = isActive ? "#2D6495" : "#D6E2F0";
+            dataset.backgroundColor = isActive ? darkGradient : lightGradient;
+          });
 
-                labels: {
-                    usePointStyle: true,
-                    pointStyle: "circle",
-                    boxWidth: 8,
-                    boxHeight: 8,
-                    padding: 16
-                },
-
-                onClick(e, legendItem, legend) {
-                    const chart = legend.chart;
-                    const selectedIndex = legendItem.datasetIndex;
-
-                    chart.data.datasets.forEach((dataset, index) => {
-                        const isActive = index === selectedIndex;
-                        dataset.borderColor = isActive ? "#2D6495" : "#D6E2F0";
-                        dataset.backgroundColor = isActive ? darkGradient : lightGradient;
-                    });
-
-                    chart.update();
-                }
-            },
-
-            tooltip: {
-                backgroundColor: "#1E2A3B",
-                padding: 12,
-                displayColors: false,
-
-                callbacks: {
-                    label(context) {
-                        return (context.parsed.y / 1000).toFixed(1) + "K";
-                    }
-                }
-            },
-
-            annotation: {
-                annotations: {
-                    marchLine: {
-                        type: "line",
-                        xMin: "MAR",
-                        xMax: "MAR",
-                        borderColor: "#D6DCE5",
-                        borderWidth: 2
-                    },
-
-                    marchPoint: {
-                        type: "point",
-                        xValue: "MAR",
-                        yValue: 4000,
-                        radius: 7,
-                        backgroundColor: "#fff",
-                        borderColor: "#D6E2F0",
-                        borderWidth: 4
-                    },
-
-                    marchLabel: {
-                        type: "label",
-                        xValue: "MAR",
-                        yValue: 4500,
-                        backgroundColor: "#1E2A3B",
-                        color: "#fff",
-                        content: ["4.5K"],
-                        borderRadius: 8,
-                        padding: 10
-                    }
-                }
-            }
-        },
-
-        scales: {
-            x: {
-                grid: {
-                    color: "#E7EDF3",
-                    borderDash: [5, 5],
-                    drawBorder: false
-                },
-
-                ticks: {
-                    color: "#64748B",
-                    font: {
-                        size: 12,
-                        weight: "500"
-                    }
-                }
-            },
-
-            y: {
-                min: 0,
-                max: 5000,
-
-                afterFit(scale) {
-                    scale.width = 40; // fixes left alignment with "Overview" title & legend
-                },
-
-                ticks: {
-                    stepSize: 1000,
-                    color: "#64748B",
-
-                    callback(value) {
-                        return value === 0 ? "0" : value / 1000 + "K";
-                    }
-                },
-
-                grid: {
-                    color: "#E7EDF3",
-                    borderDash: [5, 5],
-                    drawBorder: false
-                }
-            }
+          chart.update();
         }
+      },
+
+      tooltip: {
+        backgroundColor: "#1E2A3B",
+        padding: 12,
+        displayColors: false,
+
+        callbacks: {
+          label(context) {
+            return (context.parsed.y / 1000).toFixed(1) + "K";
+          }
+        }
+      }
+    },
+
+    scales: {
+      x: {
+        grid: {
+          color: "#E7EDF3",
+          lineWidth: 1,
+          borderDash: [6, 6],
+          drawBorder: false,
+          drawTicks: false
+        },
+
+        border: {
+          display: false,
+          dash: [6, 6]
+        }
+      },
+
+      y: {
+        min: 0,
+        max: 5000,
+
+        ticks: {
+          stepSize: 1000,
+          color: "#64748B",
+          callback(value) {
+            return value === 0 ? "0" : value / 1000 + "K";
+          }
+        },
+
+        grid: {
+          color: "#E7EDF3",
+          lineWidth: 1,
+          borderDash: [6, 6],
+          drawBorder: false,
+          drawTicks: false
+        },
+
+        border: {
+          display: false,
+          dash: [6, 6]
+        }
+      }
     }
+  }
 });

@@ -916,8 +916,12 @@ select.form-control {
 /* ---------- Overview chart + quick summary ---------- */
 .overview-row {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
+}
+
+.overview-row.dashboard{
+  grid-template-columns: 2fr 1fr;
 }
 
 .card {
