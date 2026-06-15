@@ -1170,7 +1170,7 @@ select.form-control {
   width: 64px;
   height: 64px;
   font-size: 22px;
-  border: 2px solid #E2EEF7;
+  border: 2px solid #e2eef7;
 }
 
 .avatar img {
@@ -2341,16 +2341,17 @@ select.form-control {
 }
 
 .donut-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: 16px;
   flex: 1;
 }
 
 .donut-wrap svg {
-  width: 100%;
-  height: 100%;
+  width: 320px;
+  height: 320px;
+  flex-shrink: 0;
   display: block;
 }
 
