@@ -898,7 +898,7 @@ select.form-control {
 /* ---------- Overview chart + quick summary ---------- */
 .overview-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   gap: 20px;
 }
 
@@ -2303,16 +2303,17 @@ select.form-control {
 }
 
 .donut-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: 16px;
   flex: 1;
 }
 
 .donut-wrap svg {
-  width: 100%;
-  height: 100%;
+  width: 320px;
+  height: 320px;
+  flex-shrink: 0;
   display: block;
 }
 
