@@ -14,6 +14,12 @@
   </head>
   <body>
     <style>
+      .deliverymodal{
+        width: 100%;
+        max-width:468px;
+        padding: 0px;
+       
+      }
       
 .topbar {
   background: #fff;
@@ -288,24 +294,23 @@
 .modal-warning-box {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  background: #fff8f0;
-  border: 1px solid #fddcb5;
-  border-radius: 10px;
-  padding: 14px 16px;
+  gap: 16px;
+  background: #FEF5EB;
+  border-radius: 12px;
+  border:1.5px solid #FBC586;
+  padding: 16px 39px 16px 16px;
   margin-bottom: 24px;
 }
 
 .modal-warning-icon {
   flex-shrink: 0;
-  margin-top: 1px;
 }
 
 .modal-warning-text {
   font-size: 14px;
   font-weight: 400;
-  color: #101010;
-  line-height: 1.6;
+  color: #27364B;
+  line-height: 22px;
 }
 
 /* ===== MODAL BUTTONS ===== */
@@ -332,7 +337,7 @@
   background: #2D6495;
   color: #fff;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   padding: 12px 20px;
   border-radius: 12px;
@@ -354,7 +359,7 @@
   font-weight: 500;
   padding: 12px 20px;
   border-radius: 10px;
-  border: 1.5px solid #e0e2e8;
+  border: 1.5px solid #2D6495;
   cursor: pointer;
   transition: background 0.15s;
 }
@@ -459,14 +464,35 @@
     padding: 10px 24px;
   }
 
-  /* Status timeline — scroll horizontally */
+  /* Status timeline — vertical list on small screens */
   .status-timeline {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-bottom: 8px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    overflow-x: visible;
   }
-  .status-timeline::-webkit-scrollbar { display: none; }
+
+  .status-step {
+    flex: unset;
+    padding: 14px 0;
+    border-bottom: 1px solid #f1f3f6;
+    gap: 14px;
+  }
+
+  .status-step:last-child {
+    border-bottom: none;
+  }
+
+  .status-step img,
+  .status-step .step-ic {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  .status-arrow {
+    display: none;
+  }
 
   /* Two info cards — stack vertically */
   .info-two-col {
@@ -1041,7 +1067,7 @@
         </header>
 
         <div class="content">
-          <div class="delivery-page-header-row" style="justify-content: space-between">
+          <div class="delivery-page-header-row" style="justify-content: space-between;margin-top:15px;">
             <a class="detail-back" href="deliveries.html" style="margin: 0">
               <svg
                 width="30"
@@ -1385,7 +1411,7 @@
 
     <!-- ============ No Reports Found Modal (View Reports btn) ============ -->
     <div class="modal-overlay hidden" id="noReportsModal">
-      <div class="modal sm">
+      <div class="modal deliverymodal">
         <button class="modal-close" data-modal-close aria-label="Close">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="6" y1="6" x2="18" y2="18" />
@@ -1400,7 +1426,7 @@
 
     <!-- ============ Delete Delivery Modal (Cancel Delivery btn) ============ -->
     <div class="modal-overlay hidden" id="cancelDeliveryModal">
-      <div class="modal sm">
+      <div class="modal deliverymodal">
         <button class="modal-close" data-modal-close aria-label="Close">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="6" y1="6" x2="18" y2="18" />
@@ -1417,7 +1443,9 @@
             </svg>
           </span>
           <p class="modal-warning-text">
-            This action will affect both the sender and driver. The delivery will be removed from the platform and any active progress, communication, or booking status may be interrupted.
+            This action will affect both the sender and driver.<br>
+            The delivery will be removed from the platform and <br>
+            any active progress, communication, or booking <br> status may be interrupted.
           </p>
         </div>
         <div class="modal-actions">
