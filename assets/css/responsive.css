@@ -21,6 +21,11 @@
     gap: 12px;
   }
 
+  .sidebar-head .logo-mark {
+    width: 48px;
+    height: 36px;
+  }
+
   .nav-item {
     justify-content: center;
     padding: 12px;

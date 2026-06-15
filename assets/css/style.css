@@ -652,11 +652,6 @@ select.form-control {
   grid-template-columns: 80px 1fr;
 }
 
-/* .app-shell.is-collapsed .nav-item span,
-.app-shell.is-collapsed .sidebar-head .logo-mark {
-  
-} */
-
 .app-shell.is-collapsed .nav-item {
   justify-content: center;
   padding: 12px;
@@ -671,13 +666,19 @@ select.form-control {
   gap: 12px;
 }
 
+.app-shell.is-collapsed .sidebar-head .logo-mark {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
 /* Main area */
 .main {
   display: flex;
   flex-direction: column;
   min-width: 0;
   min-height: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .topbar {
