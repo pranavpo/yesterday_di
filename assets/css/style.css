@@ -143,6 +143,24 @@ textarea {
   white-space: nowrap;
 }
 
+.btn-2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    border-color 0.15s;
+  white-space: nowrap;
+}
+
 .btn-primary {
   background: #2d6495;
   color: #fff;
@@ -898,7 +916,7 @@ select.form-control {
 /* ---------- Overview chart + quick summary ---------- */
 .overview-row {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 20px;
 }
 
@@ -1147,10 +1165,12 @@ select.form-control {
   flex-shrink: 0;
   overflow: hidden;
 }
-*/ .avatar.lg {
+
+.avatar.lg {
   width: 64px;
   height: 64px;
   font-size: 22px;
+  border: 2px solid #e2eef7;
 }
 
 .avatar img {
@@ -1554,14 +1574,28 @@ select.form-control {
   display: flex;
   align-items: center;
   gap: 18px;
-  flex-wrap: wrap;
+}
+
+.user-user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .user-header-info .name {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--brand-navy);
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
   margin: 0;
+  line-height: 26px;
+  letter-spacing: -2%;
+}
+
+.user-stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
 }
 
 .user-header-info .meta-block {
@@ -1576,11 +1610,15 @@ select.form-control {
   font-size: 14px;
 }
 
+.user-header-info .meta-block strong img {
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
 .divider-v {
   width: 1px;
-  align-self: stretch;
+  height: 42px;
   background: var(--border);
-  margin: 0 6px;
 }
 
 .block-toggle-wrap {
@@ -1734,8 +1772,8 @@ select.form-control {
 
 .detail-actions {
   display: flex;
-  gap: 12px;
-  margin-top: 22px;
+  gap: 32px;
+  margin-top: 32px;
   flex-wrap: wrap;
 }
 
