@@ -411,10 +411,15 @@ select.form-control {
 
 .auth-form {
   width: 100%;
-  max-width: 384px;
+  max-width: 327px;
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.auth-form.larger{
+  width: 100%;
+  max-width: 384px;
 }
 
 .auth-form .login-form-group {
