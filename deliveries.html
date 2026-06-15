@@ -280,40 +280,59 @@
           width: 100%;
         }
 
-        /* Stats grid — 2 columns */
+        /* Stats grid — 3 equal columns */
         .stats-grid {
           grid-template-columns: repeat(3, 1fr);
           gap: 8px;
         }
 
-        /* Last stat card full width */
         .stats-grid .stat-card:last-child {
-          grid-column: span 2;
+          grid-column: unset;
         }
 
-        .stat-value {
-          font-size: 14px;
-        }
-
-        .stat-label {
-          font-size: 11px;
-        }
-
+        /* Stack icon above text, tighten padding */
         .stat-card {
-          padding: 8px;
-          gap: 6px;
+          padding: 10px 6px;
+          gap: 4px;
           border-radius: 14px;
+          flex-direction: column;
+          align-items: flex-start;
+          overflow: visible;
+        }
+
+        .stat-card > div {
+          gap: 2px;
         }
 
         .stat-card img {
-          width: 30px;
-          height: 30px;
+          width: 26px;
+          height: 26px;
         }
 
-        /* Pill tabs */
+        .stat-value {
+          font-size: 13px;
+          font-weight: 700;
+        }
+
+        .stat-label {
+          font-size: 9px;
+          white-space: normal;
+          word-break: break-word;
+          line-height: 1.2;
+        }
+
+        /* Pill tabs — 3 per row */
+        .pill-tab-row {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 8px;
+        }
+
         .pill-tab {
           font-size: 11px;
-          padding: 7px 14px;
+          padding: 7px 10px;
+          text-align: center;
+          width: 100%;
         }
 
         /* Table cards */
