@@ -12,6 +12,10 @@
     grid-template-columns: 1fr;
   }
 
+  .overview-row.dashboard{
+    grid-template-columns: 1fr;
+  }
+
   .app-shell {
     grid-template-columns: 80px 1fr;
   }
@@ -490,6 +494,11 @@
     gap: 12px;
   }
 
+  .overview-row.dashboard{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
   .card {
     padding: 16px;
   }
@@ -612,6 +621,11 @@
   .overview-row {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+
+  .overview-row.dashboard{
+    grid-template-columns: 1fr;
+    gap: 12px
   }
 
   .card {
