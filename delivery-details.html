@@ -14,19 +14,57 @@
   </head>
   <body>
     <style>
-      .page-header-row {
-  padding: 14px 20px;
-  margin-bottom: 12px;
-  border: none;
-  border-radius: 14px;
-}
+      
 .topbar {
   background: #fff;
   border-bottom: 1px solid #e8eaed;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 22px;
+  margin-bottom: 4px;
+}
+
+.delivery-page-header-row{
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: -6px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f0f1f5;
+  border: 1.5px solid #e8ecf0;
+  border-radius: 15px;
+  padding: 10px 16px;
+  height: 44px;
+  width: 260px;
+}
+
+.search-box img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 1;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  width: 100%;
+}
+
+.search-box input::placeholder {
+  color: #707683;
 }
 
 .detail-back {
@@ -59,13 +97,12 @@
 .btn-danger {
   background: #FEEBEC;
   color: #F93642;
-  border: 1px solid ;
+  border: 1.5px solid #FDAFB3;
   font-family: inherit;
   font-size: 14px;
   font-weight: 500;
   padding: 10px 60px;
   border-radius: 15px;
-  border: none;
   cursor: pointer;
   transition: background 0.15s;
 }
@@ -73,6 +110,784 @@
 .btn-cancel:hover {
   background: #ffe0e0;
 }
+
+.status-step .step-name {
+  font-weight: 500;
+  color: #111827;
+  font-size: 14px;
+}
+
+.status-step .step-when {
+  color:#ABB7C2;
+  font-size: 14px;
+}
+
+.step-transit{
+  font-weight: 700;
+}
+
+.section-id {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--brand-navy);
+  margin: 0 0 16px;
+}
+
+.info-grid-2 .value {
+  font-size: 16px;
+  color: var(--brand-navy);
+  font-weight: 400;
+}
+
+.item-card .item-tag {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.info-grid-2 .label {
+  font-size: 14px;
+  font-weight:400; 
+}
+
+.text-secondary {
+  color: #888D98;
+  font-weight:300;
+  font-size: 12px;
+}
+
+.three-card-row .card-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.item-card .item-specs .label {
+  font-size: 14px; 
+  font-weight: 400;
+}
+
+.item-card .item-name {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.item-card .item-specs .value {
+  font-weight: 400;
+}
+
+.link-blue {
+  color:#2D6495;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.person-card .person-name {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.rating-chip {
+  background: #FEF3C6;
+  color:#111827;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.success-rate {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.photos-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.photo-block h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 14px;
+}
+
+.photo-thumbs {
+  display: flex;
+  gap: 10px;
+}
+
+.photo-thumb {
+  width: 100%;
+  flex: 1;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ===== MODAL OVERLAY ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 25, 60, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+/* ===== MODAL BOX ===== */
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 28px 28px;
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== CLOSE BUTTON ===== */
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #f0f1f5;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #555;
+  transition: background 0.15s;
+}
+
+.modal-close:hover {
+  background: #e0e2e8;
+}
+
+/* ===== TITLE ===== */
+.modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 18px;
+}
+
+/* ===== WARNING BOX ===== */
+.modal-warning-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #fff8f0;
+  border: 1px solid #fddcb5;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 24px;
+}
+
+.modal-warning-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.modal-warning-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #101010;
+  line-height: 1.6;
+}
+
+/* ===== MODAL BUTTONS ===== */
+
+.modal h3 {
+  font-size: 26px;
+  color: var(--brand-navy);
+  font-weight: 600;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.avatar.lg {
+  width: 64px;
+  height: 64px;
+  font-size: 18px;
+}
+
+.btn-delete {
+  flex: 1;
+  background: #2D6495;
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border:none;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.btn-delete:hover {
+  opacity: 0.88;
+}
+
+.btn-modal-cancel {
+  flex: 1;
+  background: #fff;
+  color: #2D6495;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 1.5px solid #e0e2e8;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-modal-cancel:hover {
+  background: #f5f6f8;
+}
+
+.modal-desc {
+  font-size: 13.5px;
+  color: #6b7280;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.status-step.s-complete.muted .step-ic {
+  background: none;
+}
+
+.step-ic {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-step.s-complete.muted {
+  background: none;
+}
+
+.s-complete {
+  background: none;
+}
+
+/* ============================================================
+   DELIVERY DETAILS PAGE — RESPONSIVE STYLES
+   Breakpoints: 768px | 420px | 375px | 320px
+   ============================================================ */
+
+/* ───────────────────────────────────────────
+   768px — Tablet
+   ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Topbar */
+  .topbar {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .page-title {
+    width: 100%;
+  }
+
+  .topbar-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .search-box {
+    flex: 1;
+    order: 1;
+    width: auto;
+  }
+
+  .bell-btn {
+    order: 2;
+    flex-shrink: 0;
+  }
+
+  /* Content */
+  .content {
+    padding: 16px;
+  }
+
+  /* Back + action buttons row */
+  .delivery-page-header-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .delivery-page-header-row > div {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .btn-primary,
+  .btn-danger {
+    flex: 1;
+    padding: 10px 16px;
+    text-align: center;
+  }
+
+  /* Status timeline — scroll horizontally */
+  .status-timeline {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 8px;
+  }
+  .status-timeline::-webkit-scrollbar { display: none; }
+
+  /* Two info cards — stack vertically */
+  .info-two-col {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Three cards — stack vertically */
+  .three-card-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Photos row — stack vertically */
+  .photos-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Modal */
+  .modal {
+    margin: 16px;
+    padding: 24px 20px 20px;
+  }
+}
+
+
+/* ───────────────────────────────────────────
+   420px — Large Mobile
+   ─────────────────────────────────────────── */
+@media (max-width: 420px) {
+
+  .page-title {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .topbar-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .search-box {
+    flex: 1;
+    order: 1;
+    width: auto;
+  }
+
+  .bell-btn {
+    order: 2;
+    flex-shrink: 0;
+  }
+
+  /* Back link */
+  .detail-back {
+    font-size: 14px;
+  }
+
+  /* Action buttons */
+  .btn-primary,
+  .btn-danger {
+    font-size: 13px;
+    padding: 9px 12px;
+    border-radius: 12px;
+  }
+
+  /* Status timeline steps */
+  .status-step .step-name {
+    font-size: 12px;
+  }
+
+  .status-step .step-when {
+    font-size: 11px;
+  }
+
+  /* Info grid */
+  .info-grid-2 .label {
+    font-size: 12px;
+  }
+
+  .info-grid-2 .value {
+    font-size: 14px;
+  }
+
+  .section-id {
+    font-size: 16px;
+  }
+
+  /* Person cards */
+  .person-name {
+    font-size: 16px;
+  }
+
+  .avatar.lg {
+    width: 52px;
+    height: 52px;
+    font-size: 15px;
+  }
+
+  /* Item card */
+  .item-name {
+    font-size: 15px;
+  }
+
+  /* Photo thumbs */
+  .photo-thumbs {
+    gap: 8px;
+  }
+
+  /* Modal */
+  .modal {
+    padding: 20px 16px 16px;
+  }
+
+  .modal h3 {
+    font-size: 20px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+}
+
+
+/* ───────────────────────────────────────────
+   375px — Standard Mobile
+   ─────────────────────────────────────────── */
+@media (max-width: 375px) {
+
+  .content {
+    padding: 12px;
+  }
+
+  .topbar {
+    padding: 10px 12px;
+  }
+
+  .topbar-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .search-box {
+    flex: 1;
+    order: 1;
+    width: auto;
+    height: 38px;
+    padding: 8px 12px;
+  }
+
+  .bell-btn {
+    order: 2;
+    flex-shrink: 0;
+  }
+
+  .search-box input {
+    font-size: 14px;
+  }
+
+  /* Header row */
+  .delivery-page-header-row {
+    gap: 10px;
+  }
+
+  .detail-back {
+    font-size: 13px;
+  }
+
+  .btn-primary,
+  .btn-danger {
+    font-size: 12px;
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+
+  /* Timeline */
+  .status-step .step-name {
+    font-size: 11px;
+  }
+
+  .status-step .step-when {
+    font-size: 10px;
+  }
+
+  .status-step img {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* Cards */
+  .card {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .three-card-row .card-title {
+    font-size: 15px;
+  }
+
+  .section-id {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .info-grid-2 .label {
+    font-size: 11px;
+  }
+
+  .info-grid-2 .value {
+    font-size: 13px;
+  }
+
+  /* Person */
+  .avatar.lg {
+    width: 46px;
+    height: 46px;
+    font-size: 13px;
+  }
+
+  .person-name {
+    font-size: 14px;
+  }
+
+  /* Photos */
+  .photo-block h4 {
+    font-size: 13px;
+  }
+
+  .photo-thumbs {
+    gap: 6px;
+  }
+
+  /* Modal */
+  .modal h3 {
+    font-size: 18px;
+  }
+
+  .modal-warning-text {
+    font-size: 13px;
+  }
+
+  .btn-delete,
+  .btn-modal-cancel {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
+
+
+/* ───────────────────────────────────────────
+   320px — Small Mobile
+   ─────────────────────────────────────────── */
+@media (max-width: 320px) {
+
+  .content {
+    padding: 10px;
+  }
+
+  .topbar {
+    padding: 8px 10px;
+  }
+
+  .topbar-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .search-box {
+    flex: 1;
+    order: 1;
+    width: auto;
+    height: 36px;
+    padding: 7px 10px;
+  }
+
+  .search-box img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .search-box input {
+    font-size: 13px;
+  }
+
+  .bell-btn {
+    order: 2;
+    flex-shrink: 0;
+  }
+
+  /* Header row */
+  .detail-back {
+    font-size: 12px;
+  }
+
+  .detail-back svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .btn-primary,
+  .btn-danger {
+    font-size: 11px;
+    padding: 7px 8px;
+    border-radius: 10px;
+  }
+
+  /* Timeline */
+
+   .status-step {
+    gap: 14px;
+    padding: 12px 0;
+  }
+
+  .status-step img,
+  .status-step .step-ic {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+  
+  .step-text .step-name,
+  .step-text .step-transit {
+    font-size: 13px;
+  }
+
+  .status-step img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .status-step .step-name {
+    font-size: 10px;
+  }
+
+  .status-step .step-when {
+    font-size: 11px;
+  }
+
+  .status-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Cards */
+  .card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .three-card-row .card-title {
+    font-size: 14px;
+  }
+
+  .section-id {
+    font-size: 13px;
+  }
+
+  .info-grid-2 .label {
+    font-size: 10px;
+  }
+
+  .info-grid-2 .value {
+    font-size: 12px;
+  }
+
+  /* Person */
+  .avatar.lg {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .person-name {
+    font-size: 13px;
+  }
+
+  .link-blue {
+    font-size: 13px;
+  }
+
+  /* Photos */
+  .photo-block h4 {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .photo-thumbs {
+    gap: 5px;
+  }
+
+  /* Modal */
+  .modal {
+    margin: 10px;
+    padding: 16px 14px 14px;
+    border-radius: 12px;
+  }
+
+  .modal h3 {
+    font-size: 16px;
+  }
+
+  .modal-warning-text {
+    font-size: 12px;
+  }
+
+  .btn-delete,
+  .btn-modal-cancel {
+    font-size: 13px;
+    padding: 9px 12px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+
     </style>
     <div class="app-shell" id="appShell">
       <!-- ====================== Sidebar ====================== -->
@@ -192,40 +1007,21 @@
           </h1>
           <div class="topbar-actions">
             <div class="search-box">
-              <svg
-                class="search-ic"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-              >
-                <circle cx="11" cy="11" r="7" />
-                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              </svg>
+              <img src="assets/images/Search.png" alt="Open icon" />
               <input type="search" placeholder="Search Deliveries" />
             </div>
             <button class="bell-btn" id="bellBtn" aria-label="Notifications">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-              >
-                <path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z" />
-                <path d="M10 21a2 2 0 0 0 4 0" />
-              </svg>
+              <img src="assets/images/notification.png" alt="Open icon" width="20" height="20"/>
             </button>
           </div>
         </header>
 
         <div class="content">
-          <div class="page-header-row" style="justify-content: space-between">
+          <div class="delivery-page-header-row" style="justify-content: space-between">
             <a class="detail-back" href="deliveries.html" style="margin: 0">
               <svg
-                width="18"
-                height="18"
+                width="30"
+                height="30" 
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -249,25 +1045,16 @@
           <section class="card">
             <div class="status-timeline" id="statusTimeline">
               <div class="status-step s-open">
-                <span class="step-ic"
-                  ><svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                  >
-                    <path d="M6 7h12l-1 13H7z" />
-                    <path d="M9 7a3 3 0 0 1 6 0" /></svg
-                ></span>
+                <span class="step-ic">
+                <img src="assets/images/openstat.png" alt="Open icon" width="41" height="42" />
+                </span>
                 <div class="step-text">
                   <span class="step-name">Open</span
                   ><span class="step-when">11/ 05 - 11.30</span>
                 </div>
               </div>
-              <span class="status-arrow"
-                ><svg
+              <span class="status-arrow">
+                <svg
                   width="22"
                   height="22"
                   viewBox="0 0 24 24"
@@ -278,26 +1065,16 @@
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="13 6 19 12 13 18" /></svg
               ></span>
+              </span>
               <div class="status-step s-await">
-                <span class="step-ic"
-                  ><svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                  >
-                    <path d="M3 7l9-4 9 4-9 4z" />
-                    <path d="M3 7v10l9 4 9-4V7" /></svg
-                ></span>
+                <img src="assets/images/awaitingpick.png" alt="Open icon" width="41" height="42" />
                 <div class="step-text">
                   <span class="step-name">Awaiting Pickup</span
                   ><span class="step-when">11/ 05 - 11.30</span>
                 </div>
               </div>
-              <span class="status-arrow"
-                ><svg
+              <span class="status-arrow">
+                <svg
                   width="22"
                   height="22"
                   viewBox="0 0 24 24"
@@ -309,22 +1086,9 @@
                   <polyline points="13 6 19 12 13 18" /></svg
               ></span>
               <div class="status-step s-transit">
-                <span class="step-ic"
-                  ><svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                  >
-                    <rect x="2" y="8" width="13" height="9" rx="2" />
-                    <path d="M15 11h4l2 3v3h-6z" />
-                    <circle cx="6.5" cy="18" r="1.8" />
-                    <circle cx="17" cy="18" r="1.8" /></svg
-                ></span>
+              <img src="assets/images/active-intransit.png" alt="Open icon" width="41" height="42" />
                 <div class="step-text">
-                  <span class="step-name">In Transit</span
+                  <span class="step-transit">In Transit</span
                   ><span class="step-when">11/ 05 - 13.30</span>
                 </div>
               </div>
@@ -340,22 +1104,20 @@
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="13 6 19 12 13 18" /></svg
               ></span>
-              <div class="status-step muted">
-                <span class="step-ic"
-                  ><svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <circle cx="12" cy="12" r="9" />
-                    <polyline points="8 12 11 15 16 9" /></svg
-                ></span>
+              <div class="status-step s-complete muted" id="stepCompleted" style="cursor:pointer;">
+                <span class="step-ic">
+                  <span id="completedPlaceholder">
+                    <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="41" height="41" rx="10" fill="#f0f1f5"/>
+                      <circle cx="20.5" cy="20.5" r="9" stroke="#c0c4d0" stroke-width="1.8"/>
+                      <polyline points="16,20.5 19,23.5 25,17.5" stroke="#c0c4d0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </span>
+                  <img id="completedIcon" src="" alt="Completed icon" width="41" height="41" data-active="assets/images/completedstat.png" style="display:none;" />
+                </span>
                 <div class="step-text">
-                  <span class="step-name">Completed</span
-                  ><span class="step-when">--</span>
+                  <span class="step-name" id="completedLabel">Completed</span
+                  ><span class="step-when" id="completedTime">--</span>
                 </div>
               </div>
               <span class="status-arrow muted"
@@ -528,7 +1290,7 @@
               <h3 class="card-title" style="margin: 0 0 14px">Driver</h3>
               <div class="person-row">
                 <span class="avatar lg" style="background: #3e5d7e">
-                  <img src="assets/images/avatar-luke.svg" alt="" />
+                  <img src="assets/images/markjackson.jpg" alt="" />
                 </span>
                 <div class="person-info">
                   <span class="person-name">Mark Jackson</span>
@@ -556,7 +1318,7 @@
                   >89% Success Rate</span
                 >
               </div>
-              <div class="success-rate" style="margin-top: 6px">
+              <div class="succss-rate" style="margin-top: 6px">
                 <strong style="color: var(--brand-navy)">Vehicle Type:</strong>
                 Truck
               </div>
@@ -572,203 +1334,128 @@
           <!-- Map -->
           <section class="card map-card">
             <div class="map-placeholder" aria-label="Delivery route map">
-              <svg
-                class="map-bg"
-                viewBox="0 0 1000 280"
-                preserveAspectRatio="xMidYMid slice"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="1000" height="280" fill="#EFE9D9" />
-                <!-- horizontal roads -->
-                <g stroke="#FFFFFF" stroke-width="14" stroke-linecap="round">
-                  <line x1="0" y1="60" x2="1000" y2="60" />
-                  <line x1="0" y1="140" x2="1000" y2="140" />
-                  <line x1="0" y1="210" x2="1000" y2="210" />
-                </g>
-                <!-- vertical roads -->
-                <g stroke="#FFFFFF" stroke-width="10" stroke-linecap="round">
-                  <line x1="120" y1="0" x2="120" y2="280" />
-                  <line x1="300" y1="0" x2="300" y2="280" />
-                  <line x1="500" y1="0" x2="500" y2="280" />
-                  <line x1="700" y1="0" x2="700" y2="280" />
-                  <line x1="860" y1="0" x2="860" y2="280" />
-                </g>
-                <!-- park / area -->
-                <rect
-                  x="160"
-                  y="170"
-                  width="120"
-                  height="60"
-                  fill="#C8DCB1"
-                  rx="6"
-                />
-                <rect
-                  x="540"
-                  y="80"
-                  width="100"
-                  height="44"
-                  fill="#D5C3A0"
-                  rx="4"
-                />
-                <rect
-                  x="740"
-                  y="170"
-                  width="90"
-                  height="40"
-                  fill="#CFB89B"
-                  rx="4"
-                />
-                <!-- route line -->
-                <path
-                  d="M150 220 C 250 200, 320 160, 420 145 C 520 130, 600 130, 720 100 C 800 90, 860 70, 900 60"
-                  fill="none"
-                  stroke="#2B5687"
-                  stroke-width="3"
-                  stroke-dasharray="6 4"
-                />
-              </svg>
-              <span
-                class="map-pin"
-                style="left: 13%; top: 74%; background: #f59e0b"
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="map-pin"
-                style="left: 88%; top: 18%; background: var(--brand-blue)"
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"
-                  />
-                </svg>
-              </span>
+              <img src="assets/images/deliverymmap.png">
             </div>
           </section>
 
           <!-- Photos -->
-          <section class="photos-row">
-            <div class="card photo-block">
-              <h4>Pick Up Photos (4)</h4>
-              <div class="photo-thumbs">
-                <div class="photo-thumb"></div>
-                <div class="photo-thumb"></div>
-                <div class="photo-thumb"></div>
-                <div class="photo-thumb"></div>
-              </div>
-            </div>
-            <div class="card photo-block">
-              <h4>Drop Off Photos (4)</h4>
-              <div class="photo-thumbs">
-                <div class="photo-thumb"></div>
-                <div class="photo-thumb"></div>
-                <div class="photo-thumb"></div>
-                <div class="photo-thumb"></div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </main>
+<section class="photos-row">
+  <div class="card photo-block">
+    <h4>Pick Up Photos (4)</h4>
+    <div class="photo-thumbs">
+      <img class="photo-thumb" src="assets/images/deliverysofa.jpg" alt="Pick Up Photo 1" />
+      <img class="photo-thumb" src="assets/images/deliverysofa.jpg" alt="Pick Up Photo 2" />
+      <img class="photo-thumb" src="assets/images/deliverysofa.jpg" alt="Pick Up Photo 3" />
+      <img class="photo-thumb" src="assets/images/deliverysofa.jpg" alt="Pick Up Photo 4" />
     </div>
-
-    <!-- ============ Cancel/Delete Delivery modal ============ -->
-    <div class="modal-overlay hidden" id="cancelDeliveryModal">
-      <div class="modal">
-        <button class="modal-close" data-modal-close aria-label="Close">
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <line x1="6" y1="6" x2="18" y2="18" />
-            <line x1="6" y1="18" x2="18" y2="6" />
-          </svg>
-        </button>
-        <h3>Delete Delivery?</h3>
-        <div class="note-box">
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              d="M10.3 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.7 3.86a2 2 0 0 0-3.4 0z"
-            />
-            <line x1="12" y1="9" x2="12" y2="13" />
-            <line x1="12" y1="17" x2="12.01" y2="17" />
-          </svg>
-          This action will affect both the sender and driver. The delivery will
-          be removed from the platform and any active progress, communication,
-          or booking status may be interrupted.
-        </div>
-        <div class="modal-actions">
-          <button class="btn btn-primary">Delete Delivery</button>
-          <button class="btn btn-secondary" data-modal-close>Cancel</button>
-        </div>
-      </div>
+  </div>
+  <div class="card photo-block">
+    <h4>Drop Off Photos (4)</h4>
+    <div class="photo-thumbs">
+      <img class="photo-thumb" src="assets/images/deliverysofa.jpg" alt="Drop Off Photo 1" />
+      <img class="photo-thumb" src="assets/images/deliverysofa.jpg" alt="Drop Off Photo 2" />
+      <img class="photo-thumb" src="assets/images/deliverysofa.jpg" alt="Drop Off Photo 3" />
+      <img class="photo-thumb" src="assets/images/deliverysofa.jpg" alt="Drop Off Photo 4" />
     </div>
+  </div>
+</section>
 
-    <!-- ============ No Reports Found modal ============ -->
+    <!-- ============ No Reports Found Modal (View Reports btn) ============ -->
     <div class="modal-overlay hidden" id="noReportsModal">
       <div class="modal sm">
         <button class="modal-close" data-modal-close aria-label="Close">
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="6" y1="6" x2="18" y2="18" />
             <line x1="6" y1="18" x2="18" y2="6" />
           </svg>
         </button>
-        <h3>No Reports Found</h3>
-        <p>No reports have been filed for this delivery.</p>
-        <button class="btn btn-primary btn-block" data-modal-close>Okay</button>
+        <h3 class="modal-title">No Reports Found</h3>
+        <p class="modal-desc">No reports have been filed for this delivery.</p>
+        <button class="btn btn-delete btn-block" data-modal-close>Okay</button>
+      </div>
+    </div>
+
+    <!-- ============ Delete Delivery Modal (Cancel Delivery btn) ============ -->
+    <div class="modal-overlay hidden" id="cancelDeliveryModal">
+      <div class="modal sm">
+        <button class="modal-close" data-modal-close aria-label="Close">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="6" y1="6" x2="18" y2="18" />
+            <line x1="6" y1="18" x2="18" y2="6" />
+          </svg>
+        </button>
+        <h3 class="modal-title">Delete Delivery?</h3>
+        <div class="modal-warning-box">
+          <span class="modal-warning-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e07b39" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <circle cx="12" cy="17" r="0.5" fill="#e07b39"/>
+            </svg>
+          </span>
+          <p class="modal-warning-text">
+            This action will affect both the sender and driver. The delivery will be removed from the platform and any active progress, communication, or booking status may be interrupted.
+          </p>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-delete" id="confirmDeleteBtn">Delete Delivery</button>
+          <button class="btn btn-modal-cancel" data-modal-close>Cancel</button>
+        </div>
       </div>
     </div>
 
     <script src="assets/js/main.js"></script>
     <script>
-      // Page-level triggers
-      (function () {
-        var cancelBtn = document.getElementById("cancelDeliveryBtn");
-        if (cancelBtn)
-          cancelBtn.addEventListener("click", function () {
-            document
-              .getElementById("cancelDeliveryModal")
-              .classList.remove("hidden");
+      // View Reports → No Reports Found
+      document.getElementById('viewReportsBtn').addEventListener('click', function () {
+        document.getElementById('noReportsModal').classList.remove('hidden');
+      });
+
+      // Cancel Delivery → Delete Delivery?
+      document.getElementById('cancelDeliveryBtn').addEventListener('click', function () {
+        document.getElementById('cancelDeliveryModal').classList.remove('hidden');
+      });
+
+      // Close all modals
+      document.querySelectorAll('[data-modal-close]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          document.querySelectorAll('.modal-overlay').forEach(function (m) {
+            m.classList.add('hidden');
           });
-        var viewBtn = document.getElementById("viewReportsBtn");
-        if (viewBtn)
-          viewBtn.addEventListener("click", function () {
-            document
-              .getElementById("noReportsModal")
-              .classList.remove("hidden");
-          });
-      })();
+        });
+      });
+      // Completed step toggle — starts INACTIVE with grey tick
+      var stepCompleted = document.getElementById('stepCompleted');
+      var completedIcon = document.getElementById('completedIcon');
+      var completedPlaceholder = document.getElementById('completedPlaceholder');
+      var completedLabel = document.getElementById('completedLabel');
+      var completedTime = document.getElementById('completedTime');
+      var isCompleted = false;
+
+      stepCompleted.addEventListener('click', function () {
+        isCompleted = !isCompleted;
+        if (isCompleted) {
+          completedIcon.src = completedIcon.dataset.active;
+          completedIcon.style.display = 'block';
+          completedPlaceholder.style.display = 'none';
+          stepCompleted.classList.remove('muted');
+          stepCompleted.classList.add('active');
+          completedLabel.style.fontWeight = '700';
+          completedLabel.style.color = '#1a1a2e';
+          completedTime.textContent = '11/ 05 - 13.30';
+          completedTime.style.color = '#6b7280';
+        } else {
+          completedIcon.src = '';
+          completedIcon.style.display = 'none';
+          completedPlaceholder.style.display = 'block';
+          stepCompleted.classList.add('muted');
+          stepCompleted.classList.remove('active');
+          completedLabel.style.fontWeight = '';
+          completedLabel.style.color = '';
+          completedTime.textContent = '--';
+          completedTime.style.color = '';
+        }
+      });
     </script>
   </body>
 </html>

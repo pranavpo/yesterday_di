@@ -18,12 +18,23 @@
   padding: 24px 28px;
 }
 
+.delivery-topbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: -16px;
+  padding: 20px 32px;
+  gap: 16px;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 12px;
-  margin-top: 8px;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
   width: 100%;
 }
 
@@ -82,7 +93,7 @@ color: #111827;
   padding: 9px 20px;
   border-radius: 12px;
   background: #E8ECF0;
-  color: #555;
+  color: #404959;
   transition: background 0.15s, color 0.15s;
   white-space: nowrap;
 }
@@ -102,7 +113,7 @@ color: #111827;
   align-items: center;
   gap: 8px;
   background: #f0f1f5;
-  border: none;
+  border: 1.5px solid #e8ecf0;
   border-radius: 15px;
   padding: 10px 16px;
   height: 44px;
@@ -127,6 +138,7 @@ color: #111827;
   width: 100%;
 }
 
+
 .search-box input::placeholder {
   color: #707683;
 }
@@ -148,12 +160,452 @@ color: #111827;
   gap: 10px;
 }
 
+.delivery-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #2D6495;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
 .badge-open      { background: #FFEEDB; color: #F08910; }
 .badge-await     { background: #DBEDFF; color: #105EF0; }
 .badge-transit   { background: #F3DBFF; color: #9610F0; }
 .badge-complete  { background: #CEECD7; color: #31B057; }
 .badge-cancelled { background: #FDE7EB; color: #EE1133; }
+
+/* ============================================================
+   DELIVERIES PAGE — RESPONSIVE STYLES
+   Breakpoints: 768px | 420px | 375px | 320px
+   ============================================================ */
+
+/* ───────────────────────────────────────────
+   768px — Tablet
+   ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Sidebar collapses — handled by existing sidebar toggle */
+  .app-shell {
+    flex-direction: column;
+  }
+
+  /* Topbar */
+  .delivery-topbar {
+    padding: 14px 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .topbar-actions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .bell-btn {
+    flex-shrink: 0;
+    margin-left: auto;
+  }
   
+  .search-box {
+    flex: 1;
+    width: auto;
+  }
+
+  /* Content area */
+  .content {
+    padding: 16px;
+  }
+
+  /* Stats grid — 3 columns then 2 */
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Pill tabs scroll horizontally */
+  .pill-tab-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .pill-tab-row::-webkit-scrollbar { display: none; }
+
+  /* Table toolbar stacks */
+  .table-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .filters {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .filter-select {
+    flex: 1;
+    min-width: 80px;
+  }
+
+  /* Table — card style on mobile */
+  .data-table thead {
+    display: none;
+  }
+
+  .data-table tbody tr {
+    display: block;
+    background: #fff;
+    border: 1px solid #E7E9EC;
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+
+  .data-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border: none;
+    font-size: 13px;
+  }
+
+  .data-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #111827;
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-right: 12px;
+  }
+
+  /* Hide the last td (eye icon) label */
+  .data-table td:last-child::before {
+    content: none;
+  }
+
+  .data-table td:last-child {
+    justify-content: flex-end;
+  }
+}
+
+/*720px*/
+
+@media (max-width: 720px) {
+  .search-box {
+    flex: 1;
+    order: 1;
+  }
+
+  .bell-btn {
+    order: 2;
+    flex-shrink: 0;
+    margin-left: 0;
+  }
+
+  .topbar-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+  }
+}
+/* ───────────────────────────────────────────
+   425px — Large Mobile
+   ─────────────────────────────────────────── */
+@media (max-width: 425px) {
+
+  @media (max-width: 425px) {
+  .delivery-topbar {
+    flex-wrap: wrap;
+  }
+
+  .page-title {
+    width: 100%;
+  }
+
+  .topbar-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .search-box {
+    flex: 1;
+    order: 1;
+  }
+
+  .bell-btn {
+    order: 2;
+    flex-shrink: 0;
+  }
+}
+
+  /* Stats grid — 2 columns */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* Last stat card full width */
+  .stats-grid .stat-card:last-child {
+    grid-column: span 2;
+  }
+
+  .stat-value {
+    font-size: 16px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  .stat-card {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .stat-card img {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* Pill tabs */
+  .pill-tab {
+    font-size: 11px;
+    padding: 7px 14px;
+  }
+
+  /* Table cards */
+  .data-table td {
+    font-size: 12px;
+  }
+
+  .data-table td::before {
+    font-size: 11px;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .delivery-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 9px;
+  }
+}
+
+
+/* ───────────────────────────────────────────
+   375px — Standard Mobile (iPhone)
+   ─────────────────────────────────────────── */
+@media (max-width: 375px) {
+
+  .content {
+    padding: 12px;
+  }
+
+  .delivery-topbar {
+    padding: 10px 12px;
+  }
+
+  .page-title { width: 100%; }
+  .topbar-actions { width: 100%; display: flex; flex-direction: row; align-items: center; gap: 8px; }
+  .search-box { flex: 1; order: 1; }
+  .bell-btn { order: 2; flex-shrink: 0; }
+
+  /* Stats grid stays 2-col but tighter */
+  .stats-grid {
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .stat-card img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .stat-value {
+    font-size: 18px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  /* Search box */
+  .search-box {
+    height: 38px;
+    padding: 8px 12px;
+  }
+
+  .search-box input {
+    font-size: 14px;
+  }
+
+  /* Table cards */
+  .data-table tbody tr {
+    padding: 12px 14px;
+    border-radius: 12px;
+  }
+
+  .data-table td {
+    font-size: 11.5px;
+    padding: 5px 0;
+  }
+
+  .data-table td::before {
+    font-size: 10.5px;
+    min-width: 90px;
+  }
+
+  /* Filters */
+  .filter-select {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .table-title {
+    font-size: 14px;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 3px 9px;
+  }
+}
+
+
+/* ───────────────────────────────────────────
+   320px — Small Mobile
+   ─────────────────────────────────────────── */
+@media (max-width: 320px) {
+
+  .content {
+    padding: 10px;
+  }
+
+  .page-title { width: 100%; }
+  .topbar-actions { width: 100%; display: flex; flex-direction: row; align-items: center; gap: 8px; }
+  .search-box { flex: 1; order: 1; }
+  .bell-btn { order: 2; flex-shrink: 0; }
+
+  /* Stats grid — single column */
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .stats-grid .stat-card:last-child {
+    grid-column: span 2;
+  }
+
+  .stat-card {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .stat-card img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .stat-value {
+    font-size: 16px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  /* Pill tabs */
+  .pill-tab {
+    font-size: 10px;
+    padding: 6px 10px;
+    border-radius: 10px;
+  }
+
+  /* Search */
+  .search-box {
+    height: 36px;
+    padding: 7px 10px;
+  }
+
+  .search-box img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .search-box input {
+    font-size: 13px;
+  }
+
+  /* Table cards */
+  .data-table tbody tr {
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .data-table td {
+    font-size: 11px;
+    padding: 4px 0;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .data-table td::before {
+    font-size: 10px;
+    min-width: 80px;
+  }
+
+  .delivery-avatar {
+    width: 26px;
+    height: 26px;
+    font-size: 8px;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  .filter-select {
+    font-size: 11px;
+    padding: 5px 6px;
+  }
+
+  .table-title {
+    font-size: 13px;
+  }
+
+  .filters {
+    gap: 6px;
+  }
+}
+
     </style>
     <div class="app-shell" id="appShell">
       <!-- ====================== Sidebar ====================== -->
@@ -251,7 +703,7 @@ color: #111827;
 
       <!-- ====================== Main ====================== -->
       <main class="main">
-        <header class="topbar">
+        <header class="delivery-topbar">
           <h1 class="page-title">
             <button
               class="sidebar-toggle"
@@ -274,7 +726,7 @@ color: #111827;
           <div class="topbar-actions">
             <div class="search-box">
              <img src="assets/images/Search.png" alt="Open icon" />
-              <input type="search" placeholder="Search  Deliveries" />
+              <input type="search" placeholder="Search Deliveries" />
             </div>
             <button class="bell-btn" id="bellBtn" aria-label="Notifications">
               <img src="assets/images/notification.png" alt="Open icon" width="20" height="20"/>
@@ -378,7 +830,7 @@ color: #111827;
                   <td data-label="Item">Sofa Set</td>
                   <td data-label="Sender">
                     <div class="cell-user">
-                      <span class="avatar">SB</span><span>Samuel Bright</span>
+                      <span class=" delivery-avatar">SB</span><span>Samuel Bright</span>
                     </div>
                   </td>
                   <td data-label="Driver">--</td>
@@ -410,12 +862,12 @@ color: #111827;
                   <td data-label="Item">Washing Machine</td>
                   <td data-label="Sender">
                     <div class="cell-user">
-                      <span class="avatar">JS</span><span>John Smith</span>
+                      <span class="delivery-avatar">JS</span><span>John Smith</span>
                     </div>
                   </td>
                   <td data-label="Driver">
                     <div class="cell-user">
-                      <span class="avatar">JJ</span><span>Jack Johnson</span>
+                      <span class="delivery-avatar">JJ</span><span>Jack Johnson</span>
                     </div>
                   </td>
                   <td data-label="Route">GC - SYD</td>
@@ -446,12 +898,12 @@ color: #111827;
                   <td data-label="Item">Small Parcel</td>
                   <td data-label="Sender">
                     <div class="cell-user">
-                      <span class="avatar">SB</span><span>Samuel Bright</span>
+                      <span class="delivery-avatar">SB</span><span>Samuel Bright</span>
                     </div>
                   </td>
                   <td data-label="Driver">
                     <div class="cell-user">
-                      <span class="avatar">MW</span><span>Mary White</span>
+                      <span class="delivery-avatar">MW</span><span>Mary White</span>
                     </div>
                   </td>
                   <td data-label="Route">GC - SYD</td>
@@ -482,12 +934,12 @@ color: #111827;
                   <td data-label="Item">Office Chair</td>
                   <td data-label="Sender">
                     <div class="cell-user">
-                      <span class="avatar">SB</span><span>Samuel Bright</span>
+                      <span class="delivery-avatar">SB</span><span>Samuel Bright</span>
                     </div>
                   </td>
                   <td data-label="Driver">
                     <div class="cell-user">
-                      <span class="avatar">MW</span><span>Mary White</span>
+                      <span class="delivery-avatar">MW</span><span>Mary White</span>
                     </div>
                   </td>
                   <td data-label="Route">GC - SYD</td>
@@ -518,12 +970,12 @@ color: #111827;
                   <td data-label="Item">Books (5kg)</td>
                   <td data-label="Sender">
                     <div class="cell-user">
-                      <span class="avatar">SB</span><span>Samuel Bright</span>
+                      <span class="delivery-avatar">SB</span><span>Samuel Bright</span>
                     </div>
                   </td>
                   <td data-label="Driver">
                     <div class="cell-user">
-                      <span class="avatar">MW</span><span>Mary White</span>
+                      <span class="delivery-avatar">MW</span><span>Mary White</span>
                     </div>
                   </td>
                   <td data-label="Route">GC - SYD</td>
@@ -554,12 +1006,12 @@ color: #111827;
                   <td data-label="Item">Refrigerator</td>
                   <td data-label="Sender">
                     <div class="cell-user">
-                      <span class="avatar">JK</span><span>Julia King</span>
+                      <span class="delivery-avatar">JK</span><span>Julia King</span>
                     </div>
                   </td>
                   <td data-label="Driver">
                     <div class="cell-user">
-                      <span class="avatar">RP</span><span>Robert Parker</span>
+                      <span class="delivery-avatar">RP</span><span>Robert Parker</span>
                     </div>
                   </td>
                   <td data-label="Route">NYC - WH1</td>
@@ -590,12 +1042,12 @@ color: #111827;
                   <td data-label="Item">Refrigerator</td>
                   <td data-label="Sender">
                     <div class="cell-user">
-                      <span class="avatar">JK</span><span>Julia King</span>
+                      <span class="delivery-avatar">JK</span><span>Julia King</span>
                     </div>
                   </td>
                   <td data-label="Driver">
                     <div class="cell-user">
-                      <span class="avatar">RP</span><span>Robert Parker</span>
+                      <span class="delivery-avatar">RP</span><span>Robert Parker</span>
                     </div>
                   </td>
                   <td data-label="Route">NYC - WH1</td>
@@ -626,12 +1078,12 @@ color: #111827;
                   <td data-label="Item">Washing Machine</td>
                   <td data-label="Sender">
                     <div class="cell-user">
-                      <span class="avatar">SB</span><span>Samuel Bright</span>
+                      <span class="delivery-avatar">SB</span><span>Samuel Bright</span>
                     </div>
                   </td>
                   <td data-label="Driver">
                     <div class="cell-user">
-                      <span class="avatar">MW</span><span>Mary White</span>
+                      <span class="delivery-avatar">MW</span><span>Mary White</span>
                     </div>
                   </td>
                   <td data-label="Route">GC - SYD</td>
@@ -662,12 +1114,12 @@ color: #111827;
                   <td data-label="Item">Refrigerator</td>
                   <td data-label="Sender">
                     <div class="cell-user">
-                      <span class="avatar">JK</span><span>Julia King</span>
+                      <span class="delivery-avatar">JK</span><span>Julia King</span>
                     </div>
                   </td>
                   <td data-label="Driver">
                     <div class="cell-user">
-                      <span class="avatar">RP</span><span>Robert Parker</span>
+                      <span class="delivery-avatar">RP</span><span>Robert Parker</span>
                     </div>
                   </td>
                   <td data-label="Route">NYC - WH1</td>
@@ -698,12 +1150,12 @@ color: #111827;
                   <td data-label="Item">Small Parcel</td>
                   <td data-label="Sender">
                     <div class="cell-user">
-                      <span class="avatar">SB</span><span>Samuel Bright</span>
+                      <span class="delivery-avatar">SB</span><span>Samuel Bright</span>
                     </div>
                   </td>
                   <td data-label="Driver">
                     <div class="cell-user">
-                      <span class="avatar">MW</span><span>Mary White</span>
+                      <span class="delivery-avatar">MW</span><span>Mary White</span>
                     </div>
                   </td>
                   <td data-label="Route">GC - SYD</td>
@@ -734,12 +1186,12 @@ color: #111827;
                   <td data-label="Item">Office Chair</td>
                   <td data-label="Sender">
                     <div class="cell-user">
-                      <span class="avatar">SB</span><span>Samuel Bright</span>
+                      <span class="delivery-avatar">SB</span><span>Samuel Bright</span>
                     </div>
                   </td>
                   <td data-label="Driver">
                     <div class="cell-user">
-                      <span class="avatar">MW</span><span>Mary White</span>
+                      <span class="delivery-avatar">MW</span><span>Mary White</span>
                     </div>
                   </td>
                   <td data-label="Route">GC - SYD</td>
@@ -770,12 +1222,12 @@ color: #111827;
                   <td data-label="Item">Washing Machine</td>
                   <td data-label="Sender">
                     <div class="cell-user">
-                      <span class="avatar">SB</span><span>Samuel Bright</span>
+                      <span class="delivery-avatar">SB</span><span>Samuel Bright</span>
                     </div>
                   </td>
                   <td data-label="Driver">
                     <div class="cell-user">
-                      <span class="avatar">MW</span><span>Mary White</span>
+                      <span class="delivery-avatar">MW</span><span>Mary White</span>
                     </div>
                   </td>
                   <td data-label="Route">GC - SYD</td>
@@ -806,12 +1258,12 @@ color: #111827;
                   <td data-label="Item">Books (5kg)</td>
                   <td data-label="Sender">
                     <div class="cell-user">
-                      <span class="avatar">SB</span><span>Samuel Bright</span>
+                      <span class="delivery-avatar">SB</span><span>Samuel Bright</span>
                     </div>
                   </td>
                   <td data-label="Driver">
                     <div class="cell-user">
-                      <span class="avatar">MW</span><span>Mary White</span>
+                      <span class="delivery-avatar">MW</span><span>Mary White</span>
                     </div>
                   </td>
                   <td data-label="Route">GC - SYD</td>
@@ -842,12 +1294,12 @@ color: #111827;
                   <td data-label="Item">Small Parcel</td>
                   <td data-label="Sender">
                     <div class="cell-user">
-                      <span class="avatar">SB</span><span>Samuel Bright</span>
+                      <span class="delivery-avatar">SB</span><span>Samuel Bright</span>
                     </div>
                   </td>
                   <td data-label="Driver">
                     <div class="cell-user">
-                      <span class="avatar">MW</span><span>Mary White</span>
+                      <span class="delivery-avatar">MW</span><span>Mary White</span>
                     </div>
                   </td>
                   <td data-label="Route">GC - SYD</td>
@@ -878,12 +1330,12 @@ color: #111827;
                   <td data-label="Item">Washing Machine</td>
                   <td data-label="Sender">
                     <div class="cell-user">
-                      <span class="avatar">JS</span><span>John Smith</span>
+                      <span class="delivery-avatar">JS</span><span>John Smith</span>
                     </div>
                   </td>
                   <td data-label="Driver">
                     <div class="cell-user">
-                      <span class="avatar">JJ</span><span>Jack Johnson</span>
+                      <span class="delivery-avatar">JJ</span><span>Jack Johnson</span>
                     </div>
                   </td>
                   <td data-label="Route">GC - SYD</td>
