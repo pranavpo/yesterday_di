@@ -3301,7 +3301,11 @@ select.form-control {
 
 .chart-card {
   position: relative;
-  height: 400px;
+  height: 386px;
   /* adjust as needed */
   width: 100%;
+}
+
+.overview-row .card{
+  max-height: 386px;
 }
