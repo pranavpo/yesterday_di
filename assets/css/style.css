@@ -2596,12 +2596,12 @@ select.form-control {
 }
 
 .inbox-row:hover {
-  background: #f7f9fc;
+  background: none;
 }
 
-.inbox-row.selected {
+/* .inbox-row.selected {
   background: #f2f7fc;
-}
+} */
 
 .inbox-row .who {
   display: flex;
@@ -2704,9 +2704,9 @@ select.form-control {
 }
 
 .detail-section-title {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
-  color: var(--brand-navy);
+  color: #101b30;
   margin: 18px 0 8px;
 }
 
@@ -2716,7 +2716,7 @@ select.form-control {
 }
 
 .detail-value {
-  color: var(--brand-navy);
+  color: #101b30;
   font-size: 15px;
   margin-top: 4px;
 }
@@ -2728,7 +2728,7 @@ select.form-control {
 }
 
 .detail-paragraph {
-  color: var(--brand-navy);
+  color: #404959;
   line-height: 1.55;
   font-size: 14px;
   margin: 0 0 12px;
@@ -2873,17 +2873,18 @@ select.form-control {
 
 .meta-row .meta-label {
   font-size: 12px;
-  color: var(--text-secondary);
+  color: #707683;
+  font-weight: 400;
 }
 
 .meta-row .meta-value {
-  color: var(--brand-navy);
+  color: #101b30;
   font-size: 14px;
   font-weight: 500;
 }
 
 .meta-row.divider {
-  border-top: 1px solid #f1f3f6;
+  border-top: 1px solid #f3f4f6;
 }
 
 /* Chat ---------- */
@@ -2946,9 +2947,10 @@ select.form-control {
 }
 
 .chat-bubble .time {
-  font-size: 11px;
-  color: var(--text-muted);
-  margin-top: 4px;
+  font-size: 9px;
+  font-weight: 400;
+  color: #21222199;
+  margin-top: 8px;
 }
 
 .chat-bubble.out .time {
