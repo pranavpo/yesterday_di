@@ -203,6 +203,12 @@
     transform: translateX(0);
   }
 
+  .app-shell.show-sidebar .sidebar-head .logo-mark {
+    width: 100px;
+    height: 75px;
+    object-fit: contain;
+  }
+
   .nav-item {
     justify-content: flex-start;
     padding: 12px 14px;

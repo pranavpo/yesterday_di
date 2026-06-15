@@ -921,7 +921,7 @@ select.form-control {
   gap: 20px;
 }
 
-.overview-row.dashboard{
+.overview-row.dashboard {
   grid-template-columns: 2fr 1fr;
 }
 
@@ -1520,6 +1520,7 @@ select.form-control {
   width: 28px;
   height: 28px;
   border-radius: 8px;
+  justify-self: center;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2576,7 +2577,7 @@ select.form-control {
 }
 
 .inbox-tabs button.active {
-  background: #2D6495;
+  background: #2d6495;
   color: #fff;
 }
 
@@ -2587,25 +2588,20 @@ select.form-control {
 
 .inbox-row {
   display: grid;
-  grid-template-columns: minmax(140px, 1.2fr) auto auto auto auto;
+  grid-template-columns: 1fr 130px 120px 100px 40px;
   align-items: center;
-  gap: 16px;
+  gap: 30px;
   padding: 12px 8px;
-  border-bottom: 1px solid #f1f3f6;
   cursor: pointer;
 }
 
 .inbox-row:hover {
-  background: #f7f9fc;
+  background: none;
 }
 
-.inbox-row.selected {
+/* .inbox-row.selected {
   background: #f2f7fc;
-}
-
-.inbox-row:last-child {
-  border-bottom: 0;
-}
+} */
 
 .inbox-row .who {
   display: flex;
@@ -2617,6 +2613,10 @@ select.form-control {
 .inbox-row .who span:last-child {
   color: var(--brand-navy);
   font-size: 14px;
+}
+
+.inbox-row .badge {
+  justify-self: start;
 }
 
 .inbox-row .date {
@@ -2704,9 +2704,9 @@ select.form-control {
 }
 
 .detail-section-title {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
-  color: var(--brand-navy);
+  color: #101b30;
   margin: 18px 0 8px;
 }
 
@@ -2716,7 +2716,7 @@ select.form-control {
 }
 
 .detail-value {
-  color: var(--brand-navy);
+  color: #101b30;
   font-size: 15px;
   margin-top: 4px;
 }
@@ -2728,7 +2728,7 @@ select.form-control {
 }
 
 .detail-paragraph {
-  color: var(--brand-navy);
+  color: #404959;
   line-height: 1.55;
   font-size: 14px;
   margin: 0 0 12px;
@@ -2809,14 +2809,20 @@ select.form-control {
 
 .delivery-img-wrap {
   position: relative;
-  border-radius: 12px;
+  width: 272px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
   overflow: hidden;
+  opacity: 1;
 }
 
 .delivery-img-wrap img {
   width: 100%;
+  height: 100%;
   display: block;
-  border-radius: 12px;
+  object-fit: cover;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 
 .carousel-dots {
@@ -2867,17 +2873,18 @@ select.form-control {
 
 .meta-row .meta-label {
   font-size: 12px;
-  color: var(--text-secondary);
+  color: #707683;
+  font-weight: 400;
 }
 
 .meta-row .meta-value {
-  color: var(--brand-navy);
+  color: #101b30;
   font-size: 14px;
   font-weight: 500;
 }
 
 .meta-row.divider {
-  border-top: 1px solid #f1f3f6;
+  border-top: 1px solid #f3f4f6;
 }
 
 /* Chat ---------- */
@@ -2940,9 +2947,10 @@ select.form-control {
 }
 
 .chat-bubble .time {
-  font-size: 11px;
-  color: var(--text-muted);
-  margin-top: 4px;
+  font-size: 9px;
+  font-weight: 400;
+  color: #21222199;
+  margin-top: 8px;
 }
 
 .chat-bubble.out .time {
@@ -3316,13 +3324,13 @@ select.form-control {
   width: 100%;
 }
 
-.overview-row .card{
+.overview-row .card {
   height: 386px;
   display: flex;
   flex-direction: column;
 }
 
-.chart-card{
+.chart-card {
   flex: 1;
   min-height: 0;
   position: relative;
@@ -3330,7 +3338,7 @@ select.form-control {
 
 /* QUICK SUMMARY */
 
-.overview-row .summary-list .summary-row{
+.overview-row .summary-list .summary-row {
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(162, 161, 168, 0.1);
 }
