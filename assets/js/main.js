@@ -18,12 +18,20 @@
     /* ---------- Sidebar collapse / mobile drawer ---------- */
     var shell = qs('#appShell');
     var sidebarToggle = qs('#sidebarToggle');
+
+    // Restore collapsed state on every page load (desktop only)
+    if (shell && window.innerWidth > 720 && localStorage.getItem('sidebarCollapsed') === '1') {
+      shell.classList.add('is-collapsed');
+    }
+
     if (shell && sidebarToggle) {
       on(sidebarToggle, 'click', function () {
         if (window.innerWidth <= 720) {
           shell.classList.toggle('show-sidebar');
         } else {
           shell.classList.toggle('is-collapsed');
+          // Persist state across page navigations
+          localStorage.setItem('sidebarCollapsed', shell.classList.contains('is-collapsed') ? '1' : '0');
         }
       });
     }
