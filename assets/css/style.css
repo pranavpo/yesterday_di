@@ -1743,21 +1743,35 @@ select.form-control {
 }
 
 .detail-field .label {
-  font-size: 13px;
-  color: var(--text-secondary);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  color: #56687A;
 }
 
 .detail-field .value {
+  font-weight: 400;
   font-size: 16px;
-  color: var(--brand-navy);
-  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #0E2741
 }
 
 .section-heading {
+  font-weight: 600;
   font-size: 16px;
-  font-weight: 700;
-  color: var(--brand-navy);
-  margin: 22px 0 10px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #101B30
+}
+
+.section-heading-info {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  color: #56687A;
 }
 
 /* Vehicle cards */
@@ -1849,7 +1863,7 @@ select.form-control {
   gap: 10px;
 }
 
-.review-head .who .avatar{
+.review-head .who .avatar {
   width: 43.34px;
   height: 40px;
 }
