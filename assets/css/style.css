@@ -1830,6 +1830,25 @@ select.form-control {
   flex-wrap: wrap;
 }
 
+/* BASIC INFO FORM */
+.detail-grid .form-group .form-label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  color: #56687A;
+}
+
+.detail-grid .form-group .form-control {
+  border: 1.5px solid #E8ECF0;
+  padding: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+
 /* Reviews grid */
 .reviews-grid {
   display: grid;
