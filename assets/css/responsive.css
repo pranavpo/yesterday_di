@@ -129,6 +129,9 @@
     width: 100%;
     min-width: 0;
   }
+  .vehicle-cards{
+    max-width: 100%;
+  }
 }
 
 /* ---------- Mobile ---------- */

@@ -1812,8 +1812,7 @@ select.form-control {
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   margin-top: 12px;
-  /* max-width: 808px; */
-  max-width: 50%;
+  max-width: 808px;
 }
 
 .review-card {
