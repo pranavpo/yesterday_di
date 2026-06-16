@@ -582,6 +582,7 @@ select.form-control {
   grid-template-columns: 260px 1fr;
   height: 100vh;
   overflow: hidden;
+  transition: 0.3s ease, margin-left 0.3s ease;
 }
 
 /* Sidebar */
@@ -624,6 +625,15 @@ select.form-control {
   color: var(--text-muted);
   z-index: 10;
   flex-shrink: 0;
+}
+
+.sidebar-toggle svg {
+  transition: transform 0.25s ease;
+  transform: rotate(0deg);
+}
+
+.app-shell.is-collapsed .sidebar-toggle svg {
+  transform: rotate(180deg);
 }
 
 .sidebar-nav {
