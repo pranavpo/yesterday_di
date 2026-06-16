@@ -1,2068 +1,1538 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yesterday Admin — User Details</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
-  </head>
 
-  <body>
-    <div class="app-shell" id="appShell">
-      <!-- ====================== Sidebar ====================== -->
-      <aside class="sidebar" id="sidebar">
-        <div class="sidebar-head">
-          <img class="logo-mark" src="assets/images/logo.svg" alt="Yesterday" />
-        </div>
-        <nav class="sidebar-nav" aria-label="Main">
-          <a class="nav-item" href="dashboard.html"
-            ><img
-              class="nav-icon"
-              src="assets/images/sidebar/dashboard.svg"
-              alt="Dashboard"
-            /><span>Dashboard</span></a
-          >
-          <a class="nav-item active" href="users.html"
-            ><img
-              class="nav-icon"
-              src="assets/images/sidebar/user-manager.svg"
-              alt="User Manager"
-            /><span>User Manager</span></a
-          >
-          <a class="nav-item" href="deliveries.html"
-            ><img
-              class="nav-icon"
-              src="assets/images/sidebar/delivery.manager.svg"
-              alt="Delivery Manager"
-            /><span>Delivery Manager</span></a
-          >
-          <a class="nav-item" href="categories.html"
-            ><img
-              class="nav-icon"
-              src="assets/images/sidebar/category-manager.svg"
-              alt="Category Manager"
-            /><span>Category Manager</span></a
-          >
-          <a class="nav-item" href="vehicles.html"
-            ><img
-              class="nav-icon"
-              src="assets/images/sidebar/vehicle-manager.svg"
-              alt="Vehicle Manager"
-            /><span>Vehicle Manager</span></a
-          >
-          <a class="nav-item" href="subscription.html"
-            ><img
-              class="nav-icon"
-              src="assets/images/sidebar/subscription.svg"
-              alt="Subscription"
-            /><span>Subscription</span></a
-          >
-          <a class="nav-item" href="messages.html"
-            ><img
-              class="nav-icon"
-              src="assets/images/sidebar/message-support.svg"
-              alt="Messages & Support"
-            /><span>Messages &amp; Support</span></a
-          >
-          <a class="nav-item" href="static.html"
-            ><img
-              class="nav-icon"
-              src="assets/images/sidebar/static-content.svg"
-              alt="Static Content"
-            /><span>Static Content</span></a
-          >
-          <a class="nav-item" href="faqs.html"
-            ><img
-              class="nav-icon"
-              src="assets/images/sidebar/faqs.svg"
-              alt="FAQs"
-            /><span>FAQs</span></a
-          >
-          <a class="nav-item" href="notifications.html"
-            ><img
-              class="nav-icon"
-              src="assets/images/sidebar/notifications.svg"
-              alt="Notifications"
-            /><span>Notifications</span></a
-          >
-          <a class="nav-item" href="settings.html"
-            ><img
-              class="nav-icon"
-              src="assets/images/sidebar/settings.svg"
-              alt="Settings"
-            /><span>Settings</span></a
-          >
-          <a class="nav-item logout" href="index.html"
-            ><img
-              class="nav-icon"
-              src="assets/images/sidebar/logout.svg"
-              alt="Logout"
-            /><span>Logout</span></a
-          >
-        </nav>
-      </aside>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yesterday Admin — User Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+</head>
 
-      <!-- ====================== Main ====================== -->
-      <main class="main">
-        <header class="topbar">
-          <h1 class="page-title">
-            <button
-              class="sidebar-toggle"
-              id="sidebarToggle"
-              aria-label="Toggle sidebar"
-            >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <polyline points="15 18 9 12 15 6" />
-              </svg>
-            </button>
-            User Manager
-          </h1>
-          <div class="topbar-actions">
-            <div class="search-box">
-              <svg
-                class="search-ic"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-              >
-                <circle cx="11" cy="11" r="7" />
-                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              </svg>
-              <input type="search" placeholder="Search Users.." />
-            </div>
-            <button class="bell-btn" id="bellBtn" aria-label="Notifications">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-              >
-                <path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z" />
-                <path d="M10 21a2 2 0 0 0 4 0" />
-              </svg>
-            </button>
-          </div>
-        </header>
+<body>
+  <div class="app-shell" id="appShell">
+    <!-- ====================== Sidebar ====================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <img class="logo-mark" src="assets/images/logo.svg" alt="Yesterday" />
+      </div>
+      <nav class="sidebar-nav" aria-label="Main">
+        <a class="nav-item" href="dashboard.html"><img class="nav-icon" src="assets/images/sidebar/dashboard.svg"
+            alt="Dashboard" /><span>Dashboard</span></a>
+        <a class="nav-item active" href="users.html"><img class="nav-icon" src="assets/images/sidebar/user-manager.svg"
+            alt="User Manager" /><span>User Manager</span></a>
+        <a class="nav-item" href="deliveries.html"><img class="nav-icon"
+            src="assets/images/sidebar/delivery.manager.svg" alt="Delivery Manager" /><span>Delivery Manager</span></a>
+        <a class="nav-item" href="categories.html"><img class="nav-icon"
+            src="assets/images/sidebar/category-manager.svg" alt="Category Manager" /><span>Category Manager</span></a>
+        <a class="nav-item" href="vehicles.html"><img class="nav-icon" src="assets/images/sidebar/vehicle-manager.svg"
+            alt="Vehicle Manager" /><span>Vehicle Manager</span></a>
+        <a class="nav-item" href="subscription.html"><img class="nav-icon" src="assets/images/sidebar/subscription.svg"
+            alt="Subscription" /><span>Subscription</span></a>
+        <a class="nav-item" href="messages.html"><img class="nav-icon" src="assets/images/sidebar/message-support.svg"
+            alt="Messages & Support" /><span>Messages &amp; Support</span></a>
+        <a class="nav-item" href="static.html"><img class="nav-icon" src="assets/images/sidebar/static-content.svg"
+            alt="Static Content" /><span>Static Content</span></a>
+        <a class="nav-item" href="faqs.html"><img class="nav-icon" src="assets/images/sidebar/faqs.svg"
+            alt="FAQs" /><span>FAQs</span></a>
+        <a class="nav-item" href="notifications.html"><img class="nav-icon"
+            src="assets/images/sidebar/notifications.svg" alt="Notifications" /><span>Notifications</span></a>
+        <a class="nav-item" href="settings.html"><img class="nav-icon" src="assets/images/sidebar/settings.svg"
+            alt="Settings" /><span>Settings</span></a>
+        <a class="nav-item logout" href="index.html"><img class="nav-icon" src="assets/images/sidebar/logout.svg"
+            alt="Logout" /><span>Logout</span></a>
+      </nav>
+    </aside>
 
-        <div class="content">
-          <a class="detail-back" href="users.html">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
+    <!-- ====================== Main ====================== -->
+    <main class="main">
+      <header class="topbar">
+        <h1 class="page-title">
+          <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="15 18 9 12 15 6" />
             </svg>
-            User Details
-          </a>
+          </button>
+          User Manager
+        </h1>
+        <div class="topbar-actions">
+          <div class="search-box">
+            <svg class="search-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="11" cy="11" r="7" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="search" placeholder="Search Users.." />
+          </div>
+          <button class="bell-btn" id="bellBtn" aria-label="Notifications">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z" />
+              <path d="M10 21a2 2 0 0 0 4 0" />
+            </svg>
+          </button>
+        </div>
+      </header>
 
-          <!-- User header card -->
-          <section class="user-header-card">
-            <div class="user-header-info">
-              <span class="avatar lg">ZG</span>
+      <div class="content">
+        <a class="detail-back" href="users.html">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+          User Details
+        </a>
 
-              <div class="user-user-details">
-                <h2 class="name">Zoe Graham</h2>
+        <!-- User header card -->
+        <section class="user-header-card">
+          <div class="user-header-info">
+            <span class="avatar lg">ZG</span>
 
-                <div class="user-stats">
-                  <div class="meta-block">
-                    Email<br />
-                    <strong>zoe.g@gmail.com</strong>
+            <div class="user-user-details">
+              <h2 class="name">Zoe Graham</h2>
+
+              <div class="user-stats">
+                <div class="meta-block">
+                  Email<br />
+                  <strong>zoe.g@gmail.com</strong>
+                </div>
+
+                <div class="divider-v"></div>
+
+                <div class="meta-block">
+                  Rating<br />
+                  <strong>
+                    <img src="./assets/images/like.svg" alt="" />
+                    124/130
+                  </strong>
+                </div>
+
+                <div class="divider-v"></div>
+
+                <div class="meta-block">
+                  Completion Rate<br />
+                  <strong>90%</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <label class="block-toggle-wrap">
+            Block User
+            <span class="toggle">
+              <input type="checkbox" id="blockToggle" />
+              <span class="slider"></span>
+            </span>
+          </label>
+        </section>
+
+        <!-- Tabs -->
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="basic" role="tab">
+            Basic Information
+          </button>
+          <button class="tab" data-tab="activity" role="tab">Activity</button>
+          <button class="tab" data-tab="reviews" role="tab">Reviews</button>
+          <button class="tab" data-tab="reports" role="tab">Reports</button>
+          <button class="tab" data-tab="subscription" role="tab">
+            Subscription
+          </button>
+        </div>
+
+        <!-- ============ Basic Information tab ============ -->
+        <section class="tab-panel active" id="panel-basic">
+          <!-- View mode -->
+          <div id="basicView">
+            <div class="detail-grid">
+              <div class="detail-field">
+                <span class="label">Full Name</span><span class="value">Zoe Graham</span>
+              </div>
+              <div class="detail-field">
+                <span class="label">Date of Birth</span><span class="value">23 Nov, 2004</span>
+              </div>
+              <div class="detail-field">
+                <span class="label">Phone Number</span><span class="value">414 555 122</span>
+              </div>
+              <div class="detail-field">
+                <span class="label">Email Address</span><span class="value">username@example.com</span>
+              </div>
+              <div class="detail-field">
+                <span class="label">Location</span><span class="value">Sydney, AUS</span>
+              </div>
+              <div class="detail-field">
+                <span class="label">Status</span><span class="value"><span
+                    class="badge badge-active">Active</span></span>
+              </div>
+              <div class="detail-field">
+                <span class="label">N. Trips</span><span class="value">414</span>
+              </div>
+              <div class="detail-field">
+                <span class="label">N. Sent Items</span><span class="value">153</span>
+              </div>
+              <div class="detail-field">
+                <span class="label">Join Date</span><span class="value">12 Dec 2025</span>
+              </div>
+              <div class="detail-field">
+                <span class="label">Subscription Type</span><span class="value"><span
+                    class="badge badge-plan-annual">Monthly</span></span>
+              </div>
+            </div>
+
+            <h3 class="section-heading">Deliverer Information</h3>
+            <div class="detail-grid">
+              <div class="detail-field">
+                <span class="label">ABN</span><span class="value">123456789</span>
+              </div>
+              <div class="detail-field">
+                <span class="label">TFN</span><span class="value">123456789</span>
+              </div>
+              <div class="detail-field">
+                <span class="label">Vehicle Number</span><span class="value">2</span>
+              </div>
+              <div class="detail-field">
+                <span class="label">Travel Radius</span><span class="value">10 kms</span>
+              </div>
+            </div>
+
+            <h3 class="section-heading">Vehicle Information</h3>
+            <div class="vehicle-cards">
+              <div class="vehicle-card">
+                <span class="v-icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12.9257 2.3584H7.07565C5.00065 2.3584 4.54232 3.39173 4.27565 4.6584L3.33398 9.16673H16.6673L15.7257 4.6584C15.459 3.39173 15.0007 2.3584 12.9257 2.3584Z"
+                      stroke="#404959" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M18.3253 16.5165C18.4169 17.4915 17.6336 18.3332 16.6336 18.3332H15.0669C14.1669 18.3332 14.0419 17.9498 13.8836 17.4748L13.7169 16.9748C13.4836 16.2915 13.3336 15.8332 12.1336 15.8332H7.86693C6.66693 15.8332 6.49194 16.3498 6.2836 16.9748L6.11694 17.4748C5.9586 17.9498 5.8336 18.3332 4.9336 18.3332H3.36694C2.36694 18.3332 1.5836 17.4915 1.67527 16.5165L2.14194 11.4415C2.2586 10.1915 2.50027 9.1665 4.6836 9.1665H15.3169C17.5003 9.1665 17.7419 10.1915 17.8586 11.4415L18.3253 16.5165Z"
+                      stroke="#404959" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3.33333 6.6665H2.5" stroke="#404959" stroke-width="1.3" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M17.4993 6.6665H16.666" stroke="#404959" stroke-width="1.3" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M10 2.5V4.16667" stroke="#404959" stroke-width="1.3" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M8.75 4.1665H11.25" stroke="#404959" stroke-width="1.3" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M5 12.5H7.5" stroke="#404959" stroke-width="1.3" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M12.5 12.5H15" stroke="#404959" stroke-width="1.3" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </span>
+                <div>
+                  <div class="v-name">Car</div>
+                  <div class="v-specs">
+                    <span>Weight Cap.<strong>10 kg</strong></span>
+                    <span>Dimensions<strong>30 × 20 × 15 cm</strong></span>
                   </div>
-
-                  <div class="divider-v"></div>
-
-                  <div class="meta-block">
-                    Rating<br />
-                    <strong>
-                      <img src="./assets/images/like.svg" alt="" />
-                      124/130
-                    </strong>
-                  </div>
-
-                  <div class="divider-v"></div>
-
-                  <div class="meta-block">
-                    Completion Rate<br />
-                    <strong>90%</strong>
+                </div>
+              </div>
+              <div class="vehicle-card">
+                <span class="v-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 2V12C15 13.1 14.1 14 13 14H2V6C2 3.79 3.79 2 6 2H15Z" stroke="#404959"
+                      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M22 14V17C22 18.66 20.66 20 19 20H18C18 18.9 17.1 18 16 18C14.9 18 14 18.9 14 20H10C10 18.9 9.1 18 8 18C6.9 18 6 18.9 6 20H5C3.34 20 2 18.66 2 17V14H13C14.1 14 15 13.1 15 12V5H16.84C17.56 5 18.22 5.39001 18.58 6.01001L20.29 9H19C18.45 9 18 9.45 18 10V13C18 13.55 18.45 14 19 14H22Z"
+                      stroke="#404959" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M8 22C9.10457 22 10 21.1046 10 20C10 18.8954 9.10457 18 8 18C6.89543 18 6 18.8954 6 20C6 21.1046 6.89543 22 8 22Z"
+                      stroke="#404959" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M16 22C17.1046 22 18 21.1046 18 20C18 18.8954 17.1046 18 16 18C14.8954 18 14 18.8954 14 20C14 21.1046 14.8954 22 16 22Z"
+                      stroke="#404959" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M22 12V14H19C18.45 14 18 13.55 18 13V10C18 9.45 18.45 9 19 9H20.29L22 12Z" stroke="#404959"
+                      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                <div>
+                  <div class="v-name">Truck</div>
+                  <div class="v-specs">
+                    <span>Weight Cap.<strong>10 kg</strong></span>
+                    <span>Dimensions<strong>30 × 20 × 15 cm</strong></span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <label class="block-toggle-wrap">
-              Block User
-              <span class="toggle">
-                <input type="checkbox" id="blockToggle" />
-                <span class="slider"></span>
-              </span>
-            </label>
-          </section>
-
-          <!-- Tabs -->
-          <div class="tabs" role="tablist">
-            <button class="tab active" data-tab="basic" role="tab">
-              Basic Information
-            </button>
-            <button class="tab" data-tab="activity" role="tab">Activity</button>
-            <button class="tab" data-tab="reviews" role="tab">Reviews</button>
-            <button class="tab" data-tab="reports" role="tab">Reports</button>
-            <button class="tab" data-tab="subscription" role="tab">
-              Subscription
-            </button>
+            <div class="detail-actions">
+              <button class="btn-2 btn-primary" id="editBtn">
+                Edit User Details
+              </button>
+              <button class="btn-2 btn-secondary">Cancel Subscription</button>
+              <button class="btn-2 btn-danger-2" id="deleteBtn">
+                Delete User
+              </button>
+            </div>
           </div>
 
-          <!-- ============ Basic Information tab ============ -->
-          <section class="tab-panel active" id="panel-basic">
-            <!-- View mode -->
-            <div id="basicView">
+          <!-- Edit mode -->
+          <div id="basicEdit" class="hidden">
+            <form id="editUserForm">
               <div class="detail-grid">
-                <div class="detail-field">
-                  <span class="label">Full Name</span
-                  ><span class="value">Zoe Graham</span>
+                <div class="form-group" style="margin: 0">
+                  <label class="form-label">Full Name</label>
+                  <input class="form-control" type="text" name="fullName" value="Zoe Graham" />
                 </div>
-                <div class="detail-field">
-                  <span class="label">Date of Birth</span
-                  ><span class="value">23 Nov, 2004</span>
+                <div class="form-group" style="margin: 0">
+                  <label class="form-label">Date of Birth</label>
+                  <input class="form-control" type="text" name="dob" placeholder="DD MMM, YYYY" />
                 </div>
-                <div class="detail-field">
-                  <span class="label">Phone Number</span
-                  ><span class="value">414 555 122</span>
+                <div class="form-group" style="margin: 0">
+                  <label class="form-label">Phone Number</label>
+                  <input class="form-control" type="tel" name="phone" />
                 </div>
-                <div class="detail-field">
-                  <span class="label">Email Address</span
-                  ><span class="value">username@example.com</span>
+                <div class="form-group" style="margin: 0">
+                  <label class="form-label">Email Address</label>
+                  <input class="form-control" type="email" name="email" />
                 </div>
-                <div class="detail-field">
-                  <span class="label">Location</span
-                  ><span class="value">Sydney, AUS</span>
+                <div class="form-group" style="margin: 0">
+                  <label class="form-label">Location</label>
+                  <input class="form-control" type="text" name="location" />
                 </div>
-                <div class="detail-field">
-                  <span class="label">Status</span
-                  ><span class="value"
-                    ><span class="badge badge-active">Active</span></span
-                  >
+                <div class="form-group" style="margin: 0">
+                  <label class="form-label">Status</label>
+                  <select class="form-control" name="status">
+                    <option>Active</option>
+                    <option>Blocked</option>
+                  </select>
                 </div>
-                <div class="detail-field">
-                  <span class="label">N. Trips</span
-                  ><span class="value">414</span>
+                <div class="form-group" style="margin: 0">
+                  <label class="form-label">Join Date</label>
+                  <input class="form-control" type="text" name="joinDate" value="12 Dec 2025" readonly />
                 </div>
-                <div class="detail-field">
-                  <span class="label">N. Sent Items</span
-                  ><span class="value">153</span>
-                </div>
-                <div class="detail-field">
-                  <span class="label">Join Date</span
-                  ><span class="value">12 Dec 2025</span>
-                </div>
-                <div class="detail-field">
-                  <span class="label">Subscription Type</span
-                  ><span class="value"
-                    ><span class="badge badge-plan-annual">Monthly</span></span
-                  >
+                <div class="form-group" style="margin: 0">
+                  <label class="form-label">Subscription Type</label>
+                  <select class="form-control" name="subscription">
+                    <option>Monthly</option>
+                    <option>Annual</option>
+                  </select>
                 </div>
               </div>
 
               <h3 class="section-heading">Deliverer Information</h3>
               <div class="detail-grid">
-                <div class="detail-field">
-                  <span class="label">ABN</span
-                  ><span class="value">123456789</span>
+                <div class="form-group" style="margin: 0">
+                  <label class="form-label">ABN</label>
+                  <input class="form-control" type="text" name="abn" />
                 </div>
-                <div class="detail-field">
-                  <span class="label">TFN</span
-                  ><span class="value">123456789</span>
-                </div>
-                <div class="detail-field">
-                  <span class="label">Vehicle Number</span
-                  ><span class="value">2</span>
-                </div>
-                <div class="detail-field">
-                  <span class="label">Travel Radius</span
-                  ><span class="value">10 kms</span>
-                </div>
-              </div>
-
-              <h3 class="section-heading">Vehicle Information</h3>
-              <div class="vehicle-cards">
-                <div class="vehicle-card">
-                  <span class="v-icon">
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12.9257 2.3584H7.07565C5.00065 2.3584 4.54232 3.39173 4.27565 4.6584L3.33398 9.16673H16.6673L15.7257 4.6584C15.459 3.39173 15.0007 2.3584 12.9257 2.3584Z"
-                        stroke="#404959"
-                        stroke-width="1.3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M18.3253 16.5165C18.4169 17.4915 17.6336 18.3332 16.6336 18.3332H15.0669C14.1669 18.3332 14.0419 17.9498 13.8836 17.4748L13.7169 16.9748C13.4836 16.2915 13.3336 15.8332 12.1336 15.8332H7.86693C6.66693 15.8332 6.49194 16.3498 6.2836 16.9748L6.11694 17.4748C5.9586 17.9498 5.8336 18.3332 4.9336 18.3332H3.36694C2.36694 18.3332 1.5836 17.4915 1.67527 16.5165L2.14194 11.4415C2.2586 10.1915 2.50027 9.1665 4.6836 9.1665H15.3169C17.5003 9.1665 17.7419 10.1915 17.8586 11.4415L18.3253 16.5165Z"
-                        stroke="#404959"
-                        stroke-width="1.3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M3.33333 6.6665H2.5"
-                        stroke="#404959"
-                        stroke-width="1.3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M17.4993 6.6665H16.666"
-                        stroke="#404959"
-                        stroke-width="1.3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M10 2.5V4.16667"
-                        stroke="#404959"
-                        stroke-width="1.3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M8.75 4.1665H11.25"
-                        stroke="#404959"
-                        stroke-width="1.3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M5 12.5H7.5"
-                        stroke="#404959"
-                        stroke-width="1.3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M12.5 12.5H15"
-                        stroke="#404959"
-                        stroke-width="1.3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  <div>
-                    <div class="v-name">Car</div>
-                    <div class="v-specs">
-                      <span>Weight Cap.<strong>10 kg</strong></span>
-                      <span>Dimensions<strong>30 × 20 × 15 cm</strong></span>
-                    </div>
-                  </div>
-                </div>
-                <div class="vehicle-card">
-                  <span class="v-icon">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M15 2V12C15 13.1 14.1 14 13 14H2V6C2 3.79 3.79 2 6 2H15Z"
-                        stroke="#404959"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M22 14V17C22 18.66 20.66 20 19 20H18C18 18.9 17.1 18 16 18C14.9 18 14 18.9 14 20H10C10 18.9 9.1 18 8 18C6.9 18 6 18.9 6 20H5C3.34 20 2 18.66 2 17V14H13C14.1 14 15 13.1 15 12V5H16.84C17.56 5 18.22 5.39001 18.58 6.01001L20.29 9H19C18.45 9 18 9.45 18 10V13C18 13.55 18.45 14 19 14H22Z"
-                        stroke="#404959"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M8 22C9.10457 22 10 21.1046 10 20C10 18.8954 9.10457 18 8 18C6.89543 18 6 18.8954 6 20C6 21.1046 6.89543 22 8 22Z"
-                        stroke="#404959"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M16 22C17.1046 22 18 21.1046 18 20C18 18.8954 17.1046 18 16 18C14.8954 18 14 18.8954 14 20C14 21.1046 14.8954 22 16 22Z"
-                        stroke="#404959"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M22 12V14H19C18.45 14 18 13.55 18 13V10C18 9.45 18.45 9 19 9H20.29L22 12Z"
-                        stroke="#404959"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  <div>
-                    <div class="v-name">Truck</div>
-                    <div class="v-specs">
-                      <span>Weight Cap.<strong>10 kg</strong></span>
-                      <span>Dimensions<strong>30 × 20 × 15 cm</strong></span>
-                    </div>
-                  </div>
+                <div class="form-group" style="margin: 0">
+                  <label class="form-label">TFN</label>
+                  <input class="form-control" type="text" name="tfn" />
                 </div>
               </div>
 
               <div class="detail-actions">
-                <button class="btn-2 btn-primary" id="editBtn">
-                  Edit User Details
+                <button class="btn btn-primary" type="submit">
+                  Save Changes
                 </button>
-                <button class="btn-2 btn-secondary">Cancel Subscription</button>
-                <button class="btn-2 btn-danger-2" id="deleteBtn">
-                  Delete User
+                <button class="btn btn-secondary" type="button" id="cancelEditBtn">
+                  Cancel
                 </button>
               </div>
-            </div>
+            </form>
+          </div>
+        </section>
 
-            <!-- Edit mode -->
-            <div id="basicEdit" class="hidden">
-              <form id="editUserForm">
-                <div class="detail-grid">
-                  <div class="form-group" style="margin: 0">
-                    <label class="form-label">Full Name</label>
-                    <input
-                      class="form-control"
-                      type="text"
-                      name="fullName"
-                      value="Zoe Graham"
-                    />
-                  </div>
-                  <div class="form-group" style="margin: 0">
-                    <label class="form-label">Date of Birth</label>
-                    <input
-                      class="form-control"
-                      type="text"
-                      name="dob"
-                      placeholder="DD MMM, YYYY"
-                    />
-                  </div>
-                  <div class="form-group" style="margin: 0">
-                    <label class="form-label">Phone Number</label>
-                    <input class="form-control" type="tel" name="phone" />
-                  </div>
-                  <div class="form-group" style="margin: 0">
-                    <label class="form-label">Email Address</label>
-                    <input class="form-control" type="email" name="email" />
-                  </div>
-                  <div class="form-group" style="margin: 0">
-                    <label class="form-label">Location</label>
-                    <input class="form-control" type="text" name="location" />
-                  </div>
-                  <div class="form-group" style="margin: 0">
-                    <label class="form-label">Status</label>
-                    <select class="form-control" name="status">
-                      <option>Active</option>
-                      <option>Blocked</option>
-                    </select>
-                  </div>
-                  <div class="form-group" style="margin: 0">
-                    <label class="form-label">Join Date</label>
-                    <input
-                      class="form-control"
-                      type="text"
-                      name="joinDate"
-                      value="12 Dec 2025"
-                      readonly
-                    />
-                  </div>
-                  <div class="form-group" style="margin: 0">
-                    <label class="form-label">Subscription Type</label>
-                    <select class="form-control" name="subscription">
-                      <option>Monthly</option>
-                      <option>Annual</option>
-                    </select>
-                  </div>
-                </div>
-
-                <h3 class="section-heading">Deliverer Information</h3>
-                <div class="detail-grid">
-                  <div class="form-group" style="margin: 0">
-                    <label class="form-label">ABN</label>
-                    <input class="form-control" type="text" name="abn" />
-                  </div>
-                  <div class="form-group" style="margin: 0">
-                    <label class="form-label">TFN</label>
-                    <input class="form-control" type="text" name="tfn" />
-                  </div>
-                </div>
-
-                <div class="detail-actions">
-                  <button class="btn btn-primary" type="submit">
-                    Save Changes
-                  </button>
-                  <button
-                    class="btn btn-secondary"
-                    type="button"
-                    id="cancelEditBtn"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </form>
-            </div>
-          </section>
-
-          <!-- ============ Activity tab ============ -->
-          <section class="tab-panel" id="panel-activity">
-            <div class="card table-card">
-              <div class="table-toolbar">
-                <h3 class="table-title">Trips</h3>
-                <div class="filters">
-                  <div
-                    class="search-box-table"
-                    style="
+        <!-- ============ Activity tab ============ -->
+        <section class="tab-panel" id="panel-activity">
+          <div class="card table-card">
+            <div class="table-toolbar">
+              <h3 class="table-title">Trips</h3>
+              <div class="filters">
+                <div class="search-box-table" style="
                       min-width: 220px;
                       box-shadow: none;
                       border: 1px solid var(--border);
-                    "
-                  >
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7.66732 14.5002C3.90065 14.5002 0.833984 11.4335 0.833984 7.66683C0.833984 3.90016 3.90065 0.833496 7.66732 0.833496C11.434 0.833496 14.5007 3.90016 14.5007 7.66683C14.5007 11.4335 11.434 14.5002 7.66732 14.5002ZM7.66732 1.8335C4.44732 1.8335 1.83398 4.4535 1.83398 7.66683C1.83398 10.8802 4.44732 13.5002 7.66732 13.5002C10.8873 13.5002 13.5007 10.8802 13.5007 7.66683C13.5007 4.4535 10.8873 1.8335 7.66732 1.8335Z"
-                        fill="#707683"
-                      />
-                      <path
-                        d="M14.6676 15.1666C14.5409 15.1666 14.4143 15.12 14.3143 15.02L12.9809 13.6866C12.7876 13.4933 12.7876 13.1733 12.9809 12.98C13.1743 12.7866 13.4943 12.7866 13.6876 12.98L15.0209 14.3133C15.2143 14.5066 15.2143 14.8266 15.0209 15.02C14.9209 15.12 14.7943 15.1666 14.6676 15.1666Z"
-                        fill="#707683"
-                      />
-                    </svg>
-                    <input type="search" placeholder="Search Activity" />
-                  </div>
-                  <select class="filter-select">
-                    <option>Date</option>
-                  </select>
-                  <select class="filter-select">
-                    <option>Locations</option>
-                  </select>
-                  <select class="filter-select">
-                    <option>Status</option>
-                  </select>
+                    ">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7.66732 14.5002C3.90065 14.5002 0.833984 11.4335 0.833984 7.66683C0.833984 3.90016 3.90065 0.833496 7.66732 0.833496C11.434 0.833496 14.5007 3.90016 14.5007 7.66683C14.5007 11.4335 11.434 14.5002 7.66732 14.5002ZM7.66732 1.8335C4.44732 1.8335 1.83398 4.4535 1.83398 7.66683C1.83398 10.8802 4.44732 13.5002 7.66732 13.5002C10.8873 13.5002 13.5007 10.8802 13.5007 7.66683C13.5007 4.4535 10.8873 1.8335 7.66732 1.8335Z"
+                      fill="#707683" />
+                    <path
+                      d="M14.6676 15.1666C14.5409 15.1666 14.4143 15.12 14.3143 15.02L12.9809 13.6866C12.7876 13.4933 12.7876 13.1733 12.9809 12.98C13.1743 12.7866 13.4943 12.7866 13.6876 12.98L15.0209 14.3133C15.2143 14.5066 15.2143 14.8266 15.0209 15.02C14.9209 15.12 14.7943 15.1666 14.6676 15.1666Z"
+                      fill="#707683" />
+                  </svg>
+                  <input type="search" placeholder="Search Activity" />
                 </div>
+                <select class="filter-select">
+                  <option>Date</option>
+                </select>
+                <select class="filter-select">
+                  <option>Locations</option>
+                </select>
+                <select class="filter-select">
+                  <option>Status</option>
+                </select>
               </div>
-              <table class="data-table responsive-cards">
-                <thead>
-                  <tr>
-                    <th>Delivery ID</th>
-                    <th>Item</th>
-                    <th>Sender</th>
-                    <th>Driver</th>
-                    <th>Route</th>
-                    <th>Price</th>
-                    <th>Status</th>
-                    <th>Date</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Item">Sofa Set</td>
-                    <td data-label="Sender">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Driver">
-                      <div class="cell-user">
-                        <span class="avatar">MW</span><span>Mary White</span>
-                      </div>
-                    </td>
-                    <td data-label="Route">GC - SYD</td>
-                    <td data-label="Price">$127</td>
-                    <td data-label="Status">
-                      <span class="badge badge-open">Open</span>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Item">Washing Machine</td>
-                    <td data-label="Sender">
-                      <div class="cell-user">
-                        <span class="avatar">JS</span><span>John Smith</span>
-                      </div>
-                    </td>
-                    <td data-label="Driver">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Route">GC - SYD</td>
-                    <td data-label="Price">$1,127</td>
-                    <td data-label="Status">
-                      <span class="badge badge-await">Awaiting Pickup</span>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Item">Small Parcel</td>
-                    <td data-label="Sender">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Driver">
-                      <div class="cell-user">
-                        <span class="avatar">MW</span><span>Mary White</span>
-                      </div>
-                    </td>
-                    <td data-label="Route">GC - SYD</td>
-                    <td data-label="Price">$65</td>
-                    <td data-label="Status">
-                      <span class="badge badge-transit">In transit</span>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Item">Office Chair</td>
-                    <td data-label="Sender">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Driver">
-                      <div class="cell-user">
-                        <span class="avatar">MW</span><span>Mary White</span>
-                      </div>
-                    </td>
-                    <td data-label="Route">GC - SYD</td>
-                    <td data-label="Price">$200</td>
-                    <td data-label="Status">
-                      <span class="badge badge-complete">Completed</span>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Item">Books (5kg)</td>
-                    <td data-label="Sender">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Driver">
-                      <div class="cell-user">
-                        <span class="avatar">MW</span><span>Mary White</span>
-                      </div>
-                    </td>
-                    <td data-label="Route">GC - SYD</td>
-                    <td data-label="Price">$127</td>
-                    <td data-label="Status">
-                      <span class="badge badge-cancelled">Cancelled</span>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="Delivery ID">X-0345</td>
-                    <td data-label="Item">Refrigerator</td>
-                    <td data-label="Sender">
-                      <div class="cell-user">
-                        <span class="avatar">JK</span><span>Julia King</span>
-                      </div>
-                    </td>
-                    <td data-label="Driver">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Route">NYC - WH1</td>
-                    <td data-label="Price">$349</td>
-                    <td data-label="Status">
-                      <span class="badge badge-open">Open</span>
-                    </td>
-                    <td data-label="Date">20/03/27</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="Delivery ID">X-0345</td>
-                    <td data-label="Item">Refrigerator</td>
-                    <td data-label="Sender">
-                      <div class="cell-user">
-                        <span class="avatar">JK</span><span>Julia King</span>
-                      </div>
-                    </td>
-                    <td data-label="Driver">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Route">NYC - WH1</td>
-                    <td data-label="Price">$349</td>
-                    <td data-label="Status">
-                      <span class="badge badge-open">Open</span>
-                    </td>
-                    <td data-label="Date">20/03/27</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Item">Washing Machine</td>
-                    <td data-label="Sender">
-                      <div class="cell-user">
-                        <span class="avatar">SB</span><span>Samuel Bright</span>
-                      </div>
-                    </td>
-                    <td data-label="Driver">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Route">GC - SYD</td>
-                    <td data-label="Price">$1,127</td>
-                    <td data-label="Status">
-                      <span class="badge badge-await">Awaiting Pickup</span>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="Delivery ID">X-0345</td>
-                    <td data-label="Item">Refrigerator</td>
-                    <td data-label="Sender">
-                      <div class="cell-user">
-                        <span class="avatar">JK</span><span>Julia King</span>
-                      </div>
-                    </td>
-                    <td data-label="Driver">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Route">NYC - WH1</td>
-                    <td data-label="Price">$349</td>
-                    <td data-label="Status">
-                      <span class="badge badge-open">Open</span>
-                    </td>
-                    <td data-label="Date">20/03/27</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Item">Small Parcel</td>
-                    <td data-label="Sender">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Driver">
-                      <div class="cell-user">
-                        <span class="avatar">MW</span><span>Mary White</span>
-                      </div>
-                    </td>
-                    <td data-label="Route">GC - SYD</td>
-                    <td data-label="Price">$65</td>
-                    <td data-label="Status">
-                      <span class="badge badge-transit">In transit</span>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Item">Office Chair</td>
-                    <td data-label="Sender">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Driver">
-                      <div class="cell-user">
-                        <span class="avatar">MW</span><span>Mary White</span>
-                      </div>
-                    </td>
-                    <td data-label="Route">GC - SYD</td>
-                    <td data-label="Price">$200</td>
-                    <td data-label="Status">
-                      <span class="badge badge-complete">Completed</span>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Item">Washing Machine</td>
-                    <td data-label="Sender">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Driver">
-                      <div class="cell-user">
-                        <span class="avatar">MW</span><span>Mary White</span>
-                      </div>
-                    </td>
-                    <td data-label="Route">GC - SYD</td>
-                    <td data-label="Price">$1,127</td>
-                    <td data-label="Status">
-                      <span class="badge badge-await">Awaiting Pickup</span>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
-          </section>
+            <table class="data-table responsive-cards">
+              <thead>
+                <tr>
+                  <th>Delivery ID</th>
+                  <th>Item</th>
+                  <th>Sender</th>
+                  <th>Driver</th>
+                  <th>Route</th>
+                  <th>Price</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Item">Sofa Set</td>
+                  <td data-label="Sender">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Driver">
+                    <div class="cell-user">
+                      <span class="avatar">MW</span><span>Mary White</span>
+                    </div>
+                  </td>
+                  <td data-label="Route">GC - SYD</td>
+                  <td data-label="Price">$127</td>
+                  <td data-label="Status">
+                    <span class="badge badge-open">Open</span>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Item">Washing Machine</td>
+                  <td data-label="Sender">
+                    <div class="cell-user">
+                      <span class="avatar">JS</span><span>John Smith</span>
+                    </div>
+                  </td>
+                  <td data-label="Driver">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Route">GC - SYD</td>
+                  <td data-label="Price">$1,127</td>
+                  <td data-label="Status">
+                    <span class="badge badge-await">Awaiting Pickup</span>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Item">Small Parcel</td>
+                  <td data-label="Sender">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Driver">
+                    <div class="cell-user">
+                      <span class="avatar">MW</span><span>Mary White</span>
+                    </div>
+                  </td>
+                  <td data-label="Route">GC - SYD</td>
+                  <td data-label="Price">$65</td>
+                  <td data-label="Status">
+                    <span class="badge badge-transit">In transit</span>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Item">Office Chair</td>
+                  <td data-label="Sender">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Driver">
+                    <div class="cell-user">
+                      <span class="avatar">MW</span><span>Mary White</span>
+                    </div>
+                  </td>
+                  <td data-label="Route">GC - SYD</td>
+                  <td data-label="Price">$200</td>
+                  <td data-label="Status">
+                    <span class="badge badge-complete">Completed</span>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Item">Books (5kg)</td>
+                  <td data-label="Sender">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Driver">
+                    <div class="cell-user">
+                      <span class="avatar">MW</span><span>Mary White</span>
+                    </div>
+                  </td>
+                  <td data-label="Route">GC - SYD</td>
+                  <td data-label="Price">$127</td>
+                  <td data-label="Status">
+                    <span class="badge badge-cancelled">Cancelled</span>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Delivery ID">X-0345</td>
+                  <td data-label="Item">Refrigerator</td>
+                  <td data-label="Sender">
+                    <div class="cell-user">
+                      <span class="avatar">JK</span><span>Julia King</span>
+                    </div>
+                  </td>
+                  <td data-label="Driver">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Route">NYC - WH1</td>
+                  <td data-label="Price">$349</td>
+                  <td data-label="Status">
+                    <span class="badge badge-open">Open</span>
+                  </td>
+                  <td data-label="Date">20/03/27</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Delivery ID">X-0345</td>
+                  <td data-label="Item">Refrigerator</td>
+                  <td data-label="Sender">
+                    <div class="cell-user">
+                      <span class="avatar">JK</span><span>Julia King</span>
+                    </div>
+                  </td>
+                  <td data-label="Driver">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Route">NYC - WH1</td>
+                  <td data-label="Price">$349</td>
+                  <td data-label="Status">
+                    <span class="badge badge-open">Open</span>
+                  </td>
+                  <td data-label="Date">20/03/27</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Item">Washing Machine</td>
+                  <td data-label="Sender">
+                    <div class="cell-user">
+                      <span class="avatar">SB</span><span>Samuel Bright</span>
+                    </div>
+                  </td>
+                  <td data-label="Driver">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Route">GC - SYD</td>
+                  <td data-label="Price">$1,127</td>
+                  <td data-label="Status">
+                    <span class="badge badge-await">Awaiting Pickup</span>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Delivery ID">X-0345</td>
+                  <td data-label="Item">Refrigerator</td>
+                  <td data-label="Sender">
+                    <div class="cell-user">
+                      <span class="avatar">JK</span><span>Julia King</span>
+                    </div>
+                  </td>
+                  <td data-label="Driver">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Route">NYC - WH1</td>
+                  <td data-label="Price">$349</td>
+                  <td data-label="Status">
+                    <span class="badge badge-open">Open</span>
+                  </td>
+                  <td data-label="Date">20/03/27</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Item">Small Parcel</td>
+                  <td data-label="Sender">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Driver">
+                    <div class="cell-user">
+                      <span class="avatar">MW</span><span>Mary White</span>
+                    </div>
+                  </td>
+                  <td data-label="Route">GC - SYD</td>
+                  <td data-label="Price">$65</td>
+                  <td data-label="Status">
+                    <span class="badge badge-transit">In transit</span>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Item">Office Chair</td>
+                  <td data-label="Sender">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Driver">
+                    <div class="cell-user">
+                      <span class="avatar">MW</span><span>Mary White</span>
+                    </div>
+                  </td>
+                  <td data-label="Route">GC - SYD</td>
+                  <td data-label="Price">$200</td>
+                  <td data-label="Status">
+                    <span class="badge badge-complete">Completed</span>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Item">Washing Machine</td>
+                  <td data-label="Sender">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Driver">
+                    <div class="cell-user">
+                      <span class="avatar">MW</span><span>Mary White</span>
+                    </div>
+                  </td>
+                  <td data-label="Route">GC - SYD</td>
+                  <td data-label="Price">$1,127</td>
+                  <td data-label="Status">
+                    <span class="badge badge-await">Awaiting Pickup</span>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
 
-          <!-- ============ Reviews tab ============ -->
-          <section class="tab-panel" id="panel-reviews">
-            <h3 class="section-heading" style="margin-top: 8px">
-              User Reviews
-            </h3>
-            <div class="reviews-grid">
-              <!-- Six review cards (one with menu open) -->
-              <article class="review-card">
-                <header class="review-head">
-                  <div class="who">
-                    <span class="avatar"
-                      ><img src="assets/images/avatar-luke.svg" alt=""
-                    /></span>
-                    <strong>Luke Jackson</strong>
-                  </div>
-                  <svg
-                    class="thumb"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M2 21h4V9H2zm19.8-10.6c.1-.5-.1-1-.4-1.3a1.7 1.7 0 0 0-1.3-.6h-6.2l.9-4.4c.1-.5 0-1.1-.4-1.4-.4-.4-.9-.6-1.4-.5l-.5.1-.5 4c-.1.6-.4 1.2-.9 1.6L8 11.5V21h11.1c.9 0 1.6-.6 1.8-1.5l1.5-7.1c0-.3.1-.6 0-.9z"
-                    />
-                  </svg>
-                </header>
-                <div class="review-item">Small Parcel</div>
-                <div class="route-line">
-                  Mackay
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="13 6 19 12 13 18" />
-                  </svg>
-                  Townsville
+        <!-- ============ Reviews tab ============ -->
+        <section class="tab-panel" id="panel-reviews">
+          <h3 class="section-heading" style="margin-top: 8px">
+            User Reviews
+          </h3>
+          <div class="reviews-grid">
+            <!-- Six review cards (one with menu open) -->
+            <article class="review-card">
+              <header class="review-head">
+                <div class="who">
+                  <span class="avatar"><img src="assets/images/avatar-luke.svg" alt="" /></span>
+                  <strong>Luke Jackson</strong>
                 </div>
-                <p class="review-body">
-                  Highly Recommend! Great communication and amazing job!
-                </p>
-                <footer class="review-footer">
-                  <span>12/06/2025</span
-                  ><button class="dots-btn" data-review-menu>
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <circle cx="6" cy="12" r="1.6" />
-                      <circle cx="12" cy="12" r="1.6" />
-                      <circle cx="18" cy="12" r="1.6" />
-                    </svg>
-                  </button>
-                </footer>
-              </article>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8.39062 18.4868V8.3268C8.39062 7.9268 8.51062 7.5368 8.73062 7.2068L11.4606 3.1468C11.8906 2.4968 12.9606 2.0368 13.8706 2.3768C14.8506 2.7068 15.5006 3.8068 15.2906 4.7868L14.7706 8.0568C14.7306 8.3568 14.8106 8.6268 14.9806 8.8368C15.1506 9.0268 15.4006 9.1468 15.6706 9.1468H19.7806C20.5706 9.1468 21.2506 9.4668 21.6506 10.0268C22.0306 10.5668 22.1006 11.2668 21.8506 11.9768L19.3906 19.4668C19.0806 20.7068 17.7306 21.7168 16.3906 21.7168H12.4906C11.8206 21.7168 10.8806 21.4868 10.4506 21.0568L9.17062 20.0668C8.68062 19.6968 8.39062 19.1068 8.39062 18.4868Z"
+                    fill="#F99F36" />
+                  <path
+                    d="M5.21 6.375H4.18C2.63 6.375 2 6.975 2 8.455V18.515C2 19.995 2.63 20.595 4.18 20.595H5.21C6.76 20.595 7.39 19.995 7.39 18.515V8.455C7.39 6.975 6.76 6.375 5.21 6.375Z"
+                    fill="#F99F36" />
+                </svg>
 
-              <article class="review-card">
-                <header class="review-head">
-                  <div class="who">
-                    <span class="avatar"
-                      ><img src="assets/images/avatar-luke.svg" alt="" /></span
-                    ><strong>Luke Jackson</strong>
-                  </div>
-                  <svg
-                    class="thumb"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M2 21h4V9H2zm19.8-10.6c.1-.5-.1-1-.4-1.3a1.7 1.7 0 0 0-1.3-.6h-6.2l.9-4.4c.1-.5 0-1.1-.4-1.4-.4-.4-.9-.6-1.4-.5l-.5.1-.5 4c-.1.6-.4 1.2-.9 1.6L8 11.5V21h11.1c.9 0 1.6-.6 1.8-1.5l1.5-7.1c0-.3.1-.6 0-.9z"
-                    />
+              </header>
+              <div class="review-item">Small Parcel</div>
+              <div class="route-line">
+                Mackay
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.33398 8H12.6673" stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M8 3.3335L12.6667 8.00016L8 12.6668" stroke="#99A1AF" stroke-width="1.33333"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+
+                Townsville
+              </div>
+              <p class="review-body">
+                Highly Recommend! Great communication and amazing job!
+              </p>
+              <footer class="review-footer">
+                <span>12/06/2025</span><button class="dots-btn" data-review-menu>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="6" cy="12" r="1.6" />
+                    <circle cx="12" cy="12" r="1.6" />
+                    <circle cx="18" cy="12" r="1.6" />
                   </svg>
-                </header>
-                <div class="review-item">Small Parcel</div>
-                <div class="route-line">
-                  Mackay
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="13 6 19 12 13 18" />
-                  </svg>
-                  Townsville
+                </button>
+              </footer>
+            </article>
+
+            <article class="review-card">
+              <header class="review-head">
+                <div class="who">
+                  <span class="avatar"><img src="assets/images/avatar-luke.svg" alt="" /></span><strong>Luke
+                    Jackson</strong>
                 </div>
-                <p class="review-body">
-                  Highly Recommend! Great communication and amazing job!
-                </p>
-                <footer class="review-footer">
-                  <span>12/06/2025</span
-                  ><button class="dots-btn" data-review-menu>
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <circle cx="6" cy="12" r="1.6" />
-                      <circle cx="12" cy="12" r="1.6" />
-                      <circle cx="18" cy="12" r="1.6" />
-                    </svg>
-                  </button>
-                </footer>
-              </article>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8.39062 18.4868V8.3268C8.39062 7.9268 8.51062 7.5368 8.73062 7.2068L11.4606 3.1468C11.8906 2.4968 12.9606 2.0368 13.8706 2.3768C14.8506 2.7068 15.5006 3.8068 15.2906 4.7868L14.7706 8.0568C14.7306 8.3568 14.8106 8.6268 14.9806 8.8368C15.1506 9.0268 15.4006 9.1468 15.6706 9.1468H19.7806C20.5706 9.1468 21.2506 9.4668 21.6506 10.0268C22.0306 10.5668 22.1006 11.2668 21.8506 11.9768L19.3906 19.4668C19.0806 20.7068 17.7306 21.7168 16.3906 21.7168H12.4906C11.8206 21.7168 10.8806 21.4868 10.4506 21.0568L9.17062 20.0668C8.68062 19.6968 8.39062 19.1068 8.39062 18.4868Z"
+                    fill="#F99F36" />
+                  <path
+                    d="M5.21 6.375H4.18C2.63 6.375 2 6.975 2 8.455V18.515C2 19.995 2.63 20.595 4.18 20.595H5.21C6.76 20.595 7.39 19.995 7.39 18.515V8.455C7.39 6.975 6.76 6.375 5.21 6.375Z"
+                    fill="#F99F36" />
+                </svg>
 
-              <article class="review-card">
-                <header class="review-head">
-                  <div class="who">
-                    <span class="avatar"
-                      ><img src="assets/images/avatar-luke.svg" alt="" /></span
-                    ><strong>Luke Jackson</strong>
-                  </div>
-                  <svg
-                    class="thumb"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M2 21h4V9H2zm19.8-10.6c.1-.5-.1-1-.4-1.3a1.7 1.7 0 0 0-1.3-.6h-6.2l.9-4.4c.1-.5 0-1.1-.4-1.4-.4-.4-.9-.6-1.4-.5l-.5.1-.5 4c-.1.6-.4 1.2-.9 1.6L8 11.5V21h11.1c.9 0 1.6-.6 1.8-1.5l1.5-7.1c0-.3.1-.6 0-.9z"
-                    />
+              </header>
+              <div class="review-item">Small Parcel</div>
+              <div class="route-line">
+                Mackay
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.33398 8H12.6673" stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M8 3.3335L12.6667 8.00016L8 12.6668" stroke="#99A1AF" stroke-width="1.33333"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                Townsville
+              </div>
+              <p class="review-body">
+                Highly Recommend! Great communication and amazing job!
+              </p>
+              <footer class="review-footer">
+                <span>12/06/2025</span><button class="dots-btn" data-review-menu>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="6" cy="12" r="1.6" />
+                    <circle cx="12" cy="12" r="1.6" />
+                    <circle cx="18" cy="12" r="1.6" />
                   </svg>
-                </header>
-                <div class="review-item">Small Parcel</div>
-                <div class="route-line">
-                  Mackay
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="13 6 19 12 13 18" />
-                  </svg>
-                  Townsville
+                </button>
+              </footer>
+            </article>
+
+            <article class="review-card">
+              <header class="review-head">
+                <div class="who">
+                  <span class="avatar"><img src="assets/images/avatar-luke.svg" alt="" /></span><strong>Luke
+                    Jackson</strong>
                 </div>
-                <p class="review-body">
-                  Highly Recommend! Great communication and amazing job!
-                </p>
-                <footer class="review-footer">
-                  <span>12/06/2025</span
-                  ><button class="dots-btn" data-review-menu>
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <circle cx="6" cy="12" r="1.6" />
-                      <circle cx="12" cy="12" r="1.6" />
-                      <circle cx="18" cy="12" r="1.6" />
-                    </svg>
-                  </button>
-                </footer>
-              </article>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8.39062 18.4868V8.3268C8.39062 7.9268 8.51062 7.5368 8.73062 7.2068L11.4606 3.1468C11.8906 2.4968 12.9606 2.0368 13.8706 2.3768C14.8506 2.7068 15.5006 3.8068 15.2906 4.7868L14.7706 8.0568C14.7306 8.3568 14.8106 8.6268 14.9806 8.8368C15.1506 9.0268 15.4006 9.1468 15.6706 9.1468H19.7806C20.5706 9.1468 21.2506 9.4668 21.6506 10.0268C22.0306 10.5668 22.1006 11.2668 21.8506 11.9768L19.3906 19.4668C19.0806 20.7068 17.7306 21.7168 16.3906 21.7168H12.4906C11.8206 21.7168 10.8806 21.4868 10.4506 21.0568L9.17062 20.0668C8.68062 19.6968 8.39062 19.1068 8.39062 18.4868Z"
+                    fill="#F99F36" />
+                  <path
+                    d="M5.21 6.375H4.18C2.63 6.375 2 6.975 2 8.455V18.515C2 19.995 2.63 20.595 4.18 20.595H5.21C6.76 20.595 7.39 19.995 7.39 18.515V8.455C7.39 6.975 6.76 6.375 5.21 6.375Z"
+                    fill="#F99F36" />
+                </svg>
 
-              <article class="review-card">
-                <header class="review-head">
-                  <div class="who">
-                    <span class="avatar"
-                      ><img src="assets/images/avatar-luke.svg" alt="" /></span
-                    ><strong>Luke Jackson</strong>
-                  </div>
-                  <svg
-                    class="thumb"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M2 21h4V9H2zm19.8-10.6c.1-.5-.1-1-.4-1.3a1.7 1.7 0 0 0-1.3-.6h-6.2l.9-4.4c.1-.5 0-1.1-.4-1.4-.4-.4-.9-.6-1.4-.5l-.5.1-.5 4c-.1.6-.4 1.2-.9 1.6L8 11.5V21h11.1c.9 0 1.6-.6 1.8-1.5l1.5-7.1c0-.3.1-.6 0-.9z"
-                    />
+              </header>
+              <div class="review-item">Small Parcel</div>
+              <div class="route-line">
+                Mackay
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.33398 8H12.6673" stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M8 3.3335L12.6667 8.00016L8 12.6668" stroke="#99A1AF" stroke-width="1.33333"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                Townsville
+              </div>
+              <p class="review-body">
+                Highly Recommend! Great communication and amazing job!
+              </p>
+              <footer class="review-footer">
+                <span>12/06/2025</span><button class="dots-btn" data-review-menu>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="6" cy="12" r="1.6" />
+                    <circle cx="12" cy="12" r="1.6" />
+                    <circle cx="18" cy="12" r="1.6" />
                   </svg>
-                </header>
-                <div class="review-item">Small Parcel</div>
-                <div class="route-line">
-                  Mackay
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="13 6 19 12 13 18" />
-                  </svg>
-                  Townsville
+                </button>
+              </footer>
+            </article>
+
+            <article class="review-card">
+              <header class="review-head">
+                <div class="who">
+                  <span class="avatar"><img src="assets/images/avatar-luke.svg" alt="" /></span><strong>Luke
+                    Jackson</strong>
                 </div>
-                <p class="review-body">
-                  Highly Recommend! Great communication and amazing job!
-                </p>
-                <footer class="review-footer">
-                  <span>12/06/2025</span
-                  ><button class="dots-btn" data-review-menu>
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <circle cx="6" cy="12" r="1.6" />
-                      <circle cx="12" cy="12" r="1.6" />
-                      <circle cx="18" cy="12" r="1.6" />
-                    </svg>
-                  </button>
-                </footer>
-              </article>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8.39062 18.4868V8.3268C8.39062 7.9268 8.51062 7.5368 8.73062 7.2068L11.4606 3.1468C11.8906 2.4968 12.9606 2.0368 13.8706 2.3768C14.8506 2.7068 15.5006 3.8068 15.2906 4.7868L14.7706 8.0568C14.7306 8.3568 14.8106 8.6268 14.9806 8.8368C15.1506 9.0268 15.4006 9.1468 15.6706 9.1468H19.7806C20.5706 9.1468 21.2506 9.4668 21.6506 10.0268C22.0306 10.5668 22.1006 11.2668 21.8506 11.9768L19.3906 19.4668C19.0806 20.7068 17.7306 21.7168 16.3906 21.7168H12.4906C11.8206 21.7168 10.8806 21.4868 10.4506 21.0568L9.17062 20.0668C8.68062 19.6968 8.39062 19.1068 8.39062 18.4868Z"
+                    fill="#F99F36" />
+                  <path
+                    d="M5.21 6.375H4.18C2.63 6.375 2 6.975 2 8.455V18.515C2 19.995 2.63 20.595 4.18 20.595H5.21C6.76 20.595 7.39 19.995 7.39 18.515V8.455C7.39 6.975 6.76 6.375 5.21 6.375Z"
+                    fill="#F99F36" />
+                </svg>
 
-              <article class="review-card">
-                <header class="review-head">
-                  <div class="who">
-                    <span class="avatar"
-                      ><img src="assets/images/avatar-luke.svg" alt="" /></span
-                    ><strong>Luke Jackson</strong>
-                  </div>
-                  <svg
-                    class="thumb"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M2 21h4V9H2zm19.8-10.6c.1-.5-.1-1-.4-1.3a1.7 1.7 0 0 0-1.3-.6h-6.2l.9-4.4c.1-.5 0-1.1-.4-1.4-.4-.4-.9-.6-1.4-.5l-.5.1-.5 4c-.1.6-.4 1.2-.9 1.6L8 11.5V21h11.1c.9 0 1.6-.6 1.8-1.5l1.5-7.1c0-.3.1-.6 0-.9z"
-                    />
+              </header>
+              <div class="review-item">Small Parcel</div>
+              <div class="route-line">
+                Mackay
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.33398 8H12.6673" stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M8 3.3335L12.6667 8.00016L8 12.6668" stroke="#99A1AF" stroke-width="1.33333"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                Townsville
+              </div>
+              <p class="review-body">
+                Highly Recommend! Great communication and amazing job!
+              </p>
+              <footer class="review-footer">
+                <span>12/06/2025</span><button class="dots-btn" data-review-menu>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="6" cy="12" r="1.6" />
+                    <circle cx="12" cy="12" r="1.6" />
+                    <circle cx="18" cy="12" r="1.6" />
                   </svg>
-                </header>
-                <div class="review-item">Small Parcel</div>
-                <div class="route-line">
-                  Mackay
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="13 6 19 12 13 18" />
-                  </svg>
-                  Townsville
+                </button>
+              </footer>
+            </article>
+
+            <article class="review-card">
+              <header class="review-head">
+                <div class="who">
+                  <span class="avatar"><img src="assets/images/avatar-luke.svg" alt="" /></span><strong>Luke
+                    Jackson</strong>
                 </div>
-                <p class="review-body">
-                  Highly Recommend! Great communication and amazing job!
-                </p>
-                <footer class="review-footer">
-                  <span>12/06/2025</span
-                  ><button class="dots-btn" data-review-menu>
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <circle cx="6" cy="12" r="1.6" />
-                      <circle cx="12" cy="12" r="1.6" />
-                      <circle cx="18" cy="12" r="1.6" />
-                    </svg>
-                  </button>
-                </footer>
-              </article>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8.39062 18.4868V8.3268C8.39062 7.9268 8.51062 7.5368 8.73062 7.2068L11.4606 3.1468C11.8906 2.4968 12.9606 2.0368 13.8706 2.3768C14.8506 2.7068 15.5006 3.8068 15.2906 4.7868L14.7706 8.0568C14.7306 8.3568 14.8106 8.6268 14.9806 8.8368C15.1506 9.0268 15.4006 9.1468 15.6706 9.1468H19.7806C20.5706 9.1468 21.2506 9.4668 21.6506 10.0268C22.0306 10.5668 22.1006 11.2668 21.8506 11.9768L19.3906 19.4668C19.0806 20.7068 17.7306 21.7168 16.3906 21.7168H12.4906C11.8206 21.7168 10.8806 21.4868 10.4506 21.0568L9.17062 20.0668C8.68062 19.6968 8.39062 19.1068 8.39062 18.4868Z"
+                    fill="#F99F36" />
+                  <path
+                    d="M5.21 6.375H4.18C2.63 6.375 2 6.975 2 8.455V18.515C2 19.995 2.63 20.595 4.18 20.595H5.21C6.76 20.595 7.39 19.995 7.39 18.515V8.455C7.39 6.975 6.76 6.375 5.21 6.375Z"
+                    fill="#F99F36" />
+                </svg>
 
-              <article class="review-card">
-                <header class="review-head">
-                  <div class="who">
-                    <span class="avatar"
-                      ><img src="assets/images/avatar-luke.svg" alt="" /></span
-                    ><strong>Luke Jackson</strong>
-                  </div>
-                  <svg
-                    class="thumb"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M2 21h4V9H2zm19.8-10.6c.1-.5-.1-1-.4-1.3a1.7 1.7 0 0 0-1.3-.6h-6.2l.9-4.4c.1-.5 0-1.1-.4-1.4-.4-.4-.9-.6-1.4-.5l-.5.1-.5 4c-.1.6-.4 1.2-.9 1.6L8 11.5V21h11.1c.9 0 1.6-.6 1.8-1.5l1.5-7.1c0-.3.1-.6 0-.9z"
-                    />
+              </header>
+              <div class="review-item">Small Parcel</div>
+              <div class="route-line">
+                Mackay
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.33398 8H12.6673" stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M8 3.3335L12.6667 8.00016L8 12.6668" stroke="#99A1AF" stroke-width="1.33333"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                Townsville
+              </div>
+              <p class="review-body">
+                Highly Recommend! Great communication and amazing job!
+              </p>
+              <footer class="review-footer">
+                <span>12/06/2025</span><button class="dots-btn" data-review-menu>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="6" cy="12" r="1.6" />
+                    <circle cx="12" cy="12" r="1.6" />
+                    <circle cx="18" cy="12" r="1.6" />
                   </svg>
-                </header>
-                <div class="review-item">Small Parcel</div>
-                <div class="route-line">
-                  Mackay
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="13 6 19 12 13 18" />
-                  </svg>
-                  Townsville
+                </button>
+              </footer>
+            </article>
+
+            <article class="review-card">
+              <header class="review-head">
+                <div class="who">
+                  <span class="avatar"><img src="assets/images/avatar-luke.svg" alt="" /></span><strong>Luke
+                    Jackson</strong>
                 </div>
-                <p class="review-body">
-                  Highly Recommend! Great communication and amazing job!
-                </p>
-                <footer class="review-footer">
-                  <span>12/06/2025</span
-                  ><button class="dots-btn" data-review-menu>
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <circle cx="6" cy="12" r="1.6" />
-                      <circle cx="12" cy="12" r="1.6" />
-                      <circle cx="18" cy="12" r="1.6" />
-                    </svg>
-                  </button>
-                </footer>
-              </article>
-            </div>
-          </section>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8.39062 18.4868V8.3268C8.39062 7.9268 8.51062 7.5368 8.73062 7.2068L11.4606 3.1468C11.8906 2.4968 12.9606 2.0368 13.8706 2.3768C14.8506 2.7068 15.5006 3.8068 15.2906 4.7868L14.7706 8.0568C14.7306 8.3568 14.8106 8.6268 14.9806 8.8368C15.1506 9.0268 15.4006 9.1468 15.6706 9.1468H19.7806C20.5706 9.1468 21.2506 9.4668 21.6506 10.0268C22.0306 10.5668 22.1006 11.2668 21.8506 11.9768L19.3906 19.4668C19.0806 20.7068 17.7306 21.7168 16.3906 21.7168H12.4906C11.8206 21.7168 10.8806 21.4868 10.4506 21.0568L9.17062 20.0668C8.68062 19.6968 8.39062 19.1068 8.39062 18.4868Z"
+                    fill="#F99F36" />
+                  <path
+                    d="M5.21 6.375H4.18C2.63 6.375 2 6.975 2 8.455V18.515C2 19.995 2.63 20.595 4.18 20.595H5.21C6.76 20.595 7.39 19.995 7.39 18.515V8.455C7.39 6.975 6.76 6.375 5.21 6.375Z"
+                    fill="#F99F36" />
+                </svg>
 
-          <!-- ============ Reports tab ============ -->
-          <section class="tab-panel" id="panel-reports">
-            <div class="card table-card">
-              <div class="table-toolbar">
-                <h3 class="table-title">Reports</h3>
-                <div class="filters">
-                  <div
-                    class="search-box-table"
-                    style="
+              </header>
+              <div class="review-item">Small Parcel</div>
+              <div class="route-line">
+                Mackay
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.33398 8H12.6673" stroke="#99A1AF" stroke-width="1.33333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M8 3.3335L12.6667 8.00016L8 12.6668" stroke="#99A1AF" stroke-width="1.33333"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                Townsville
+              </div>
+              <p class="review-body">
+                Highly Recommend! Great communication and amazing job!
+              </p>
+              <footer class="review-footer">
+                <span>12/06/2025</span><button class="dots-btn" data-review-menu>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="6" cy="12" r="1.6" />
+                    <circle cx="12" cy="12" r="1.6" />
+                    <circle cx="18" cy="12" r="1.6" />
+                  </svg>
+                </button>
+              </footer>
+            </article>
+          </div>
+        </section>
+
+        <!-- ============ Reports tab ============ -->
+        <section class="tab-panel" id="panel-reports">
+          <div class="card table-card">
+            <div class="table-toolbar">
+              <h3 class="table-title">Reports</h3>
+              <div class="filters">
+                <div class="search-box-table" style="
                       min-width: 240px;
                       box-shadow: none;
                       border: 1px solid var(--border);
-                    "
-                  >
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7.66732 14.5002C3.90065 14.5002 0.833984 11.4335 0.833984 7.66683C0.833984 3.90016 3.90065 0.833496 7.66732 0.833496C11.434 0.833496 14.5007 3.90016 14.5007 7.66683C14.5007 11.4335 11.434 14.5002 7.66732 14.5002ZM7.66732 1.8335C4.44732 1.8335 1.83398 4.4535 1.83398 7.66683C1.83398 10.8802 4.44732 13.5002 7.66732 13.5002C10.8873 13.5002 13.5007 10.8802 13.5007 7.66683C13.5007 4.4535 10.8873 1.8335 7.66732 1.8335Z"
-                        fill="#707683"
-                      />
-                      <path
-                        d="M14.6676 15.1666C14.5409 15.1666 14.4143 15.12 14.3143 15.02L12.9809 13.6866C12.7876 13.4933 12.7876 13.1733 12.9809 12.98C13.1743 12.7866 13.4943 12.7866 13.6876 12.98L15.0209 14.3133C15.2143 14.5066 15.2143 14.8266 15.0209 15.02C14.9209 15.12 14.7943 15.1666 14.6676 15.1666Z"
-                        fill="#707683"
-                      />
-                    </svg>
-                    <input type="search" placeholder="Search Reports" />
-                  </div>
-                  <select class="filter-select">
-                    <option>Date</option>
-                  </select>
-                  <select class="filter-select">
-                    <option>Status</option>
-                  </select>
+                    ">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7.66732 14.5002C3.90065 14.5002 0.833984 11.4335 0.833984 7.66683C0.833984 3.90016 3.90065 0.833496 7.66732 0.833496C11.434 0.833496 14.5007 3.90016 14.5007 7.66683C14.5007 11.4335 11.434 14.5002 7.66732 14.5002ZM7.66732 1.8335C4.44732 1.8335 1.83398 4.4535 1.83398 7.66683C1.83398 10.8802 4.44732 13.5002 7.66732 13.5002C10.8873 13.5002 13.5007 10.8802 13.5007 7.66683C13.5007 4.4535 10.8873 1.8335 7.66732 1.8335Z"
+                      fill="#707683" />
+                    <path
+                      d="M14.6676 15.1666C14.5409 15.1666 14.4143 15.12 14.3143 15.02L12.9809 13.6866C12.7876 13.4933 12.7876 13.1733 12.9809 12.98C13.1743 12.7866 13.4943 12.7866 13.6876 12.98L15.0209 14.3133C15.2143 14.5066 15.2143 14.8266 15.0209 15.02C14.9209 15.12 14.7943 15.1666 14.6676 15.1666Z"
+                      fill="#707683" />
+                  </svg>
+                  <input type="search" placeholder="Search Reports" />
                 </div>
+                <select class="filter-select">
+                  <option>Date</option>
+                </select>
+                <select class="filter-select">
+                  <option>Status</option>
+                </select>
               </div>
-              <table class="data-table responsive-cards">
-                <thead>
-                  <tr>
-                    <th>User</th>
-                    <th>Date</th>
-                    <th>Delivery ID</th>
-                    <th>Reported By</th>
-                    <th>Status</th>
-                    <th>Content</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td data-label="User">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Reported By">
-                      <div class="cell-user">
-                        <span class="avatar">MW</span><span>Mary White</span>
-                      </div>
-                    </td>
-                    <td data-label="Status">
-                      <span class="badge badge-pending">Pending</span>
-                    </td>
-                    <td data-label="Content">Placeholder information…</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="User">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Reported By">
-                      <div class="cell-user">
-                        <span class="avatar">MW</span><span>Mary White</span>
-                      </div>
-                    </td>
-                    <td data-label="Status">
-                      <span class="badge badge-resolved">Resolved</span>
-                    </td>
-                    <td data-label="Content">Placeholder information…</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="User">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Reported By">
-                      <div class="cell-user">
-                        <span class="avatar">MW</span><span>Mary White</span>
-                      </div>
-                    </td>
-                    <td data-label="Status">
-                      <span class="badge badge-resolved">Resolved</span>
-                    </td>
-                    <td data-label="Content">Placeholder information…</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="User">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Reported By">
-                      <div class="cell-user">
-                        <span class="avatar">MW</span><span>Mary White</span>
-                      </div>
-                    </td>
-                    <td data-label="Status">
-                      <span class="badge badge-pending">Pending</span>
-                    </td>
-                    <td data-label="Content">Placeholder information…</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="User">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Reported By">
-                      <div class="cell-user">
-                        <span class="avatar">MW</span><span>Mary White</span>
-                      </div>
-                    </td>
-                    <td data-label="Status">
-                      <span class="badge badge-pending">Pending</span>
-                    </td>
-                    <td data-label="Content">Placeholder information…</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="User">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Reported By">
-                      <div class="cell-user">
-                        <span class="avatar">MW</span><span>Mary White</span>
-                      </div>
-                    </td>
-                    <td data-label="Status">
-                      <span class="badge badge-pending">Pending</span>
-                    </td>
-                    <td data-label="Content">Placeholder information…</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="User">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Reported By">
-                      <div class="cell-user">
-                        <span class="avatar">MW</span><span>Mary White</span>
-                      </div>
-                    </td>
-                    <td data-label="Status">
-                      <span class="badge badge-pending">Pending</span>
-                    </td>
-                    <td data-label="Content">Placeholder information…</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="User">
-                      <div class="cell-user">
-                        <span class="avatar">ZG</span><span>Zoe Graham</span>
-                      </div>
-                    </td>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Delivery ID">Y-0127</td>
-                    <td data-label="Reported By">
-                      <div class="cell-user">
-                        <span class="avatar">MW</span><span>Mary White</span>
-                      </div>
-                    </td>
-                    <td data-label="Status">
-                      <span class="badge badge-pending">Pending</span>
-                    </td>
-                    <td data-label="Content">Placeholder information…</td>
-                    <td>
-                      <button class="row-action">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.6"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-                          />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
-          </section>
+            <table class="data-table responsive-cards">
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Date</th>
+                  <th>Delivery ID</th>
+                  <th>Reported By</th>
+                  <th>Status</th>
+                  <th>Content</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="User">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Reported By">
+                    <div class="cell-user">
+                      <span class="avatar">MW</span><span>Mary White</span>
+                    </div>
+                  </td>
+                  <td data-label="Status">
+                    <span class="badge badge-pending">Pending</span>
+                  </td>
+                  <td data-label="Content">Placeholder information…</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="User">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Reported By">
+                    <div class="cell-user">
+                      <span class="avatar">MW</span><span>Mary White</span>
+                    </div>
+                  </td>
+                  <td data-label="Status">
+                    <span class="badge badge-resolved">Resolved</span>
+                  </td>
+                  <td data-label="Content">Placeholder information…</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="User">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Reported By">
+                    <div class="cell-user">
+                      <span class="avatar">MW</span><span>Mary White</span>
+                    </div>
+                  </td>
+                  <td data-label="Status">
+                    <span class="badge badge-resolved">Resolved</span>
+                  </td>
+                  <td data-label="Content">Placeholder information…</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="User">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Reported By">
+                    <div class="cell-user">
+                      <span class="avatar">MW</span><span>Mary White</span>
+                    </div>
+                  </td>
+                  <td data-label="Status">
+                    <span class="badge badge-pending">Pending</span>
+                  </td>
+                  <td data-label="Content">Placeholder information…</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="User">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Reported By">
+                    <div class="cell-user">
+                      <span class="avatar">MW</span><span>Mary White</span>
+                    </div>
+                  </td>
+                  <td data-label="Status">
+                    <span class="badge badge-pending">Pending</span>
+                  </td>
+                  <td data-label="Content">Placeholder information…</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="User">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Reported By">
+                    <div class="cell-user">
+                      <span class="avatar">MW</span><span>Mary White</span>
+                    </div>
+                  </td>
+                  <td data-label="Status">
+                    <span class="badge badge-pending">Pending</span>
+                  </td>
+                  <td data-label="Content">Placeholder information…</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="User">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Reported By">
+                    <div class="cell-user">
+                      <span class="avatar">MW</span><span>Mary White</span>
+                    </div>
+                  </td>
+                  <td data-label="Status">
+                    <span class="badge badge-pending">Pending</span>
+                  </td>
+                  <td data-label="Content">Placeholder information…</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="User">
+                    <div class="cell-user">
+                      <span class="avatar">ZG</span><span>Zoe Graham</span>
+                    </div>
+                  </td>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Delivery ID">Y-0127</td>
+                  <td data-label="Reported By">
+                    <div class="cell-user">
+                      <span class="avatar">MW</span><span>Mary White</span>
+                    </div>
+                  </td>
+                  <td data-label="Status">
+                    <span class="badge badge-pending">Pending</span>
+                  </td>
+                  <td data-label="Content">Placeholder information…</td>
+                  <td>
+                    <button class="row-action">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
 
-          <!-- ============ Subscription tab ============ -->
-          <section class="tab-panel" id="panel-subscription">
-            <div class="card table-card">
-              <div class="table-toolbar">
-                <h3 class="table-title">Subscription History</h3>
-                <div class="filters">
-                  <div
-                    class="search-box-table"
-                    style="
+        <!-- ============ Subscription tab ============ -->
+        <section class="tab-panel" id="panel-subscription">
+          <div class="card table-card">
+            <div class="table-toolbar">
+              <h3 class="table-title">Subscription History</h3>
+              <div class="filters">
+                <div class="search-box-table" style="
                       min-width: 260px;
                       box-shadow: none;
                       border: 1px solid var(--border);
-                    "
-                  >
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7.66732 14.5002C3.90065 14.5002 0.833984 11.4335 0.833984 7.66683C0.833984 3.90016 3.90065 0.833496 7.66732 0.833496C11.434 0.833496 14.5007 3.90016 14.5007 7.66683C14.5007 11.4335 11.434 14.5002 7.66732 14.5002ZM7.66732 1.8335C4.44732 1.8335 1.83398 4.4535 1.83398 7.66683C1.83398 10.8802 4.44732 13.5002 7.66732 13.5002C10.8873 13.5002 13.5007 10.8802 13.5007 7.66683C13.5007 4.4535 10.8873 1.8335 7.66732 1.8335Z"
-                        fill="#707683"
-                      />
-                      <path
-                        d="M14.6676 15.1666C14.5409 15.1666 14.4143 15.12 14.3143 15.02L12.9809 13.6866C12.7876 13.4933 12.7876 13.1733 12.9809 12.98C13.1743 12.7866 13.4943 12.7866 13.6876 12.98L15.0209 14.3133C15.2143 14.5066 15.2143 14.8266 15.0209 15.02C14.9209 15.12 14.7943 15.1666 14.6676 15.1666Z"
-                        fill="#707683"
-                      />
-                    </svg>
+                    ">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7.66732 14.5002C3.90065 14.5002 0.833984 11.4335 0.833984 7.66683C0.833984 3.90016 3.90065 0.833496 7.66732 0.833496C11.434 0.833496 14.5007 3.90016 14.5007 7.66683C14.5007 11.4335 11.434 14.5002 7.66732 14.5002ZM7.66732 1.8335C4.44732 1.8335 1.83398 4.4535 1.83398 7.66683C1.83398 10.8802 4.44732 13.5002 7.66732 13.5002C10.8873 13.5002 13.5007 10.8802 13.5007 7.66683C13.5007 4.4535 10.8873 1.8335 7.66732 1.8335Z"
+                      fill="#707683" />
+                    <path
+                      d="M14.6676 15.1666C14.5409 15.1666 14.4143 15.12 14.3143 15.02L12.9809 13.6866C12.7876 13.4933 12.7876 13.1733 12.9809 12.98C13.1743 12.7866 13.4943 12.7866 13.6876 12.98L15.0209 14.3133C15.2143 14.5066 15.2143 14.8266 15.0209 15.02C14.9209 15.12 14.7943 15.1666 14.6676 15.1666Z"
+                      fill="#707683" />
+                  </svg>
 
-                    <input
-                      type="search"
-                      placeholder="Search Subscription History"
-                    />
-                  </div>
-                  <select class="filter-select">
-                    <option>Date</option>
-                  </select>
-                  <select class="filter-select">
-                    <option>Status</option>
-                  </select>
+                  <input type="search" placeholder="Search Subscription History" />
                 </div>
+                <select class="filter-select">
+                  <option>Date</option>
+                </select>
+                <select class="filter-select">
+                  <option>Status</option>
+                </select>
               </div>
-              <table class="data-table responsive-cards">
-                <thead>
-                  <tr>
-                    <th>Date</th>
-                    <th>Reference</th>
-                    <th>Plan</th>
-                    <th>Amount</th>
-                    <th>Status</th>
-                    <th>Payment Method</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Reference">SUB-0127</td>
-                    <td data-label="Plan">
-                      <span class="badge badge-plan-monthly">Monthly</span>
-                    </td>
-                    <td data-label="Amount">$10.00</td>
-                    <td data-label="Status">
-                      <span class="badge badge-upcoming">Upcoming</span>
-                    </td>
-                    <td data-label="Payment Method">Visa •••• 4242</td>
-                  </tr>
-                  <tr>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Reference">SUB-0127</td>
-                    <td data-label="Plan">
-                      <span class="badge badge-plan-monthly">Monthly</span>
-                    </td>
-                    <td data-label="Amount">$10.00</td>
-                    <td data-label="Status">
-                      <span class="badge badge-paid">Paid</span>
-                    </td>
-                    <td data-label="Payment Method">Visa •••• 4242</td>
-                  </tr>
-                  <tr>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Reference">SUB-0127</td>
-                    <td data-label="Plan">
-                      <span class="badge badge-plan-monthly">Monthly</span>
-                    </td>
-                    <td data-label="Amount">$10.00</td>
-                    <td data-label="Status">
-                      <span class="badge badge-failed">Failed</span>
-                    </td>
-                    <td data-label="Payment Method">Visa •••• 4242</td>
-                  </tr>
-                  <tr>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Reference">SUB-0127</td>
-                    <td data-label="Plan">
-                      <span class="badge badge-plan-annual">Annual</span>
-                    </td>
-                    <td data-label="Amount">$120.00</td>
-                    <td data-label="Status">
-                      <span class="badge badge-paid">Paid</span>
-                    </td>
-                    <td data-label="Payment Method">Visa •••• 4242</td>
-                  </tr>
-                  <tr>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Reference">SUB-0127</td>
-                    <td data-label="Plan">
-                      <span class="badge badge-plan-monthly">Monthly</span>
-                    </td>
-                    <td data-label="Amount">$10.00</td>
-                    <td data-label="Status">
-                      <span class="badge badge-failed">Failed</span>
-                    </td>
-                    <td data-label="Payment Method">Visa •••• 4242</td>
-                  </tr>
-                  <tr>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Reference">SUB-0127</td>
-                    <td data-label="Plan">
-                      <span class="badge badge-plan-annual">Annual</span>
-                    </td>
-                    <td data-label="Amount">$120.00</td>
-                    <td data-label="Status">
-                      <span class="badge badge-paid">Paid</span>
-                    </td>
-                    <td data-label="Payment Method">Visa •••• 4242</td>
-                  </tr>
-                  <tr>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Reference">SUB-0127</td>
-                    <td data-label="Plan">
-                      <span class="badge badge-plan-monthly">Monthly</span>
-                    </td>
-                    <td data-label="Amount">$10.00</td>
-                    <td data-label="Status">
-                      <span class="badge badge-paid">Paid</span>
-                    </td>
-                    <td data-label="Payment Method">Visa •••• 4242</td>
-                  </tr>
-                  <tr>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Reference">SUB-0127</td>
-                    <td data-label="Plan">
-                      <span class="badge badge-plan-monthly">Monthly</span>
-                    </td>
-                    <td data-label="Amount">$10.00</td>
-                    <td data-label="Status">
-                      <span class="badge badge-paid">Paid</span>
-                    </td>
-                    <td data-label="Payment Method">Visa •••• 4242</td>
-                  </tr>
-                  <tr>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Reference">SUB-0127</td>
-                    <td data-label="Plan">
-                      <span class="badge badge-plan-monthly">Monthly</span>
-                    </td>
-                    <td data-label="Amount">$10.00</td>
-                    <td data-label="Status">
-                      <span class="badge badge-paid">Paid</span>
-                    </td>
-                    <td data-label="Payment Method">Visa •••• 4242</td>
-                  </tr>
-                  <tr>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Reference">SUB-0127</td>
-                    <td data-label="Plan">
-                      <span class="badge badge-plan-monthly">Monthly</span>
-                    </td>
-                    <td data-label="Amount">$10.00</td>
-                    <td data-label="Status">
-                      <span class="badge badge-paid">Paid</span>
-                    </td>
-                    <td data-label="Payment Method">Visa •••• 4242</td>
-                  </tr>
-                  <tr>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Reference">SUB-0127</td>
-                    <td data-label="Plan">
-                      <span class="badge badge-plan-annual">Annual</span>
-                    </td>
-                    <td data-label="Amount">$120.00</td>
-                    <td data-label="Status">
-                      <span class="badge badge-paid">Paid</span>
-                    </td>
-                    <td data-label="Payment Method">Visa •••• 4242</td>
-                  </tr>
-                  <tr>
-                    <td data-label="Date">15/12/26</td>
-                    <td data-label="Reference">SUB-0127</td>
-                    <td data-label="Plan">
-                      <span class="badge badge-plan-annual">Annual</span>
-                    </td>
-                    <td data-label="Amount">$120.00</td>
-                    <td data-label="Status">
-                      <span class="badge badge-paid">Paid</span>
-                    </td>
-                    <td data-label="Payment Method">Visa •••• 4242</td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
-          </section>
-        </div>
-      </main>
-    </div>
-
-    <!-- ============ Delete user modal ============ -->
-    <div class="modal-overlay hidden" id="deleteModal">
-      <div class="modal">
-        <button class="modal-close" data-modal-close aria-label="Close">
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <line x1="6" y1="6" x2="18" y2="18" />
-            <line x1="6" y1="18" x2="18" y2="6" />
-          </svg>
-        </button>
-        <h3>Delete [User name]?</h3>
-        <p>
-          Please confirm you want to permanently delete this user account from
-          the Yesterday platform.
-        </p>
-        <div class="note-box">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 9V14"
-              stroke="#F99F36"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M11.9994 21.4098H5.93944C2.46944 21.4098 1.01944 18.9298 2.69944 15.8998L5.81944 10.2798L8.75944 4.99979C10.5394 1.78979 13.4594 1.78979 15.2394 4.99979L18.1794 10.2898L21.2994 15.9098C22.9794 18.9398 21.5194 21.4198 18.0594 21.4198H11.9994V21.4098Z"
-              stroke="#F99F36"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M11.9941 17H12.0031"
-              stroke="#F99F36"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-
-          <p>
-            This action will affect the user's account access, profile data,
-            active deliveries, and platform history.
-          </p>
-        </div>
-        <div class="modal-actions">
-          <button class="btn btn-primary">Delete User</button>
-          <button class="btn btn-secondary" data-modal-close>Cancel</button>
-        </div>
+            <table class="data-table responsive-cards">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Reference</th>
+                  <th>Plan</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Payment Method</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Reference">SUB-0127</td>
+                  <td data-label="Plan">
+                    <span class="badge badge-plan-monthly">Monthly</span>
+                  </td>
+                  <td data-label="Amount">$10.00</td>
+                  <td data-label="Status">
+                    <span class="badge badge-upcoming">Upcoming</span>
+                  </td>
+                  <td data-label="Payment Method">Visa •••• 4242</td>
+                </tr>
+                <tr>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Reference">SUB-0127</td>
+                  <td data-label="Plan">
+                    <span class="badge badge-plan-monthly">Monthly</span>
+                  </td>
+                  <td data-label="Amount">$10.00</td>
+                  <td data-label="Status">
+                    <span class="badge badge-paid">Paid</span>
+                  </td>
+                  <td data-label="Payment Method">Visa •••• 4242</td>
+                </tr>
+                <tr>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Reference">SUB-0127</td>
+                  <td data-label="Plan">
+                    <span class="badge badge-plan-monthly">Monthly</span>
+                  </td>
+                  <td data-label="Amount">$10.00</td>
+                  <td data-label="Status">
+                    <span class="badge badge-failed">Failed</span>
+                  </td>
+                  <td data-label="Payment Method">Visa •••• 4242</td>
+                </tr>
+                <tr>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Reference">SUB-0127</td>
+                  <td data-label="Plan">
+                    <span class="badge badge-plan-annual">Annual</span>
+                  </td>
+                  <td data-label="Amount">$120.00</td>
+                  <td data-label="Status">
+                    <span class="badge badge-paid">Paid</span>
+                  </td>
+                  <td data-label="Payment Method">Visa •••• 4242</td>
+                </tr>
+                <tr>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Reference">SUB-0127</td>
+                  <td data-label="Plan">
+                    <span class="badge badge-plan-monthly">Monthly</span>
+                  </td>
+                  <td data-label="Amount">$10.00</td>
+                  <td data-label="Status">
+                    <span class="badge badge-failed">Failed</span>
+                  </td>
+                  <td data-label="Payment Method">Visa •••• 4242</td>
+                </tr>
+                <tr>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Reference">SUB-0127</td>
+                  <td data-label="Plan">
+                    <span class="badge badge-plan-annual">Annual</span>
+                  </td>
+                  <td data-label="Amount">$120.00</td>
+                  <td data-label="Status">
+                    <span class="badge badge-paid">Paid</span>
+                  </td>
+                  <td data-label="Payment Method">Visa •••• 4242</td>
+                </tr>
+                <tr>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Reference">SUB-0127</td>
+                  <td data-label="Plan">
+                    <span class="badge badge-plan-monthly">Monthly</span>
+                  </td>
+                  <td data-label="Amount">$10.00</td>
+                  <td data-label="Status">
+                    <span class="badge badge-paid">Paid</span>
+                  </td>
+                  <td data-label="Payment Method">Visa •••• 4242</td>
+                </tr>
+                <tr>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Reference">SUB-0127</td>
+                  <td data-label="Plan">
+                    <span class="badge badge-plan-monthly">Monthly</span>
+                  </td>
+                  <td data-label="Amount">$10.00</td>
+                  <td data-label="Status">
+                    <span class="badge badge-paid">Paid</span>
+                  </td>
+                  <td data-label="Payment Method">Visa •••• 4242</td>
+                </tr>
+                <tr>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Reference">SUB-0127</td>
+                  <td data-label="Plan">
+                    <span class="badge badge-plan-monthly">Monthly</span>
+                  </td>
+                  <td data-label="Amount">$10.00</td>
+                  <td data-label="Status">
+                    <span class="badge badge-paid">Paid</span>
+                  </td>
+                  <td data-label="Payment Method">Visa •••• 4242</td>
+                </tr>
+                <tr>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Reference">SUB-0127</td>
+                  <td data-label="Plan">
+                    <span class="badge badge-plan-monthly">Monthly</span>
+                  </td>
+                  <td data-label="Amount">$10.00</td>
+                  <td data-label="Status">
+                    <span class="badge badge-paid">Paid</span>
+                  </td>
+                  <td data-label="Payment Method">Visa •••• 4242</td>
+                </tr>
+                <tr>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Reference">SUB-0127</td>
+                  <td data-label="Plan">
+                    <span class="badge badge-plan-annual">Annual</span>
+                  </td>
+                  <td data-label="Amount">$120.00</td>
+                  <td data-label="Status">
+                    <span class="badge badge-paid">Paid</span>
+                  </td>
+                  <td data-label="Payment Method">Visa •••• 4242</td>
+                </tr>
+                <tr>
+                  <td data-label="Date">15/12/26</td>
+                  <td data-label="Reference">SUB-0127</td>
+                  <td data-label="Plan">
+                    <span class="badge badge-plan-annual">Annual</span>
+                  </td>
+                  <td data-label="Amount">$120.00</td>
+                  <td data-label="Status">
+                    <span class="badge badge-paid">Paid</span>
+                  </td>
+                  <td data-label="Payment Method">Visa •••• 4242</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
       </div>
-    </div>
+    </main>
+  </div>
 
-    <!-- ============ Block user modal ============ -->
-    <div class="modal-overlay hidden" id="blockModal">
-      <div class="modal">
-        <button class="modal-close" data-modal-close aria-label="Close">
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <line x1="6" y1="6" x2="18" y2="18" />
-            <line x1="6" y1="18" x2="18" y2="6" />
-          </svg>
-        </button>
-        <h3>Block [User name]?</h3>
-        <p>
-          Please confirm you want to suspend this user account. Suspended users
-          will be unable to log in, place new delivery requests, submit bids, or
-          access key platform features until reactivated by admin.
-        </p>
-        <div class="note-box">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 9V14"
-              stroke="#F99F36"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M11.9994 21.4098H5.93944C2.46944 21.4098 1.01944 18.9298 2.69944 15.8998L5.81944 10.2798L8.75944 4.99979C10.5394 1.78979 13.4594 1.78979 15.2394 4.99979L18.1794 10.2898L21.2994 15.9098C22.9794 18.9398 21.5194 21.4198 18.0594 21.4198H11.9994V21.4098Z"
-              stroke="#F99F36"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M11.9941 17H12.0031"
-              stroke="#F99F36"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-
-          <p>
-            This action will immediately restrict the user's access to the
-            platform and may impact any active or pending activity.
-          </p>
-        </div>
-        <div class="modal-actions">
-          <button class="btn btn-primary">Block User</button>
-          <button class="btn btn-secondary" data-modal-close>Cancel</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Review options menu (delete) -->
-    <div class="notif-options hidden" id="reviewMenu">
-      <button type="button">
-        <img src="./assets/images/delete-icon.svg" />
-        Delete Review
+  <!-- ============ Delete user modal ============ -->
+  <div class="modal-overlay hidden" id="deleteModal">
+    <div class="modal">
+      <button class="modal-close" data-modal-close aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="6" y1="6" x2="18" y2="18" />
+          <line x1="6" y1="18" x2="18" y2="6" />
+        </svg>
       </button>
+      <h3>Delete [User name]?</h3>
+      <p>
+        Please confirm you want to permanently delete this user account from
+        the Yesterday platform.
+      </p>
+      <div class="note-box">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 9V14" stroke="#F99F36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path
+            d="M11.9994 21.4098H5.93944C2.46944 21.4098 1.01944 18.9298 2.69944 15.8998L5.81944 10.2798L8.75944 4.99979C10.5394 1.78979 13.4594 1.78979 15.2394 4.99979L18.1794 10.2898L21.2994 15.9098C22.9794 18.9398 21.5194 21.4198 18.0594 21.4198H11.9994V21.4098Z"
+            stroke="#F99F36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M11.9941 17H12.0031" stroke="#F99F36" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+
+        <p>
+          This action will affect the user's account access, profile data,
+          active deliveries, and platform history.
+        </p>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary">Delete User</button>
+        <button class="btn btn-secondary" data-modal-close>Cancel</button>
+      </div>
     </div>
+  </div>
+
+  <!-- ============ Block user modal ============ -->
+  <div class="modal-overlay hidden" id="blockModal">
+    <div class="modal">
+      <button class="modal-close" data-modal-close aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="6" y1="6" x2="18" y2="18" />
+          <line x1="6" y1="18" x2="18" y2="6" />
+        </svg>
+      </button>
+      <h3>Block [User name]?</h3>
+      <p>
+        Please confirm you want to suspend this user account. Suspended users
+        will be unable to log in, place new delivery requests, submit bids, or
+        access key platform features until reactivated by admin.
+      </p>
+      <div class="note-box">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 9V14" stroke="#F99F36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path
+            d="M11.9994 21.4098H5.93944C2.46944 21.4098 1.01944 18.9298 2.69944 15.8998L5.81944 10.2798L8.75944 4.99979C10.5394 1.78979 13.4594 1.78979 15.2394 4.99979L18.1794 10.2898L21.2994 15.9098C22.9794 18.9398 21.5194 21.4198 18.0594 21.4198H11.9994V21.4098Z"
+            stroke="#F99F36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M11.9941 17H12.0031" stroke="#F99F36" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+
+        <p>
+          This action will immediately restrict the user's access to the
+          platform and may impact any active or pending activity.
+        </p>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary">Block User</button>
+        <button class="btn btn-secondary" data-modal-close>Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Review options menu (delete) -->
+  <div class="notif-options hidden" id="reviewMenu">
+    <button type="button">
+      <img src="./assets/images/delete-icon.svg" />
+      Delete Review
+    </button>
+  </div>
 
 
   <!-- ============ Notifications panel ============ -->
@@ -2121,25 +1591,40 @@
     <button type="button">
       <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="0.5" y="0.5" width="37" height="37" rx="11.5" fill="white" stroke="#E8ECEE" />
-        <path d="M19.1973 14.2417C19.2274 14.2417 19.2585 14.2541 19.2842 14.2798C19.3098 14.3054 19.3223 14.3366 19.3223 14.3667V17.1421C19.3221 17.2114 19.267 17.2671 19.1973 17.2671C19.1672 17.2671 19.136 17.2545 19.1104 17.229C19.0848 17.2035 19.0724 17.1721 19.0723 17.1421V14.3667C19.0723 14.3366 19.0847 14.3054 19.1104 14.2798C19.136 14.2541 19.1671 14.2417 19.1973 14.2417Z" fill="#292D32" stroke="#2D6495" />
-        <path d="M19.2139 10.5333C22.346 10.5333 24.8886 13.076 24.8887 16.2081V17.9581C24.8887 18.2461 24.9533 18.5927 25.041 18.9064C25.1289 19.2207 25.2539 19.5504 25.4014 19.798V19.799L26.46 21.5656L26.4609 21.5665C26.7726 22.0839 26.8269 22.701 26.6191 23.2706C26.4143 23.832 25.9644 24.2646 25.3877 24.4591L25.3867 24.4601C23.3996 25.1332 21.3122 25.4581 19.2139 25.4581C17.1168 25.4581 15.0285 25.125 13.0391 24.4591L13.0371 24.4581C12.4113 24.2518 11.9596 23.8138 11.7666 23.2863C11.5727 22.7559 11.6298 22.1289 11.9668 21.5646L11.9678 21.5656L13.0264 19.799L13.0273 19.798C13.1744 19.5512 13.2986 19.2243 13.3867 18.9103C13.4747 18.5968 13.5391 18.2499 13.5391 17.9581V16.2081C13.5392 13.0761 16.0818 10.5334 19.2139 10.5333ZM24.6475 16.2238C24.6383 13.2247 22.2075 10.7921 19.2139 10.7921C16.2211 10.7922 13.7891 13.2241 13.7891 16.2169V17.9669C13.789 18.553 13.5459 19.4376 13.2451 19.9318L13.2432 19.9357L12.1865 21.7081C11.9059 22.1722 11.8158 22.715 12.0039 23.2169C12.1923 23.7192 12.61 24.0617 13.1221 24.2325H13.123C17.0588 25.5416 21.3865 25.5416 25.3223 24.2325L25.3213 24.2316C25.8239 24.067 26.2153 23.689 26.3926 23.1925C26.5788 22.6942 26.5148 22.1572 26.2529 21.713L26.251 21.7101L25.1934 19.9435L25.1914 19.9396L25.0811 19.7374C24.8331 19.229 24.6475 18.4875 24.6475 17.9747V16.2238Z" fill="#292D32" stroke="#2D6495" />
-        <path d="M16.5967 25.1833C16.6982 25.7001 16.9531 26.1802 17.3262 26.5535C17.8177 27.045 18.4948 27.3337 19.1973 27.3337C20.4856 27.3336 21.5628 26.405 21.7979 25.1833H22.0508C21.8129 26.5445 20.6253 27.5836 19.1973 27.5837C18.4402 27.5837 17.6913 27.271 17.1504 26.7302C16.7295 26.3093 16.4494 25.7619 16.3447 25.1833H16.5967Z" fill="#292D32" stroke="#2D6495" />
+        <path
+          d="M19.1973 14.2417C19.2274 14.2417 19.2585 14.2541 19.2842 14.2798C19.3098 14.3054 19.3223 14.3366 19.3223 14.3667V17.1421C19.3221 17.2114 19.267 17.2671 19.1973 17.2671C19.1672 17.2671 19.136 17.2545 19.1104 17.229C19.0848 17.2035 19.0724 17.1721 19.0723 17.1421V14.3667C19.0723 14.3366 19.0847 14.3054 19.1104 14.2798C19.136 14.2541 19.1671 14.2417 19.1973 14.2417Z"
+          fill="#292D32" stroke="#2D6495" />
+        <path
+          d="M19.2139 10.5333C22.346 10.5333 24.8886 13.076 24.8887 16.2081V17.9581C24.8887 18.2461 24.9533 18.5927 25.041 18.9064C25.1289 19.2207 25.2539 19.5504 25.4014 19.798V19.799L26.46 21.5656L26.4609 21.5665C26.7726 22.0839 26.8269 22.701 26.6191 23.2706C26.4143 23.832 25.9644 24.2646 25.3877 24.4591L25.3867 24.4601C23.3996 25.1332 21.3122 25.4581 19.2139 25.4581C17.1168 25.4581 15.0285 25.125 13.0391 24.4591L13.0371 24.4581C12.4113 24.2518 11.9596 23.8138 11.7666 23.2863C11.5727 22.7559 11.6298 22.1289 11.9668 21.5646L11.9678 21.5656L13.0264 19.799L13.0273 19.798C13.1744 19.5512 13.2986 19.2243 13.3867 18.9103C13.4747 18.5968 13.5391 18.2499 13.5391 17.9581V16.2081C13.5392 13.0761 16.0818 10.5334 19.2139 10.5333ZM24.6475 16.2238C24.6383 13.2247 22.2075 10.7921 19.2139 10.7921C16.2211 10.7922 13.7891 13.2241 13.7891 16.2169V17.9669C13.789 18.553 13.5459 19.4376 13.2451 19.9318L13.2432 19.9357L12.1865 21.7081C11.9059 22.1722 11.8158 22.715 12.0039 23.2169C12.1923 23.7192 12.61 24.0617 13.1221 24.2325H13.123C17.0588 25.5416 21.3865 25.5416 25.3223 24.2325L25.3213 24.2316C25.8239 24.067 26.2153 23.689 26.3926 23.1925C26.5788 22.6942 26.5148 22.1572 26.2529 21.713L26.251 21.7101L25.1934 19.9435L25.1914 19.9396L25.0811 19.7374C24.8331 19.229 24.6475 18.4875 24.6475 17.9747V16.2238Z"
+          fill="#292D32" stroke="#2D6495" />
+        <path
+          d="M16.5967 25.1833C16.6982 25.7001 16.9531 26.1802 17.3262 26.5535C17.8177 27.045 18.4948 27.3337 19.1973 27.3337C20.4856 27.3336 21.5628 26.405 21.7979 25.1833H22.0508C21.8129 26.5445 20.6253 27.5836 19.1973 27.5837C18.4402 27.5837 17.6913 27.271 17.1504 26.7302C16.7295 26.3093 16.4494 25.7619 16.3447 25.1833H16.5967Z"
+          fill="#292D32" stroke="#2D6495" />
       </svg>
       Make all as read
     </button>
     <button type="button">
       <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="0.5" y="0.5" width="37" height="37" rx="11.5" fill="white" stroke="#E8ECEE" />
-        <path d="M26.6973 13.9833C23.9223 13.7083 21.1306 13.5667 18.3473 13.5667C16.6973 13.5667 15.0473 13.65 13.3973 13.8167L11.6973 13.9833" stroke="#2D6495" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M16.2812 13.1417L16.4646 12.0501C16.5979 11.2584 16.6979 10.6667 18.1062 10.6667H20.2896C21.6979 10.6667 21.8063 11.2917 21.9313 12.0584L22.1146 13.1417" stroke="#2D6495" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M24.9049 16.6167L24.3633 25.0084C24.2716 26.3167 24.1966 27.3334 21.8716 27.3334H16.5216C14.1966 27.3334 14.1216 26.3167 14.0299 25.0084L13.4883 16.6167" stroke="#2D6495" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M17.8047 22.75H20.5797" stroke="#2D6495" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M17.1133 19.4167H21.2799" stroke="#2D6495" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+          d="M26.6973 13.9833C23.9223 13.7083 21.1306 13.5667 18.3473 13.5667C16.6973 13.5667 15.0473 13.65 13.3973 13.8167L11.6973 13.9833"
+          stroke="#2D6495" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+          d="M16.2812 13.1417L16.4646 12.0501C16.5979 11.2584 16.6979 10.6667 18.1062 10.6667H20.2896C21.6979 10.6667 21.8063 11.2917 21.9313 12.0584L22.1146 13.1417"
+          stroke="#2D6495" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+          d="M24.9049 16.6167L24.3633 25.0084C24.2716 26.3167 24.1966 27.3334 21.8716 27.3334H16.5216C14.1966 27.3334 14.1216 26.3167 14.0299 25.0084L13.4883 16.6167"
+          stroke="#2D6495" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M17.8047 22.75H20.5797" stroke="#2D6495" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M17.1133 19.4167H21.2799" stroke="#2D6495" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round" />
       </svg>
       Clear all notifications
     </button>
   </div>
 
-    <script src="assets/js/main.js"></script>
-  </body>
+  <script src="assets/js/main.js"></script>
+</body>
+
 </html>
