@@ -972,6 +972,31 @@
     </div>
 
 
+  <!-- ============ Delete user modal ============ -->
+  <div class="modal-overlay hidden" id="deleteUserModal">
+    <div class="modal">
+      <button class="modal-close" data-modal-close aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="6" y1="6" x2="18" y2="18" /><line x1="6" y1="18" x2="18" y2="6" />
+        </svg>
+      </button>
+      <h3>Delete User?</h3>
+      <p>Please confirm you want to permanently delete this user account from the Yesterday platform.</p>
+      <div class="note-box">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 9V14" stroke="#F99F36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M11.9994 21.4098H5.93944C2.46944 21.4098 1.01944 18.9298 2.69944 15.8998L5.81944 10.2798L8.75944 4.99979C10.5394 1.78979 13.4594 1.78979 15.2394 4.99979L18.1794 10.2898L21.2994 15.9098C22.9794 18.9398 21.5194 21.4198 18.0594 21.4198H11.9994V21.4098Z" stroke="#F99F36" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M11.9941 17H12.0031" stroke="#F99F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <p>This action will affect the user's account access, profile data, active deliveries, and platform history.</p>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="confirmDeleteUserBtn">Delete User</button>
+        <button class="btn btn-secondary" data-modal-close>Cancel</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ============ Notifications panel ============ -->
   <div class="notif-panel hidden" id="notifPanel" role="dialog" aria-label="Notifications">
     <div class="head">
@@ -1048,5 +1073,30 @@
   </div>
 
     <script src="assets/js/main.js"></script>
+    <script>
+      (function () {
+        var modal = document.getElementById('deleteUserModal');
+        var confirmBtn = document.getElementById('confirmDeleteUserBtn');
+
+        // Open modal on every trash icon click
+        document.querySelectorAll('.row-action.danger').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            modal.classList.remove('hidden');
+          });
+        });
+
+        // "Delete User" button → close modal
+        if (confirmBtn) {
+          confirmBtn.addEventListener('click', function () {
+            modal.classList.add('hidden');
+          });
+        }
+
+        // Close on backdrop click
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal) modal.classList.add('hidden');
+        });
+      })();
+    </script>
   </body>
 </html>

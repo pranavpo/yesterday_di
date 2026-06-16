@@ -286,7 +286,7 @@
 
             <!-- Add Q&A form -->
             <aside class="card faq-form-card">
-              <h3>Add Questions and Answers</h3>
+              <h3 id="faqFormTitle">Add Questions and Answers</h3>
               <form id="faqForm">
                 <div class="form-group">
                   <label class="form-label" for="faqQuestion"
@@ -311,7 +311,7 @@
                   ></textarea>
                 </div>
                 <div class="detail-actions">
-                  <button class="btn btn-primary" type="button" data-faq-upload>
+                  <button class="btn btn-primary" type="button" id="faqUploadBtn" data-faq-upload>
                     Upload
                   </button>
                   <button class="btn btn-secondary" type="reset">Cancel</button>
@@ -342,6 +342,25 @@
       </div>
     </div>
 
+
+  <!-- ============ Delete FAQ Modal ============ -->
+  <div class="modal-overlay hidden" id="deleteFaqModal">
+    <div class="modal">
+      <button class="modal-close" data-modal-close aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <h3>Delete FAQ?</h3>
+      <p>Please confirm you want to permanently delete this FAQ entry. This action cannot be undone.</p>
+      <div class="note-box">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F08910" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <p>This will permanently remove the question and answer from the FAQ list.</p>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="confirmDeleteFaqBtn">Delete FAQ</button>
+        <button class="btn btn-secondary" data-modal-close>Cancel</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ============ Notifications panel ============ -->
   <div class="notif-panel hidden" id="notifPanel" role="dialog" aria-label="Notifications">
@@ -421,6 +440,12 @@
     <script src="assets/js/main.js"></script>
     <script>
       (function () {
+        var deleteModal = document.getElementById('deleteFaqModal');
+        var confirmDeleteBtn = document.getElementById('confirmDeleteFaqBtn');
+        var formTitle = document.getElementById('faqFormTitle');
+        var uploadBtn = document.getElementById('faqUploadBtn');
+
+        // Accordion toggle
         document
           .querySelectorAll(".faq-card .chev, .faq-card .faq-head .faq-q")
           .forEach(function (el) {
@@ -430,15 +455,59 @@
               card.classList.toggle("open");
             });
           });
+
+        // Delete icon → open delete modal
+        document.querySelectorAll('.faq-card .row-action.danger').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            deleteModal.classList.remove('hidden');
+          });
+        });
+
+        // Delete modal backdrop click
+        deleteModal.addEventListener('click', function (e) {
+          if (e.target === deleteModal) deleteModal.classList.add('hidden');
+        });
+
+        // Confirm delete → close modal
+        if (confirmDeleteBtn) {
+          confirmDeleteBtn.addEventListener('click', function () {
+            deleteModal.classList.add('hidden');
+          });
+        }
+
+        // Edit icon → populate form
+        document.querySelectorAll('.faq-card .row-action[aria-label="Edit"]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var card = btn.closest('.faq-card');
+            var q = card.querySelector('.faq-q').textContent.trim();
+            var paras = card.querySelectorAll('.faq-a p');
+            var a = Array.from(paras).map(function (p) { return p.textContent.trim(); }).join('\n\n');
+            document.getElementById('faqQuestion').value = q;
+            document.getElementById('faqContent').value = a;
+            formTitle.textContent = 'Edit Question and Answer';
+            uploadBtn.textContent = 'Update';
+            document.querySelector('.faq-form-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+        });
+
+        // Upload/Update button
         document.querySelectorAll("[data-faq-upload]").forEach(function (btn) {
           btn.addEventListener("click", function () {
             var t = document.getElementById("successToast");
+            var isEdit = formTitle.textContent.indexOf('Edit') !== -1;
+            document.querySelector('.toast .msg').textContent = isEdit ? 'FAQ updated successfully' : 'FAQ added successfully';
             t.classList.remove("hidden");
-            setTimeout(function () {
-              t.classList.add("hidden");
-            }, 2400);
+            setTimeout(function () { t.classList.add("hidden"); }, 2400);
             document.getElementById("faqForm").reset();
+            formTitle.textContent = 'Add Questions and Answers';
+            uploadBtn.textContent = 'Upload';
           });
+        });
+
+        // Cancel button → reset form state
+        document.querySelector('#faqForm [type="reset"]').addEventListener('click', function () {
+          formTitle.textContent = 'Add Questions and Answers';
+          uploadBtn.textContent = 'Upload';
         });
       })();
     </script>

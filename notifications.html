@@ -394,6 +394,41 @@
     </div>
 
 
+  <!-- ============ View Notification Modal ============ -->
+  <div class="modal-overlay hidden" id="viewNotifModal">
+    <div class="modal">
+      <button class="modal-close" data-modal-close aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <h3>Notification Details</h3>
+      <div style="display:flex;flex-direction:column;gap:14px;margin:18px 0;">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span style="color:#56687a;font-size:13px;font-weight:500;min-width:140px;flex-shrink:0;">Date &amp; Time</span>
+          <span id="vnDateTime" style="color:#13284b;font-size:14px;">—</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span style="color:#56687a;font-size:13px;font-weight:500;min-width:140px;flex-shrink:0;">Message</span>
+          <span id="vnMessage" style="color:#13284b;font-size:14px;">—</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span style="color:#56687a;font-size:13px;font-weight:500;min-width:140px;flex-shrink:0;">State</span>
+          <span id="vnState" style="color:#13284b;font-size:14px;">—</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span style="color:#56687a;font-size:13px;font-weight:500;min-width:140px;flex-shrink:0;">Subscription Type</span>
+          <span id="vnSubType" style="color:#13284b;font-size:14px;">—</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span style="color:#56687a;font-size:13px;font-weight:500;min-width:140px;flex-shrink:0;">User Type</span>
+          <span id="vnUserType" style="color:#13284b;font-size:14px;">—</span>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" data-modal-close>Close</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ============ Notifications panel ============ -->
   <div class="notif-panel hidden" id="notifPanel" role="dialog" aria-label="Notifications">
     <div class="head">
@@ -472,18 +507,35 @@
     <script src="assets/js/main.js"></script>
     <script>
       (function () {
-        document
-          .querySelectorAll("[data-send-broadcast]")
-          .forEach(function (btn) {
-            btn.addEventListener("click", function () {
-              var t = document.getElementById("successToast");
-              t.classList.remove("hidden");
-              setTimeout(function () {
-                t.classList.add("hidden");
-              }, 2400);
-              document.getElementById("broadcastForm").reset();
-            });
+        // Send notification toast
+        document.querySelectorAll("[data-send-broadcast]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var t = document.getElementById("successToast");
+            t.classList.remove("hidden");
+            setTimeout(function () { t.classList.add("hidden"); }, 2400);
+            document.getElementById("broadcastForm").reset();
           });
+        });
+
+        // View button → populate and open detail modal
+        var viewModal = document.getElementById('viewNotifModal');
+        document.querySelectorAll('.data-table .row-action').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var row = btn.closest('tr');
+            var cells = row.querySelectorAll('td');
+            document.getElementById('vnDateTime').textContent = cells[0].innerText.trim();
+            document.getElementById('vnMessage').textContent = cells[1].innerText.trim();
+            document.getElementById('vnState').textContent = cells[2].innerText.trim();
+            document.getElementById('vnSubType').textContent = cells[3].innerText.trim();
+            document.getElementById('vnUserType').textContent = cells[4].innerText.trim();
+            viewModal.classList.remove('hidden');
+          });
+        });
+
+        // Backdrop click closes modal
+        viewModal.addEventListener('click', function (e) {
+          if (e.target === viewModal) viewModal.classList.add('hidden');
+        });
       })();
     </script>
   </body>

@@ -10,6 +10,22 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
   <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+  <style>
+    @media print {
+      @page { size: landscape; margin: 1cm; }
+      .sidebar, .sidebar-toggle, .menu-btn, .topbar-actions,
+      .page-header-row, .popover, .notif-panel, .notif-options { display: none !important; }
+      .app-shell { display: block !important; }
+      .main { margin: 0 !important; width: 100% !important; }
+      .topbar { box-shadow: none !important; border-bottom: 1px solid #e4e7ec; }
+      .content { padding: 16px !important; }
+      .stats-grid { grid-template-columns: repeat(5, 1fr) !important; }
+      .overview-row.dashboard { grid-template-columns: 2fr 1fr !important; }
+      .card, .stat-card { break-inside: avoid; box-shadow: none !important; border: 1px solid #e4e7ec; }
+      .table-card { break-inside: avoid; }
+      canvas { max-height: 220px !important; }
+    }
+  </style>
 </head>
 
 <body>
@@ -737,7 +753,128 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      // Export → auto-download landscape PDF
+      var exportBtn = document.getElementById('exportBtn');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', function () {
+          var btn = exportBtn;
+          var origText = btn.textContent.trim();
+          btn.textContent = 'Generating…';
+          btn.disabled = true;
+
+          // Hide toolbar row so it doesn't appear in the PDF
+          var toolbar = document.querySelector('.page-header-row');
+          if (toolbar) toolbar.style.display = 'none';
+
+          var el = document.querySelector('.content');
+          var opt = {
+            margin: [0.25, 0.25, 0.25, 0.25],
+            filename: 'dashboard-' + new Date().toISOString().split('T')[0] + '.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: {
+              scale: 2,
+              useCORS: true,
+              logging: false,
+              scrollX: 0,
+              scrollY: -window.scrollY,
+              windowWidth: document.documentElement.scrollWidth
+            },
+            jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' },
+            pagebreak: { mode: ['css', 'legacy'] }
+          };
+
+          html2pdf().set(opt).from(el).save().then(function () {
+            if (toolbar) toolbar.style.display = '';
+            btn.textContent = origText;
+            btn.disabled = false;
+          }).catch(function () {
+            if (toolbar) toolbar.style.display = '';
+            btn.textContent = origText;
+            btn.disabled = false;
+          });
+        });
+      }
+
+      // Calendar: dynamic month navigation
+      var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'];
+      var curYear = 2025, curMonth = 1; // Feb 2025
+      var rangeStart = 14, rangeEnd = 16;
+
+      var picker = document.getElementById('datePicker');
+      if (!picker) return;
+      var headTitle = picker.querySelector('.cal-head h4');
+      var grid = picker.querySelector('.cal-grid');
+      var prevBtn = picker.querySelector('[aria-label="Previous month"]');
+      var nextBtn = picker.querySelector('[aria-label="Next month"]');
+
+      function renderCal() {
+        headTitle.textContent = MONTHS[curMonth] + ' ' + curYear;
+        grid.innerHTML = '';
+        ['S', 'M', 'T', 'W', 'T', 'F', 'S'].forEach(function (l) {
+          var el = document.createElement('div');
+          el.className = 'dow'; el.textContent = l;
+          grid.appendChild(el);
+        });
+        var firstDow = new Date(curYear, curMonth, 1).getDay();
+        var daysInPrev = new Date(curYear, curMonth, 0).getDate();
+        var daysInCur = new Date(curYear, curMonth + 1, 0).getDate();
+        for (var i = firstDow - 1; i >= 0; i--) {
+          var el = document.createElement('div');
+          el.className = 'day mute';
+          el.textContent = daysInPrev - i;
+          grid.appendChild(el);
+        }
+        for (var day = 1; day <= daysInCur; day++) {
+          var el = document.createElement('div');
+          el.className = 'day';
+          if (rangeStart !== null && rangeEnd !== null) {
+            if (day === rangeStart || day === rangeEnd) el.classList.add('selected');
+            else if (day > rangeStart && day < rangeEnd) el.classList.add('in-range');
+          } else if (rangeStart !== null && day === rangeStart) {
+            el.classList.add('selected');
+          }
+          el.textContent = day;
+          grid.appendChild(el);
+        }
+        var trailing = (7 - ((firstDow + daysInCur) % 7)) % 7;
+        for (var n = 1; n <= trailing; n++) {
+          var el = document.createElement('div');
+          el.className = 'day mute'; el.textContent = n;
+          grid.appendChild(el);
+        }
+      }
+
+      grid.addEventListener('click', function (e) {
+        var t = e.target;
+        if (!t.classList.contains('day') || t.classList.contains('mute')) return;
+        var day = parseInt(t.textContent, 10);
+        if (rangeStart === null || rangeEnd !== null) { rangeStart = day; rangeEnd = null; }
+        else if (day >= rangeStart) { rangeEnd = day; }
+        else { rangeEnd = rangeStart; rangeStart = day; }
+        renderCal();
+      });
+
+      prevBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (--curMonth < 0) { curMonth = 11; curYear--; }
+        rangeStart = null; rangeEnd = null;
+        renderCal();
+      });
+      nextBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (++curMonth > 11) { curMonth = 0; curYear++; }
+        rangeStart = null; rangeEnd = null;
+        renderCal();
+      });
+
+      renderCal();
+    })();
+  </script>
 </body>
 
 </html>
