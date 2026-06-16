@@ -2,7 +2,7 @@
    Yesterday Admin CMS — Responsive overrides
    ========================================================= */
 
-@media(max-width: 1440px) {
+@media (max-width: 1440px) {
   .overview-row {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -647,7 +647,7 @@
 
   .overview-row.dashboard {
     grid-template-columns: 1fr;
-    gap: 12px
+    gap: 12px;
   }
 
   .card {
@@ -763,7 +763,7 @@
   }
 
   /* SVG wordmark (verify-code page) — scale to fit */
-  .auth-brand>svg {
+  .auth-brand > svg {
     width: 75%;
     height: auto;
     max-width: 240px;
@@ -815,7 +815,7 @@
     font-size: 32px;
   }
 
-  .auth-brand>svg {
+  .auth-brand > svg {
     width: 70%;
     max-width: 200px;
   }
@@ -848,5 +848,19 @@
 
   .code-input {
     border-radius: 10px;
+  }
+}
+
+/* ---------- Mac / medium desktop (inbox row overflow fix) ---------- */
+@media (max-width: 1440px) {
+  .inbox-row {
+    grid-template-columns: minmax(0, 1fr) auto auto auto 32px;
+    gap: 12px;
+  }
+
+  .inbox-row .who span:last-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
