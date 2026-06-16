@@ -53,6 +53,25 @@
       }
     }
 
+    /* ---------- Close mobile sidebar on outside click ---------- */
+    document.addEventListener('click', function (e) {
+      if (!shell) return;
+
+      const isSidebar = shell.querySelector('#sidebar')?.contains(e.target);
+      const isToggle = e.target.closest('#sidebarToggle');
+      const isMenuBtn = e.target.closest('.menu-btn');
+
+      const isMobile = window.innerWidth <= 720;
+
+      if (!isMobile) return;
+
+      // If click is outside sidebar + outside toggle buttons
+      if (!isSidebar && !isToggle && !isMenuBtn) {
+        shell.classList.remove('show-sidebar');
+      }
+    });
+
+
     /* ---------- Password show/hide ---------- */
     qsa('[data-toggle-pass]').forEach(function (btn) {
       on(btn, 'click', function () {
