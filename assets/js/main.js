@@ -18,14 +18,6 @@
     /* ---------- Sidebar collapse / mobile drawer ---------- */
     var shell = qs('#appShell');
     var sidebarToggle = qs('#sidebarToggle');
-
-    if (shell) {
-      // ✅ RESTORE STATE ON PAGE LOAD
-      if (localStorage.getItem('sidebarCollapsed') === 'true') {
-        shell.classList.add('is-collapsed');
-      }
-    }
-
     if (shell && sidebarToggle) {
       on(sidebarToggle, 'click', function () {
         if (window.innerWidth <= 720) {
@@ -33,12 +25,6 @@
         } else {
           shell.classList.toggle('is-collapsed');
         }
-
-        // ✅ SAVE STATE
-        localStorage.setItem(
-          'sidebarCollapsed',
-          shell.classList.contains('is-collapsed')
-        );
       });
     }
     // Mobile menu button is auto-inserted near top bar on mobile
