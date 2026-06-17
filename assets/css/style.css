@@ -3420,7 +3420,7 @@ select.form-control {
 }
 
 .overview-row .card {
-  /* height: 386px; */
+  min-height: 386px;
   display: flex;
   flex-direction: column;
 }
